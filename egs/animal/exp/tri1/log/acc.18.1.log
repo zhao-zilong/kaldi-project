@@ -1,14 +1,16 @@
 # gmm-acc-stats-ali exp/tri1/18.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri1/ali.1.gz|" exp/tri1/18.1.acc 
-# Started at Wed Jun  8 14:02:17 BRT 2016
+# Started at Fri Jun 10 15:11:51 BRT 2016
 #
 gmm-acc-stats-ali exp/tri1/18.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri1/ali.1.gz|' exp/tri1/18.1.acc 
-apply-cmvn --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- 
 add-deltas ark:- ark:- 
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 50 utterances; for utterance felipe_v2_Sfelipe_v218 avg. like is -80.8013 over 1623 frames.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 100 utterances; for utterance silvio_Ssilvio9 avg. like is -80.922 over 1573 frames.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 120 utterances, errors on 0
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 120 files, 0 with errors.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -81.1425 over 190116 frames.
+apply-cmvn --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- 
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 50 utterances; for utterance felipe_v2_Sfelipe_v218 avg. like is -82.0746 over 1623 frames.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 100 utterances; for utterance felipe_vfour_Sfelipe_vfour9 avg. like is -82.8646 over 1573 frames.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 150 utterances; for utterance felipe_vtwo_Sfelipe_vtwo18 avg. like is -82.2749 over 1761 frames.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 200 utterances; for utterance silvio_Ssilvio9 avg. like is -83.6453 over 1573 frames.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 220 utterances, errors on 0
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 220 files, 0 with errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -82.5296 over 372916 frames.
 LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:123) Written accs.
-# Accounting: time=7 threads=1
-# Ended (code 0) at Wed Jun  8 14:02:24 BRT 2016, elapsed time 7 seconds
+# Accounting: time=2 threads=1
+# Ended (code 0) at Fri Jun 10 15:11:53 BRT 2016, elapsed time 2 seconds

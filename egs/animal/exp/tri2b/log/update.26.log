@@ -1,0 +1,33 @@
+# gmm-est --write-occs=exp/tri2b/27.occs --mix-up=9000 --power=0.25 exp/tri2b/26.mdl "gmm-sum-accs - exp/tri2b/26.*.acc |" exp/tri2b/27.mdl 
+# Started at Fri Jun 10 15:16:03 BRT 2016
+#
+gmm-est --write-occs=exp/tri2b/27.occs --mix-up=9000 --power=0.25 exp/tri2b/26.mdl 'gmm-sum-accs - exp/tri2b/26.*.acc |' exp/tri2b/27.mdl 
+gmm-sum-accs - exp/tri2b/26.1.acc 
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 1 stats, total count 368384, avg like/frame -40.7163
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 368384
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:67) Written stats to -
+LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 0 per frame over 368384 frames. 
+LOG (gmm-est:MleUpdate():transition-model.cc:396) 210 probabilities floored, 3969 out of 5752 transition-states skipped due to insuffient data (it is normal to have some skipped.)
+LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall 0 log-like improvement per frame over 368384 frames.
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.082457, occupation count 9.977335, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.056378, occupation count 9.189686, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.054753, occupation count 9.527062, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.049458, occupation count 8.111132, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.059524, occupation count 9.999996, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.021929, occupation count 5.723512, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.090090, occupation count 10.000000, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.040208, occupation count 7.197164, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.041350, occupation count 7.856413, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.144821, occupation count 9.992671, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.108290, occupation count 9.637794, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 7, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.047761, occupation count 8.549135, vector size 40)
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 8718
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:229) Removed 12 Gaussians due to counts < --min-gaussian-occupancy=10 and --remove-low-count-gaussians=true
+LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 0.0827157 objective function improvement per frame over 368384 frames
+LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -40.7163 over 368384 frames.
+LOG (gmm-est:SplitByCount():am-diag-gmm.cc:116) Split 1366 states with target = 9000, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 8718 to 9018
+LOG (gmm-est:main():gmm-est.cc:146) Written model to exp/tri2b/27.mdl
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 10 15:16:03 BRT 2016, elapsed time 0 seconds

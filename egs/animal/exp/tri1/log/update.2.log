@@ -1,19 +1,20 @@
 # gmm-est --mix-up=2360 --power=0.25 --write-occs=exp/tri1/3.occs exp/tri1/2.mdl "gmm-sum-accs - exp/tri1/2.*.acc |" exp/tri1/3.mdl 
-# Started at Wed Jun  8 14:01:34 BRT 2016
+# Started at Fri Jun 10 15:11:08 BRT 2016
 #
 gmm-est --mix-up=2360 --power=0.25 --write-occs=exp/tri1/3.occs exp/tri1/2.mdl 'gmm-sum-accs - exp/tri1/2.*.acc |' exp/tri1/3.mdl 
 gmm-sum-accs - exp/tri1/2.1.acc 
-LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 1 stats, total count 190116, avg like/frame -88.6179
-LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 190116
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 1 stats, total count 372916, avg like/frame -87.9031
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 372916
 LOG (gmm-sum-accs:main():gmm-sum-accs.cc:67) Written stats to -
-LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 0 per frame over 190116 frames. 
-LOG (gmm-est:MleUpdate():transition-model.cc:396) 28 probabilities floored, 1255 out of 1923 transition-states skipped due to insuffient data (it is normal to have some skipped.)
-LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall 0 log-like improvement per frame over 190116 frames.
-LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 2011
+LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 0 per frame over 372916 frames. 
+LOG (gmm-est:MleUpdate():transition-model.cc:396) 34 probabilities floored, 2316 out of 3522 transition-states skipped due to insuffient data (it is normal to have some skipped.)
+LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall 0 log-like improvement per frame over 372916 frames.
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 2006
 LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:229) Removed 0 Gaussians due to counts < --min-gaussian-occupancy=10 and --remove-low-count-gaussians=true
-LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 0.19685 objective function improvement per frame over 190116 frames
-LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -88.6179 over 190116 frames.
-LOG (gmm-est:SplitByCount():am-diag-gmm.cc:116) Split 480 states with target = 2360, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 2011 to 2360
+LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 0.128031 objective function improvement per frame over 372916 frames
+LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -87.9031 over 372916 frames.
+LOG (gmm-est:SplitByCount():am-diag-gmm.cc:116) Split 881 states with target = 2360, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 2006 to 2360
 LOG (gmm-est:main():gmm-est.cc:146) Written model to exp/tri1/3.mdl
 # Accounting: time=0 threads=1
-# Ended (code 0) at Wed Jun  8 14:01:34 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Fri Jun 10 15:11:08 BRT 2016, elapsed time 0 seconds

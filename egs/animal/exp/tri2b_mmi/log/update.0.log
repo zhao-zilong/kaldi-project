@@ -1,0 +1,13 @@
+# gmm-est-gaussians-ebw --tau=400 exp/tri2b_mmi/0.mdl exp/tri2b_mmi/num_acc.0.acc exp/tri2b_mmi/den_acc.0.acc - | gmm-est-weights-ebw --weight-tau=10 - exp/tri2b_mmi/num_acc.0.acc exp/tri2b_mmi/den_acc.0.acc exp/tri2b_mmi/1.mdl 
+# Started at Fri Jun 10 15:20:24 BRT 2016
+#
+gmm-est-gaussians-ebw --tau=400 exp/tri2b_mmi/0.mdl exp/tri2b_mmi/num_acc.0.acc exp/tri2b_mmi/den_acc.0.acc - 
+gmm-est-weights-ebw --weight-tau=10 - exp/tri2b_mmi/num_acc.0.acc exp/tri2b_mmi/den_acc.0.acc exp/tri2b_mmi/1.mdl 
+LOG (gmm-est-gaussians-ebw:main():gmm-est-gaussians-ebw.cc:98) Num count 2779.87, den count 2779.87
+LOG (gmm-est-gaussians-ebw:main():gmm-est-gaussians-ebw.cc:100) Overall auxf impr/frame from Gaussian update is 0.427449 over 2779.87 frames; floored D for 0 Gaussians.
+LOG (gmm-est-gaussians-ebw:main():gmm-est-gaussians-ebw.cc:111) Written model to -
+LOG (gmm-est-weights-ebw:main():gmm-est-weights-ebw.cc:96) Num count 2779.87, den count 2779.87
+LOG (gmm-est-weights-ebw:main():gmm-est-weights-ebw.cc:98) Overall auxf impr/frame from weight update is 0.209478 over 15548.7 frames.
+LOG (gmm-est-weights-ebw:main():gmm-est-weights-ebw.cc:110) Written model to exp/tri2b_mmi/1.mdl
+# Accounting: time=2 threads=1
+# Ended (code 0) at Fri Jun 10 15:20:26 BRT 2016, elapsed time 2 seconds

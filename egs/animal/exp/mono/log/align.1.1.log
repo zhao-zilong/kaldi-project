@@ -1,5 +1,5 @@
 # gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=6 --retry-beam=24 --careful=false "gmm-boost-silence --boost=1.0 1 exp/mono/1.mdl - |" "ark:gunzip -c exp/mono/fsts.1.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas ark:- ark:- |" "ark,t:|gzip -c >exp/mono/ali.1.gz" 
-# Started at Wed Jun  8 13:58:27 BRT 2016
+# Started at Fri Jun 10 15:04:57 BRT 2016
 #
 gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=6 --retry-beam=24 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/mono/1.mdl - |' 'ark:gunzip -c exp/mono/fsts.1.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas ark:- ark:- |' 'ark,t:|gzip -c >exp/mono/ali.1.gz' 
 gmm-boost-silence --boost=1.0 1 exp/mono/1.mdl - 
@@ -9,22 +9,55 @@ LOG (gmm-boost-silence:main():gmm-boost-silence.cc:103) Wrote model to -
 add-deltas ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- 
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo1 with beam 24
-WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo10 with beam 24
-WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo18 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo13 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo14 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo17 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo19 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo2 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo3 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo4 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance eduardo_Seduardo6 with beam 24
-WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_Sfelipe17 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_Sfelipe11 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_Sfelipe16 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_Sfelipe18 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_Sfelipe19 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_v2_Sfelipe_v215 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_v2_Sfelipe_v217 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_v2_Sfelipe_v26 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_v2_Sfelipe_v27 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive11 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive12 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive13 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive14 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive15 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive5 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive7 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfive_Sfelipe_vfive9 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfour_Sfelipe_vfour14 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfour_Sfelipe_vfour16 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vfour_Sfelipe_vfour5 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vone_Sfelipe_vone14 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vone_Sfelipe_vone19 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vone_Sfelipe_vone8 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vthree_Sfelipe_vthree11 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vthree_Sfelipe_vthree12 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vthree_Sfelipe_vthree13 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vtwo_Sfelipe_vtwo11 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vtwo_Sfelipe_vtwo18 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance matheus_Smatheus6 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance silvio_Ssilvio5 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio1 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio11 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio12 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio14 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file zilio_Szilio14, len = 1511
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio19 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio2 with beam 24
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio4 with beam 24
 WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance zilio_Szilio5 with beam 24
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 120 utterances, errors on 0
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -98.066 over 190116 frames.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 14 out of 120 utterances.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 120, errors on 0
-# Accounting: time=15 threads=1
-# Ended (code 0) at Wed Jun  8 13:58:42 BRT 2016, elapsed time 15 seconds
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 220 utterances, errors on 0
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -97.7995 over 371405 frames.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 46 out of 220 utterances.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 219, errors on 1
+# Accounting: time=40 threads=1
+# Ended (code 0) at Fri Jun 10 15:05:37 BRT 2016, elapsed time 40 seconds

@@ -1,0 +1,455 @@
+# gmm-latgen-faster --beam=13.0 --lattice-beam=7.0 --acoustic-scale=0.1 --max-mem=20000000 --max-active=5000 --word-symbol-table=data/lang/words.txt exp/tri2b/final.mdl exp/tri2b_denlats/dengraph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/final.mat ark:- ark:- |" "ark:|gzip -c >exp/tri2b_denlats/lat.1.gz" 
+# Started at Fri Jun 10 15:17:04 BRT 2016
+#
+gmm-latgen-faster --beam=13.0 --lattice-beam=7.0 --acoustic-scale=0.1 --max-mem=20000000 --max-active=5000 --word-symbol-table=data/lang/words.txt exp/tri2b/final.mdl exp/tri2b_denlats/dengraph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/final.mat ark:- ark:- |' 'ark:|gzip -c >exp/tri2b_denlats/lat.1.gz' 
+transform-feats exp/tri2b/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- 
+eduardo_Seduardo1 corsa javali cobra lobo pernilongo gato porco cao burro arara mosca cao bufalo alfaiate mosca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo1 is -4.27895 over 1202 frames.
+eduardo_Seduardo10 tigre crocodilo jegue rato raposa crocodilo boi capivara tatu golfinho macaco paca golfinho dinossauro mosca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo10 is -4.60435 over 1211 frames.
+eduardo_Seduardo11 paca mico garrote sabia canario passaro-preto frango abelha cobra guaxinim cabrito aranha aranha boi jacare 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo11 is -4.44694 over 1236 frames.
+eduardo_Seduardo12 canguru papagaio besouro sapo tartaruga joao-de-barro corsa canguru ra piolho pombo javali gato guaxinim camelo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo12 is -4.48519 over 1111 frames.
+eduardo_Seduardo13 jacare passaro-preto andorinha egua alfaiate tatu gato elefante piolho tatu rato besouro lontra raposa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo13 is -4.78166 over 1061 frames.
+eduardo_Seduardo14 mula leoa joao-de-barro cabrito bicho-do-mato golfinho boi cachorro carangueijo jegue mico garrote galinha bicho-preguica bode 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo14 is -4.33149 over 1336 frames.
+eduardo_Seduardo15 egua capivara camelo lagarto gato burro ovelha passaro-preto peru corsa borboleta quati boi pato capivara 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo15 is -4.47842 over 1173 frames.
+eduardo_Seduardo16 galo galo jumento ra porco-da-india garca escaravelho aranha escorpiao barata golfinho rinoceronte peixe cobra cachorro 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo16 is -4.65991 over 1261 frames.
+eduardo_Seduardo17 raposa cavalo ganso besouro carangueijo baleia ra garrote arara escorpiao pombo porco-do-mato porco-da-india joao-de-barro peixe 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo17 is -4.22437 over 1236 frames.
+eduardo_Seduardo18 baleia pinto cavalo garca egua tigre canario besouro sapo lontra garca girafa calango cabrito mosca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo18 is -4.56776 over 1061 frames.
+eduardo_Seduardo19 raposa vaca lontra pato lagartixa barata bufalo frango pavao peixe arara jumento guaxinim lagartixa pernilongo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo19 is -4.54718 over 1086 frames.
+eduardo_Seduardo2 corsa alfaiate alfaiate galinha carneiro aranha ovelha pulga touro pernilongo periquito pinto bufalo periquito coruja 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo2 is -4.68589 over 1048 frames.
+eduardo_Seduardo20 sabia onca camelo coelho alfaiate vaca barata carangueijo cao formiga barata bode gaviao pernilongo joao-de-barro 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo20 is -4.23443 over 1211 frames.
+eduardo_Seduardo3 cabra cabra sapo paca pato formiga tubarao crocodilo vagalume lontra lagarta bezerro camelo garca borboleta morcego 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo3 is -4.84492 over 1136 frames.
+eduardo_Seduardo4 escorpiao <UNK> alfaiate burro traca porco paca saracura golfinho camelo peixe mula lobo galo corsa peru <UNK> 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo4 is -5.42972 over 1236 frames.
+eduardo_Seduardo5 garrote bicho-do-mato elefante javali bode seu jabuti traca bezerro calango coruja egua touro besouro gato 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo5 is -4.41674 over 1423 frames.
+eduardo_Seduardo6 paca sapo frango ra sapo marreco barata barata frango corsa paca leao pombo tatu borboleta lobo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo6 is -4.23669 over 1198 frames.
+eduardo_Seduardo7 pernilongo besouro andorinha papagaio aranha carneiro carneiro ponei urubu anta pomba golfinho jegue peixe ra 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo7 is -4.2326 over 1286 frames.
+eduardo_Seduardo8 pombo zebra urso morcego porco marreco piolho vagalume cao macaco galinha besouro ra cao porco-do-mato 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo8 is -4.36927 over 1198 frames.
+eduardo_Seduardo9 corsa tatu ponei hipopotamo cobra cobra garrote cachorro jacare veado bem-te-vi borboleta pavao javali raposa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance eduardo_Seduardo9 is -4.64575 over 1286 frames.
+felipe_Sfelipe1 cavalo barata pombo marreco ganso cabra pulga zangao traca baleia rato lontra morcego frango zebra 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe1 is -3.85898 over 1836 frames.
+felipe_Sfelipe10 garca seu sabia mula rinoceronte canario lobo elefante tartaruga besouro lagartixa sabia golfinho zangao pinto 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe10 is -3.95392 over 1798 frames.
+felipe_Sfelipe11 rato jacare vaca leoa crocodilo alfaiate bicho-preguica pomba tubarao tartaruga canario carangueijo morcego carangueijo sabia 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe11 is -3.93533 over 1798 frames.
+felipe_Sfelipe12 cao borboleta baleia cabrito boi leao mosca touro gaviao aguia jumento joao-de-barro calango morcego baleia 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe12 is -4.00209 over 1786 frames.
+felipe_Sfelipe13 formiga egua barata tubarao crocodilo leao paca andorinha zebra tubarao morcego bem-te-vi tatu tamandua frango 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe13 is -4.0328 over 1761 frames.
+felipe_Sfelipe14 crocodilo joao-de-barro veado joao-de-barro guaxinim dinossauro garca veado jacare egua lagarta escaravelho borboleta avestruz urubu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe14 is -4.05439 over 1836 frames.
+felipe_Sfelipe15 cabra cao aguia veado pavao coruja touro pombo tartaruga jegue periquito pernilongo aranha bem-te-vi bufalo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe15 is -4.11936 over 1698 frames.
+felipe_Sfelipe16 mosca ponei ganso zangao avestruz canario porco-do-mato guaxinim raposa leoa golfinho canguru besouro lontra calango 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe16 is -4.07923 over 1698 frames.
+felipe_Sfelipe17 alfaiate galinha anta besouro barata arara ema bezerro pinto pernilongo saracura barata aranha canario corsa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe17 is -4.01603 over 1648 frames.
+felipe_Sfelipe18 alfaiate pulga gaviao lobo besouro canguru porco-do-mato borboleta barata zebra mosca morcego onca lagartixa alfaiate 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe18 is -4.06074 over 1748 frames.
+felipe_Sfelipe19 carangueijo lagarta piolho hipopotamo besouro dinossauro rato javali alfaiate ganso cachorro lagarta gato galo escorpiao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe19 is -4.18073 over 1723 frames.
+felipe_Sfelipe2 morcego morcego gato mico garca pombo cao besouro guaxinim crocodilo porco bode vagalume touro quati 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe2 is -3.84192 over 1836 frames.
+felipe_Sfelipe20 anta dinossauro lagarto gato canario mosca frango piolho lagarto pato peru hiena gaviao cao tatu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe20 is -4.01406 over 1673 frames.
+felipe_Sfelipe3 porco-da-india ponei traca urso crocodilo gato alfaiate boi peixe pavao burro cavalo bezerro lagarto cavalo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe3 is -3.81209 over 1848 frames.
+felipe_Sfelipe4 cabrito marreco burro cabra ema gamba coruja foca baleia saracura garrote coelho alfaiate saracura porco-da-india 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe4 is -3.87329 over 1923 frames.
+felipe_Sfelipe5 bezerro cao pomba borboleta hiena morcego lagarto garca sabia zebra crocodilo gato onca burro egua 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe5 is -3.88494 over 1798 frames.
+felipe_Sfelipe6 quati seu sapo carneiro alfaiate coruja gamba bicho-preguica abelha urubu javali periquito foca cabrito pombo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe6 is -4.12399 over 1861 frames.
+felipe_Sfelipe7 cavalo golfinho tubarao avestruz ra escorpiao aranha jacare bezerro abelha alfaiate formiga golfinho barata seu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe7 is -3.87312 over 1798 frames.
+felipe_Sfelipe8 gamba pavao bode porco-do-mato tigre lagarto barata rinoceronte guaxinim urubu anta ponei formiga porco-da-india pomba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe8 is -3.95682 over 1811 frames.
+felipe_Sfelipe9 girafa ra tigre sapo passaro marreco crocodilo pomba elefante cachorro mula bicho-do-mato barata elefante tatu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_Sfelipe9 is -3.90225 over 1811 frames.
+felipe_v2_Sfelipe_v21 galinha borboleta pernilongo paca porco-da-india barata jumento pomba camelo baleia marreco lagartixa bufalo vagalume pomba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v21 is -3.92454 over 1786 frames.
+felipe_v2_Sfelipe_v210 touro cao hipopotamo lagarto peru corsa corsa bufalo tigre seu alfaiate peixe cavalo vaca peixe 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v210 is -3.72652 over 1686 frames.
+felipe_v2_Sfelipe_v211 morcego peixe alfaiate onca papagaio rinoceronte cobra pernilongo saracura ovelha urubu avestruz lagarto tartaruga alfaiate 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v211 is -3.96888 over 1836 frames.
+felipe_v2_Sfelipe_v212 pomba baleia corsa marreco cavalo bicho-preguica aguia cobra bicho-preguica quati bezerro pavao bem-te-vi pernilongo urso 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v212 is -3.9664 over 1661 frames.
+felipe_v2_Sfelipe_v213 ponei dinossauro barata golfinho boi andorinha macaco cao ovelha rinoceronte papagaio pomba besouro canario paca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v213 is -4.05204 over 1648 frames.
+felipe_v2_Sfelipe_v214 baleia tartaruga cobra vaca vagalume besouro besouro veado saracura javali mula ovelha cachorro formiga mula 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v214 is -4.02452 over 1623 frames.
+felipe_v2_Sfelipe_v215 andorinha pernilongo corsa tubarao lagarta porco borboleta coruja sapo traca veado bufalo hiena cachorro bode 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v215 is -3.99213 over 1773 frames.
+felipe_v2_Sfelipe_v216 tatu aranha cachorro porco rato pomba bicho-preguica pomba andorinha hipopotamo formiga cachorro jumento boi paca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v216 is -3.99561 over 1598 frames.
+felipe_v2_Sfelipe_v217 porco-da-india cachorro traca besouro cabrito periquito tigre vagalume carangueijo tigre tatu aranha jabuti leoa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v217 is -4.0102 over 1548 frames.
+felipe_v2_Sfelipe_v218 tigre hiena tubarao avestruz mico hipopotamo periquito peru raposa morcego periquito tatu touro formiga tubarao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v218 is -4.02569 over 1623 frames.
+felipe_v2_Sfelipe_v219 boi borboleta sapo borboleta burro besouro gamba peru ponei cachorro hipopotamo lagartixa capivara ema jabuti 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v219 is -3.99606 over 1611 frames.
+felipe_v2_Sfelipe_v22 cavalo ra borboleta mico morcego alfaiate tigre carangueijo tubarao girafa raposa coruja quati pinto tigre 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v22 is -3.90575 over 1798 frames.
+felipe_v2_Sfelipe_v220 camelo urso hipopotamo onca pato javali jacare gato pinto mula mula cabrito borboleta javali seu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v220 is -3.95551 over 1561 frames.
+felipe_v2_Sfelipe_v23 foca porco elefante bufalo porco lobo vagalume alfaiate borboleta corsa escorpiao calango paca peixe boi 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v23 is -3.87792 over 1823 frames.
+felipe_v2_Sfelipe_v24 formiga tamandua galinha rinoceronte cabrito pomba borboleta girafa borboleta cachorro jabuti elefante tamandua pavao pomba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v24 is -4.01331 over 1923 frames.
+felipe_v2_Sfelipe_v25 pulga escaravelho papagaio lagarto bezerro joao-de-barro carangueijo peru aranha pinto cao mico capivara corsa bode 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v25 is -3.98129 over 1736 frames.
+felipe_v2_Sfelipe_v26 saracura jumento sabia gaviao passaro-preto anta papagaio bicho-preguica vagalume marreco jabuti pato joao-de-barro tigre lagarta 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v26 is -4.12849 over 1886 frames.
+felipe_v2_Sfelipe_v27 peixe ra vaca piolho lobo frango papagaio pernilongo gaviao onca galo arara carangueijo porco-da-india garca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v27 is -3.96077 over 1836 frames.
+felipe_v2_Sfelipe_v28 andorinha burro passaro baleia peru gato corsa leoa baleia passaro ponei cabra peixe leoa macaco 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v28 is -3.83737 over 1773 frames.
+felipe_v2_Sfelipe_v29 tigre jumento arara pavao bufalo marreco urubu zebra rinoceronte carangueijo jacare marreco ponei leao escaravelho 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_v2_Sfelipe_v29 is -3.85007 over 1898 frames.
+felipe_vfive_Sfelipe_vfive1 puma coala galo arraia onca baleia dinossauro carneiro cuica orca caracol pavao dodo texugo garrote 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive1 is -4.08341 over 1423 frames.
+felipe_vfive_Sfelipe_vfive10 bacalhau bovino lagarto zabele piolho canideo ovino grilo coala corsa acaro porco-espinho coala vieira sombria 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive10 is -4.21857 over 1611 frames.
+felipe_vfive_Sfelipe_vfive11 alpaca dromedario lemure toupeira tordo cadela estrela-do-mar jiboia borboleta formiga gamo porco-do-mato jacutinga albatroz periquito 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive11 is -4.18017 over 1798 frames.
+felipe_vfive_Sfelipe_vfive12 sabia potro carneiro alpaca tesourinha hamster gorila galinaceo bem-te-vi patinho orca bicho-do-mato estrela-do-mar aguia ostra 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive12 is -4.18175 over 1648 frames.
+felipe_vfive_Sfelipe_vfive13 marreco cabra maritaca porco lagostim girafa jaburu leao-marinho bufalo peru guepardo pantera preguica passaro-preto cavalo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive13 is -4.0354 over 1723 frames.
+felipe_vfive_Sfelipe_vfive14 <UNK> <UNK> 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive14 is -6.39344 over 1573 frames.
+felipe_vfive_Sfelipe_vfive15 coelho guepardo chimpanze urubu pavao filhote faisao flamingo canguru alpaca libelula aguia morcego borboleta mangusto 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive15 is -4.26145 over 1486 frames.
+felipe_vfive_Sfelipe_vfive16 escorpiao javali javali pavao salamandra equino bezerro truta antilope chapim larva vitelo marta veado alpaca onca-pintada 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive16 is -4.0486 over 1936 frames.
+felipe_vfive_Sfelipe_vfive17 vagalume peixe-espada hipopotamo mula traca pavao libelula chimpanze pulgao peneireiro iguana cadela patativa dinossauro 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive17 is -3.96495 over 1618 frames.
+felipe_vfive_Sfelipe_vfive18 perdigao cigarra salmao marreco garrote sapo sabia texugo cardeal jamanta fuinha lontra doninha harpia gnu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive18 is -4.02861 over 1598 frames.
+felipe_vfive_Sfelipe_vfive19 cao alfaiate enguia castor rouxinol minhoca mamifero carneiro carpa pulgao urso-polar tesourinha cabra flamingo jacutinga 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive19 is -3.9799 over 1673 frames.
+felipe_vfive_Sfelipe_vfive2 cagado capivara tenia rata pulga gazela esquilo prea centopeia curica seriema hominideo coiote cutia carneiro 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive2 is -4.07051 over 1548 frames.
+felipe_vfive_Sfelipe_vfive20 vaca gorila moreia sanguessuga girino peixe-espada camaleao equinoderme ourico-do-mar tordo mergulhao larva bicudo serpente mico 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive20 is -4.23211 over 1586 frames.
+felipe_vfive_Sfelipe_vfive3 corvo aguia equino seu ave bicho-preguica lagarta garoupa hamster gamba beluga alfaiate marreco ariranha chita 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive3 is -3.9483 over 1723 frames.
+felipe_vfive_Sfelipe_vfive4 orca boto bovino ourico-do-mar enguia lince libelula fuinha baleia-cachalote barata piton avestruz anchova vespa lagartixa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive4 is -3.88031 over 1873 frames.
+felipe_vfive_Sfelipe_vfive5 simio orca cuco lula robalo anu barroso coiote jaguar doninha acaro cabra ariranha dromedario macaco-aranha 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive5 is -3.99248 over 1736 frames.
+felipe_vfive_Sfelipe_vfive6 peixe lobo-guara cotia bem-te-vi garoupa pirilampo canguru sardinha codorna golfinho equino egua dromedario ave-de-rapina tigre 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive6 is -3.96785 over 1886 frames.
+felipe_vfive_Sfelipe_vfive7 andorinha ourico-do-mar borboleta mamifero enguia orca gafanhoto vaca lampreia galinaceo lombriga abutre estrela-do-mar urso-polar beluga 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive7 is -4.12316 over 1948 frames.
+felipe_vfive_Sfelipe_vfive8 antilope alpaca peru macaco-aranha perdiz alce besouro lince vitelo porco-da-india urubu leopardo abutre andorinha gaivota 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive8 is -4.28512 over 1761 frames.
+felipe_vfive_Sfelipe_vfive9 sanguessuga lombriga passaro-preto potro quero-quero galinaceo tordo mangusto lemure ponei cabra patinho boi atum rouxinol 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfive_Sfelipe_vfive9 is -4.10535 over 1661 frames.
+felipe_vfour_Sfelipe_vfour1 coelha codorna lagosta cisne lama cardeal tuiuiu araqua pica-pau puma orangotango bisonte lobo-guara dromedario patinho 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour1 is -4.17793 over 1423 frames.
+felipe_vfour_Sfelipe_vfour10 asno esturjao cuica perdigao polvo atoba sombria tordo mariquita barroso leitao cervo chopim beluga antilope 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour10 is -4.12907 over 1486 frames.
+felipe_vfour_Sfelipe_vfour11 albatroz iguana potro coelha piton bovino tucano elefanta girino cagado rola minhoca tapir naja baleia-cachalote 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour11 is -4.11998 over 1573 frames.
+felipe_vfour_Sfelipe_vfour12 preguica anchova filhote bicudo baleia-orca ave-de-rapina dodo bugio traira equino lemure abutre saci mastodonte lhama 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour12 is -4.14992 over 1611 frames.
+felipe_vfour_Sfelipe_vfour13 vitelo cervo atoba carcara perdiz beija-flor quero-quero lama patativa prea chinchila esquilo caruncho prea centopeia 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour13 is -4.10085 over 1673 frames.
+felipe_vfour_Sfelipe_vfour14 ave-de-rapina potro tordo corvo tuiuiu salmao lebre diabo-da-tasmânia polvo tuiuiu cordeiro anchova grifo anu dodo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour14 is -4.11021 over 1523 frames.
+felipe_vfour_Sfelipe_vfour15 quero-quero simio piranha cutia caprino barroso galinaceo hominideo raia papa-moscas jaguatirica guara beluga baleia-cachalote ostra 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour15 is -4.0854 over 1636 frames.
+felipe_vfour_Sfelipe_vfour16 caranguejo barroso acaro macaco-prego carpa mergulhao cotovia gafanhoto maritaca larva fragata jacutinga salamandra larva tesourinha 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour16 is -4.17797 over 1648 frames.
+felipe_vfour_Sfelipe_vfour17 jamanta jacutinga corvo percevejo lagosta chita boto mosquito marreca cavala raia beluga pardal bicudo leitao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour17 is -3.96173 over 1611 frames.
+felipe_vfour_Sfelipe_vfour18 salmao seriema furao jaburu saira camundongo fuinha cavalo-marinho flamingo pitao camaleao marreca cigarra cuco caranguejo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour18 is -4.07687 over 1573 frames.
+felipe_vfour_Sfelipe_vfour19 peixe-espada jiboia sombria caramujo vitelo lesma araqua coelha urso-polar bicho-preguica cervo-do-pantanal leao-marinho saira lagostim lemure 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour19 is -4.05315 over 1761 frames.
+felipe_vfour_Sfelipe_vfour2 bicho-preguica furao cachalote bisonte panda grilo cuco ourico-do-mar grilo faisao guara saira mamute jaburu porco-espinho 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour2 is -3.94839 over 1573 frames.
+felipe_vfour_Sfelipe_vfour20 gafanhoto mico-leao-dourado cervo anaconda aguia-real reptil carcara truta tainha lesma pantera chita flamingo potro patativa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour20 is -4.05335 over 1586 frames.
+felipe_vfour_Sfelipe_vfour3 ornitorrinco corvo ornitorrinco cagado fragata cervo fragata jacu caruncho cisne pica-pau leopardo sombria camundongo peneireiro 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour3 is -4.09919 over 1586 frames.
+felipe_vfour_Sfelipe_vfour4 macaco-prego caracol dromedario peixe-boi jamanta vitelo anchova esponja coelha chita acaro potro araqua mamute grifo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour4 is -4.16174 over 1448 frames.
+felipe_vfour_Sfelipe_vfour5 doninha anu truta tenia leao-marinho tordo mamifero anaconda flamingo mexilhao curica ovino salmao marreca saira 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour5 is -4.04793 over 1423 frames.
+felipe_vfour_Sfelipe_vfour6 tucano centopeia percevejo faisao esturjao zebu camarao chita cigarra tuiuiu esponja maritaca bovino gralha camaleao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour6 is -4.06993 over 1548 frames.
+felipe_vfour_Sfelipe_vfour7 tuiuiu lince cisne gaivota mosquito preguica canideo ratazana guara rata bicho-da-seda tenia mangusto cupim jamanta 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour7 is -3.91072 over 1698 frames.
+felipe_vfour_Sfelipe_vfour8 chita esquilo leopardo bacalhau bisonte caracol tuiuiu mamifero porco-espinho cigarra salmao antilope tuiuiu lobo-guara hominideo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour8 is -4.1343 over 1523 frames.
+felipe_vfour_Sfelipe_vfour9 onca-pintada mangusto cacao garoupa seriema lebre cotia cuica cavalo-marinho caracol tapir cuco aguia-real saci pitao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vfour_Sfelipe_vfour9 is -4.14009 over 1573 frames.
+felipe_vone_Sfelipe_vone1 cacao lobo-guara carrapato antilope araqua hamster chacal gato-selvagem galinaceo potro hamster ostra zebu porco-espinho orca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone1 is -4.02847 over 2211 frames.
+felipe_vone_Sfelipe_vone10 orangotango panda mangusto pantera pirilampo peixe-espada tainha linguado lula canivete cavalo-marinho puma camarao coelha filhote 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone10 is -4.05126 over 2111 frames.
+felipe_vone_Sfelipe_vone11 <UNK> medusa salmao urso-pardo vitelo mamifero maritaca alce perdiz girino jaguar sanguessuga anaconda verme piranha camarao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone11 is -3.94588 over 2161 frames.
+felipe_vone_Sfelipe_vone12 <UNK> anaconda mariquita harpia cotovia saira jaguatirica lobo-guara rata cisne gralha cuica pitao tucano moreia piton 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone12 is -3.99775 over 2123 frames.
+felipe_vone_Sfelipe_vone13 chimpanze robalo tapir truta lhama percevejo orangotango guara lhama bisao lemure polvo ave-de-rapina fragata prea 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone13 is -3.86778 over 2148 frames.
+felipe_vone_Sfelipe_vone14 <UNK> urso-polar preguica verme furao lagosta cotia jacutinga condor cordeiro flamingo tucano simio hominideo jaguatirica fragata 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone14 is -4.06939 over 1898 frames.
+felipe_vone_Sfelipe_vone15 girino beluga falcao barroso dodo antilope chita ratazana bicho-preguica pica-pau ostra dromedario flamingo polvo buzio 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone15 is -3.86861 over 1823 frames.
+felipe_vone_Sfelipe_vone16 tapir salmao grilo louva-a-deus harpia jiboia colibri salamandra toupeira bicudo mariquita leopardo bigua chacal texugo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone16 is -3.87963 over 1848 frames.
+felipe_vone_Sfelipe_vone17 corvo salamandra lagosta rolinha caranguejo coelha antilope castor guepardo albatroz fragata mastodonte perdigao juriti leoa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone17 is -4.62473 over 1723 frames.
+felipe_vone_Sfelipe_vone18 gorila raia lesma bicho-preguica ourico-do-mar carrapato patinho camaleao cuica mariquita cuica simio juriti ostra cervo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone18 is -3.9429 over 1698 frames.
+felipe_vone_Sfelipe_vone19 carrapato rola cotia cigarra araqua faisao chinchila lesma verme tapir estrela-do-mar pulgao mergulhao moreia verme 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone19 is -3.83451 over 1723 frames.
+felipe_vone_Sfelipe_vone2 gamo cisne leopardo minhoca mico-leao-dourado pica-pau ornitorrinco sombria cuco reptil marmota libelula cotovia joaninha quero-quero 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone2 is -3.88314 over 2448 frames.
+felipe_vone_Sfelipe_vone20 vespa mergulhao cascavel lemure serpente camarao cotia camundongo peneireiro guara marta chopim bicho-da-seda piranha gafanhoto 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone20 is -4.07664 over 1611 frames.
+felipe_vone_Sfelipe_vone3 bisonte moreia asno guara bicho-preguica zebu abutre gaivota falcao prea pescada linguado garoupa cotovia vitelo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone3 is -3.57903 over 2336 frames.
+felipe_vone_Sfelipe_vone4 salamandra verme araqua tucano seriema ovino cagado castor pardal codorniz bisonte peixe-boi texugo cacao joaninha 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone4 is -3.62635 over 2461 frames.
+felipe_vone_Sfelipe_vone5 peixe-boi carcara cutia marreca carrapato gaivota potro cadela patinho corvo curica cacatua ornitorrinco jacu lombriga 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone5 is -3.48678 over 2486 frames.
+felipe_vone_Sfelipe_vone6 juriti caranguejo colibri alce lagostim sardinha castor sardinha antilope gnu bigua bicho-preguica bigua anchova gafanhoto 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone6 is -3.70299 over 2436 frames.
+felipe_vone_Sfelipe_vone7 rouxinol pirilampo fragata codorna <UNK> codorna acaro cisne tesourinha alce vitelo roedor atoba jacutinga cigarra esquilo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone7 is -3.82394 over 2298 frames.
+felipe_vone_Sfelipe_vone8 sanguessuga enguia iguana camundongo pelicano mamifero coelha carrapato garoupa carcara ostra lince mexilhao urso-pardo maritaca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone8 is -3.96455 over 2161 frames.
+felipe_vone_Sfelipe_vone9 onca-pintada tainha cuica mangusto piton linguado peixe-boi bicho-preguica larva equino lemure mexilhao cotia perdigao buzio 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vone_Sfelipe_vone9 is -3.95428 over 2186 frames.
+felipe_vthree_Sfelipe_vthree1 bisao cervo egua lampreia calau porco gazela rola caracol javali lagartixa joao-de-barro vieira araqua tainha 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree1 is -4.02391 over 1911 frames.
+felipe_vthree_Sfelipe_vthree10 carneiro cagado ganso mangusto ostra baleia-orca sapo barata marreco ema lobo-guara puma rinoceronte porco-da-india papa-moscas 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree10 is -4.00081 over 1911 frames.
+felipe_vthree_Sfelipe_vthree11 pica-pau lagarto cabrito chopim tapir canario iguana canguru buzio moreia mexilhao bovino ourico-do-mar lesma ave-de-rapina 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree11 is -3.96104 over 1948 frames.
+felipe_vthree_Sfelipe_vthree12 minhoca cisne chinchila caracol galo jaburu mosquito peixe-espada cardeal rinoceronte ourico-do-mar mamifero elefanta polvo pelicano 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree12 is -4.1738 over 1823 frames.
+felipe_vthree_Sfelipe_vthree13 medusa polvo porco-da-india pulgao garoupa gaviao tartaruga roedor hipopotamo cotovia cobra borboleta cachorro urubu ave-de-rapina 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree13 is -4.20343 over 2011 frames.
+felipe_vthree_Sfelipe_vthree14 ra canario borboleta tuiuiu chopim cupim pinguim harpia ave onca boto bisao bacalhau codorna mastodonte 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree14 is -3.94901 over 2036 frames.
+felipe_vthree_Sfelipe_vthree15 paca bugio ornitorrinco bezerro anta mula cervo pavao piolho bicho-preguica cobra jacare aranha baleia-orca mamute 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree15 is -4.02111 over 1886 frames.
+felipe_vthree_Sfelipe_vthree16 flamingo rato calango pavao bicho-do-mato enguia jacu mexilhao piolho barata bisao truta linguado morsa borboleta 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree16 is -3.97715 over 1886 frames.
+felipe_vthree_Sfelipe_vthree17 vespa cabrito filhote guaxinim lagartixa raposa cachalote peixe traira camarao cervo-do-pantanal puma golfinho gamba simio 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree17 is -4.13285 over 1848 frames.
+felipe_vthree_Sfelipe_vthree18 simio leopardo esponja marta serpente beluga maritaca mariquita urso baleia equino jumento cuco gamo bode 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree18 is -4.0963 over 1861 frames.
+felipe_vthree_Sfelipe_vthree19 papa-moscas ovelha beluga baleia-cachalote hiena tubarao medusa ra percevejo calango leoa aranha aguia-real gaivota anaconda 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree19 is -4.1152 over 1911 frames.
+felipe_vthree_Sfelipe_vthree2 lobo tartaruga barata rouxinol papa-moscas rola mosca boi jaguatirica vitelo pirilampo sapo mico-leao-dourado camaleao orangotango 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree2 is -4.09288 over 1886 frames.
+felipe_vthree_Sfelipe_vthree20 pulga chimpanze gato jaguar ovino anaconda passaro-preto equino jacutinga macaco-prego ema codorniz maritaca lebre canivete 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree20 is -3.83113 over 1973 frames.
+felipe_vthree_Sfelipe_vthree3 ra polvo lula ourico-do-mar tuiuiu texugo andorinha leao esturjao asno atum arraia canideo tico-tico vitelo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree3 is -3.92178 over 1761 frames.
+felipe_vthree_Sfelipe_vthree4 borboleta avestruz garoupa tesourinha lobo-guara leopardo ostra elefante mariquita zebra estrela-do-mar peixe lesma cegonha pantera 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree4 is -3.99965 over 2061 frames.
+felipe_vthree_Sfelipe_vthree5 ponei tubarao larva tamandua carpa beluga equinoderme puma dinossauro fuinha ganso saira raposa raposa robalo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree5 is -3.99317 over 1911 frames.
+felipe_vthree_Sfelipe_vthree6 quati javali codorniz mariquita rata cuco raia mico-leao-dourado lagosta camarao chita iguana percevejo leopardo hamster 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree6 is -3.93955 over 1861 frames.
+felipe_vthree_Sfelipe_vthree7 pavao anta atoba mosquito burro piolho camelo carpa faisao perdigao seriema vagalume lemure borboleta cordeiro 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree7 is -3.86692 over 2086 frames.
+felipe_vthree_Sfelipe_vthree8 morcego camelo peixe-boi gamba salamandra caramujo asno piranha furao traira chimpanze gnu camelo seu paca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree8 is -3.76996 over 2036 frames.
+felipe_vthree_Sfelipe_vthree9 seriema rinoceronte arara cervo-do-pantanal pomba toupeira crocodilo curica bisonte morcego faisao mamute chimpanze aguia lagartixa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vthree_Sfelipe_vthree9 is -3.92683 over 2098 frames.
+felipe_vtwo_Sfelipe_vtwo1 cordeiro albatroz jacu tapir tapir caramujo ornitorrinco cisne cigarra jiboia chapim ariranha caranguejo cutia lula 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo1 is -3.88916 over 1998 frames.
+felipe_vtwo_Sfelipe_vtwo10 chapim chopim doninha truta baleia-cachalote gaivota gafanhoto gaivota chita cigarra estrela-do-mar cotia pulgao mico-leao-dourado rola 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo10 is -3.79694 over 1948 frames.
+felipe_vtwo_Sfelipe_vtwo11 seriema vespa barroso gaivota mamute serpente lagostim bicho-preguica centopeia roedor panda baleia-orca lagostim pescada mergulhao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo11 is -3.89716 over 1761 frames.
+felipe_vtwo_Sfelipe_vtwo12 mariquita coiote lagosta mamute filhote abutre urso-pardo pitao esquilo codorna boto saira dodo patinho orangotango 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo12 is -3.97094 over 1811 frames.
+felipe_vtwo_Sfelipe_vtwo13 arraia abutre bovino furao lemure cotia girino onca-pintada corvina preguica dodo rolinha perdiz coelha urso-pardo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo13 is -3.88157 over 1723 frames.
+felipe_vtwo_Sfelipe_vtwo14 peneireiro lagosta cadela baleia-cachalote tapir tordo bugio estrela-do-mar anchova saira tesourinha fragata aguia-real falcao faisao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo14 is -4.03974 over 1723 frames.
+felipe_vtwo_Sfelipe_vtwo15 patativa orangotango jiboia mamute camundongo percevejo patativa caracol roedor raia pantera filhote peixe-espada cadela marmota 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo15 is -4.03443 over 1698 frames.
+felipe_vtwo_Sfelipe_vtwo16 hominideo jaguar puma panda colibri carcara cascavel joaninha chopim jaburu polvo camaleao diabo-da-tasmânia dromedario lebre 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo16 is -4.15547 over 1767 frames.
+felipe_vtwo_Sfelipe_vtwo17 maritaca serpente carrapato orangotango coelha codorniz ratazana pulgao atoba naja abutre piranha equino harpia diabo-da-tasmânia 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo17 is -4.03312 over 1886 frames.
+felipe_vtwo_Sfelipe_vtwo18 lobo-guara macaco-prego gazela gafanhoto perdiz moreia castor hamster cuica gamo chacal cegonha peneireiro libelula aguia-real 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo18 is -4.07127 over 1761 frames.
+felipe_vtwo_Sfelipe_vtwo19 enguia atum camarao verme hominideo chapim hominideo calau jiboia beija-flor simio zabele acaro urso-pardo leitao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo19 is -3.95661 over 1636 frames.
+felipe_vtwo_Sfelipe_vtwo2 potro caranguejo urso-polar bicho-preguica lagosta minhoca lagostim quero-quero larva dodo moreia filhote cotovia alpaca galinaceo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo2 is -3.81434 over 2123 frames.
+felipe_vtwo_Sfelipe_vtwo20 atoba gnu tesourinha zebu cutia calau rouxinol potro puma rouxinol lemure carpa esturjao gnu mastodonte 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo20 is -4.00131 over 1548 frames.
+felipe_vtwo_Sfelipe_vtwo3 jaburu falcao equino corvina enguia potro seriema ariranha cutia chita pinguim rata tucano carcara leopardo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo3 is -3.80816 over 1973 frames.
+felipe_vtwo_Sfelipe_vtwo4 libelula bigua tainha seriema rena sombria verme pitao mariquita chapim cutia piranha reptil minhoca pirilampo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo4 is -3.72834 over 1973 frames.
+felipe_vtwo_Sfelipe_vtwo5 ratazana pescada cegonha urso-pardo bugio esturjao porco-espinho minhoca vitelo pinguim lhama camarao doninha simio gazela 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo5 is -4.02107 over 1973 frames.
+felipe_vtwo_Sfelipe_vtwo6 cuica marta cacatua quero-quero flamingo cupim cordeiro ave-de-rapina anu baleia-cachalote prea alpaca elefanta camaleao arraia 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo6 is -3.82651 over 1973 frames.
+felipe_vtwo_Sfelipe_vtwo7 castor beluga ostra atoba flamingo cisne moreia vitelo cuica orangotango pulgao lampreia alce cachalote flamingo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo7 is -3.83453 over 1736 frames.
+felipe_vtwo_Sfelipe_vtwo8 juriti caracol alce mamifero marreca bicho-da-seda atum pirilampo cotia jacutinga lombriga ovino texugo naja roedor 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo8 is -3.81005 over 1786 frames.
+felipe_vtwo_Sfelipe_vtwo9 ratazana mariquita tuiuiu atoba potro mergulhao simio leao-marinho percevejo chinchila guepardo pescada cervo-do-pantanal anchova patativa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_vtwo_Sfelipe_vtwo9 is -3.81282 over 2036 frames.
+matheus_Smatheus1 touro cao hipopotamo pernilongo paca porco-da-india barata jumento pomba camelo baleia marreco lagartixa bufalo vagalume pomba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus1 is -4.51456 over 1748 frames.
+matheus_Smatheus10 touro cao hipopotamo pernilongo paca porco-da-india barata jumento pomba camelo baleia marreco lagartixa bufalo vagalume pomba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus10 is -4.515 over 1748 frames.
+matheus_Smatheus11 morcego peixe alfaiate onca papagaio rinoceronte cobra pernilongo saracura ovelha urubu avestruz lagarto tartaruga alfaiate 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus11 is -4.21361 over 1798 frames.
+matheus_Smatheus12 pomba baleia corsa marreco cavalo bicho-preguica aguia cobra bicho-preguica quati bezerro pavao bem-te-vi pernilongo urso 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus12 is -4.03137 over 1748 frames.
+matheus_Smatheus13 ponei dinossauro barata golfinho boi andorinha macaco cao ovelha rinoceronte papagaio pomba besouro canario paca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus13 is -4.21063 over 1648 frames.
+matheus_Smatheus14 baleia tartaruga cobra vaca vagalume besouro besouro veado saracura javali mula ovelha cachorro formiga mula 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus14 is -4.25503 over 1636 frames.
+matheus_Smatheus15 andorinha pernilongo corsa tubarao lagarta porco borboleta coruja sapo traca veado bufalo hiena cachorro bode 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus15 is -4.11319 over 1636 frames.
+matheus_Smatheus16 tatu aranha cachorro porco rato pomba bicho-preguica pomba andorinha hipopotamo formiga cachorro jumento boi paca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus16 is -4.13318 over 1736 frames.
+matheus_Smatheus17 <UNK> porco-da-india cachorro traca ra besouro cabrito periquito tigre vagalume carangueijo tigre tatu aranha jabuti leoa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus17 is -4.15454 over 1748 frames.
+matheus_Smatheus18 tigre hiena tubarao avestruz mico hipopotamo periquito peru raposa morcego periquito tatu touro formiga tubarao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus18 is -4.13969 over 1648 frames.
+matheus_Smatheus19 boi borboleta sapo borboleta burro besouro gamba peru ponei cachorro hipopotamo lagartixa capivara ema jabuti 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus19 is -4.24445 over 1486 frames.
+matheus_Smatheus2 cavalo ra borboleta mico morcego alfaiate tigre carangueijo tubarao girafa raposa coruja quati pinto tigre 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus2 is -4.21922 over 1686 frames.
+matheus_Smatheus20 camelo urso hipopotamo onca pato javali jacare gato pinto mula mula cabrito borboleta javali seu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus20 is -4.06455 over 1623 frames.
+matheus_Smatheus3 foca porco elefante bufalo porco lobo vagalume alfaiate borboleta corsa escorpiao calango paca peixe boi 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus3 is -4.20387 over 1686 frames.
+matheus_Smatheus4 formiga tamandua galinha rinoceronte cabrito pomba borboleta girafa borboleta cachorro jabuti elefante tamandua pavao pomba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus4 is -4.28643 over 1698 frames.
+matheus_Smatheus5 pulga escaravelho papagaio lagarto bezerro joao-de-barro carangueijo peru aranha pinto cao mico capivara corsa bode 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus5 is -4.17224 over 1698 frames.
+matheus_Smatheus6 saracura jumento sabia gaviao passaro-preto anta papagaio bicho-preguica vagalume marreco jabuti pato joao-de-barro tigre lagarta 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus6 is -4.26556 over 1711 frames.
+matheus_Smatheus7 peixe ra vaca piolho lobo frango papagaio pernilongo gaviao onca galo arara carangueijo porco-da-india garca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus7 is -4.08234 over 1711 frames.
+matheus_Smatheus8 andorinha burro passaro baleia peru gato corsa leoa baleia passaro ponei cabra peixe leoa macaco 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus8 is -4.10253 over 1661 frames.
+matheus_Smatheus9 tigre jumento arara pavao bufalo marreco urubu zebra rinoceronte carangueijo jacare marreco ponei leao escaravelho 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance matheus_Smatheus9 is -4.10416 over 1736 frames.
+silvio_Ssilvio1 boi besouro touro andorinha cabra dinossauro saracura capivara capivara ganso cobra tubarao garca tigre aguia 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio1 is -4.42244 over 1661 frames.
+silvio_Ssilvio10 besouro formiga leoa lagarta sabia javali galo lagarto cabrito sapo passaro canguru girafa peixe mula 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio10 is -4.33582 over 1698 frames.
+silvio_Ssilvio11 sabia calango paca carangueijo ganso cobra canario capivara galinha anta paca avestruz porco-do-mato zangao bicho-do-mato 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio11 is -4.43059 over 1736 frames.
+silvio_Ssilvio12 alfaiate vaca borboleta vagalume marreco elefante hipopotamo guaxinim joao-de-barro periquito morcego egua joao-de-barro frango escorpiao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio12 is -4.41473 over 1773 frames.
+silvio_Ssilvio13 tartaruga garca cavalo cachorro arara cabrito calango peru cobra corsa ponei porco ra pinto passaro-preto 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio13 is -4.93986 over 1911 frames.
+silvio_Ssilvio14 hiena vaca aranha mula cao mosca pernilongo escorpiao porco-da-india lontra traca touro guaxinim ema bicho-preguica 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio14 is -4.83884 over 1673 frames.
+silvio_Ssilvio15 lobo camelo quati canguru rinoceronte seu saracura formiga burro porco-da-india arara passaro-preto porco-do-mato barata sabia 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio15 is -4.58069 over 1511 frames.
+silvio_Ssilvio16 pavao girafa quati canario tamandua hiena vagalume macaco canguru marreco coelho mosca vaca mula lagartixa 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio16 is -4.51276 over 1586 frames.
+silvio_Ssilvio17 pato jumento hipopotamo jumento onca galo barata frango jabuti alfaiate porco anta sapo garrote canguru 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio17 is -4.26781 over 1523 frames.
+silvio_Ssilvio18 garrote garca burro garrote guaxinim jabuti pernilongo cavalo touro golfinho cabra peixe lobo besouro cao 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio18 is -4.22143 over 1498 frames.
+silvio_Ssilvio19 zangao lontra passaro-preto lagarta rato foca traca pato besouro escaravelho ponei guaxinim peru coruja bezerro 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio19 is -4.21774 over 1573 frames.
+silvio_Ssilvio2 boi hipopotamo bufalo lagarta porco-da-india avestruz pinto jacare gato sapo gamba dinossauro ponei frango ra 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio2 is -4.37621 over 1673 frames.
+silvio_Ssilvio20 galo elefante bode burro cao periquito bufalo anta ganso dinossauro tartaruga burro carangueijo veado onca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio20 is -4.19417 over 1586 frames.
+silvio_Ssilvio3 hiena bicho-preguica pato lontra ema baleia cabra borboleta porco aguia traca vaca pato formiga passaro-preto 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio3 is -4.28343 over 1573 frames.
+silvio_Ssilvio4 galo peixe besouro tubarao gamba rinoceronte barata urso mico egua lagartixa jegue garrote rinoceronte aranha 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio4 is -4.32958 over 1648 frames.
+silvio_Ssilvio5 alfaiate jumento joao-de-barro gaviao barata zebra mico tubarao borboleta gamba lagarto lagarta tigre calango sapo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio5 is -4.32352 over 1686 frames.
+silvio_Ssilvio6 garca cobra tamandua peru peru aguia pombo abelha zebra raposa mula pernilongo raposa zangao cobra 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio6 is -4.29335 over 1498 frames.
+silvio_Ssilvio7 capivara papagaio ganso alfaiate escaravelho cao escaravelho capivara besouro galo seu escaravelho passaro-preto escaravelho saracura 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio7 is -4.25648 over 1736 frames.
+silvio_Ssilvio8 jegue egua paca corsa pernilongo burro bufalo cavalo rinoceronte morcego marreco baleia frango bicho-do-mato coruja 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio8 is -4.20637 over 1698 frames.
+silvio_Ssilvio9 egua ovelha foca quati baleia crocodilo traca saracura galinha boi ovelha peixe mula mosca pernilongo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance silvio_Ssilvio9 is -4.20979 over 1573 frames.
+zilio_Szilio1 baleia avestruz zangao rato periquito gaviao burro burro cao bem-te-vi morcego urso mula tatu sapo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio1 is -4.74585 over 824 frames.
+zilio_Szilio10 onca cobra lagarto cavalo porco-da-india abelha coruja mico veado pato rinoceronte pernilongo zangao formiga paca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio10 is -4.03479 over 1533 frames.
+zilio_Szilio11 abelha cachorro lobo lagarto capivara crocodilo leao passaro-preto elefante bezerro joao-de-barro peixe aranha quati canguru 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio11 is -4.47759 over 1548 frames.
+zilio_Szilio12 ema foca rinoceronte macaco burro paca bicho-preguica lobo canario cachorro cabra saracura passaro-preto ganso ganso 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio12 is -4.31128 over 1548 frames.
+zilio_Szilio13 ponei foca elefante peixe sapo veado mico papagaio jabuti sapo cobra pato pinto traca papagaio 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio13 is -4.02687 over 1498 frames.
+zilio_Szilio14 sabia marreco andorinha alfaiate barata guaxinim andorinha corsa alfaiate joao-de-barro arara carneiro mico bufalo boi 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio14 is -4.57357 over 1511 frames.
+zilio_Szilio15 abelha saracura pomba pato barata escorpiao canario rato ponei carangueijo rinoceronte periquito cabra golfinho golfinho 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio15 is -4.18214 over 1698 frames.
+zilio_Szilio16 hiena leao cao bicho-do-mato besouro tubarao vaca morcego raposa girafa gamba galinha rinoceronte porco-da-india pomba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio16 is -4.14581 over 1586 frames.
+zilio_Szilio17 besouro andorinha tubarao cabrito lobo ra porco-da-india pomba jegue ema mula burro bufalo porco quati 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio17 is -4.24998 over 1486 frames.
+zilio_Szilio18 baleia morcego lagartixa raposa arara bicho-do-mato bem-te-vi lagarta carneiro carneiro canguru burro aguia garca burro burro borboleta lobo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio18 is -4.49302 over 1636 frames.
+zilio_Szilio19 coruja capivara galo calango borboleta capivara canguru cabrito canario lagartixa zangao morcego pombo periquito crocodilo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio19 is -4.17303 over 1661 frames.
+zilio_Szilio2 ema frango egua girafa peixe peixe avestruz bicho-preguica hiena galinha joao-de-barro pavao alfaiate lobo borboleta 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio2 is -4.91125 over 998 frames.
+zilio_Szilio20 aguia pavao calango pomba mula pombo corsa seu pombo elefante rinoceronte barata formiga bicho-do-mato gamba 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio20 is -4.24766 over 1548 frames.
+zilio_Szilio3 camelo sabia borboleta pavao burro pulga passaro lagarta anta ema jabuti formiga lontra sabia mosca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio3 is -4.58814 over 1136 frames.
+zilio_Szilio4 aguia aranha lobo ra alfaiate ponei tubarao onca cachorro formiga bode leoa lobo pombo lagarto 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio4 is -4.37306 over 1298 frames.
+zilio_Szilio5 jacare traca ovelha bode andorinha tigre girafa borboleta cabrito zangao <UNK> quati joao-de-barro sabia mula bicho-preguica 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio5 is -4.30652 over 1448 frames.
+zilio_Szilio6 sabia leao peru pernilongo traca barata ema escorpiao marreco bem-te-vi golfinho ganso seu <UNK> bicho-preguica traca 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio6 is -4.10447 over 1711 frames.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 220 utterances, errors on 0
+zilio_Szilio7 boi escaravelho bode ganso gaviao bufalo dinossauro pulga garrote cavalo zangao peixe mula golfinho tatu 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio7 is -4.14716 over 1423 frames.
+zilio_Szilio8 sapo coelho urubu pato cobra garca leoa hipopotamo mico joao-de-barro onca boi borboleta pato jacare 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio8 is -4.15551 over 1448 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -90.3207 over 372916 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 220 utterances; 0 had errors.
+zilio_Szilio9 jegue besouro pombo guaxinim canguru elefante elefante cobra barata hiena bicho-do-mato hipopotamo hipopotamo aguia garrote urso 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance zilio_Szilio9 is -4.36066 over 1748 frames.
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:175) Time taken 195.89s: real-time factor assuming 100 frames/sec is 0.0525294
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:178) Done 220 utterances, failed for 0
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:180) Overall log-likelihood per frame is -4.10726 over 372916 frames.
+# Accounting: time=196 threads=1
+# Ended (code 0) at Fri Jun 10 15:20:20 BRT 2016, elapsed time 196 seconds

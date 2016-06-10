@@ -1,29 +1,27 @@
 # gmm-est --mix-up=8120 --power=0.25 --write-occs=exp/tri1/19.occs exp/tri1/18.mdl "gmm-sum-accs - exp/tri1/18.*.acc |" exp/tri1/19.mdl 
-# Started at Wed Jun  8 14:02:24 BRT 2016
+# Started at Fri Jun 10 15:11:53 BRT 2016
 #
 gmm-est --mix-up=8120 --power=0.25 --write-occs=exp/tri1/19.occs exp/tri1/18.mdl 'gmm-sum-accs - exp/tri1/18.*.acc |' exp/tri1/19.mdl 
 gmm-sum-accs - exp/tri1/18.1.acc 
-LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 1 stats, total count 190116, avg like/frame -81.1425
-LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 190116
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 1 stats, total count 372916, avg like/frame -82.5296
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 372916
 LOG (gmm-sum-accs:main():gmm-sum-accs.cc:67) Written stats to -
-LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 0 per frame over 190116 frames. 
-LOG (gmm-est:MleUpdate():transition-model.cc:396) 70 probabilities floored, 1256 out of 1923 transition-states skipped due to insuffient data (it is normal to have some skipped.)
-LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall 0 log-like improvement per frame over 190116 frames.
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.001940, occupation count 8.745296, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.024212, occupation count 9.999577, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.007851, occupation count 9.554148, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.035939, occupation count 9.990983, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.029307, occupation count 9.993709, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.010799, occupation count 9.751509, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.048553, occupation count 9.759151, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.038461, occupation count 9.999950, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.046037, occupation count 9.667679, vector size 39)
-WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.010351, occupation count 9.999256, vector size 39)
-LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 7774
-LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:229) Removed 10 Gaussians due to counts < --min-gaussian-occupancy=10 and --remove-low-count-gaussians=true
-LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 0.112155 objective function improvement per frame over 190116 frames
-LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -81.1425 over 190116 frames.
-LOG (gmm-est:SplitByCount():am-diag-gmm.cc:116) Split 480 states with target = 8120, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 7774 to 8142
+LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 0 per frame over 372916 frames. 
+LOG (gmm-est:MleUpdate():transition-model.cc:396) 91 probabilities floored, 2327 out of 3522 transition-states skipped due to insuffient data (it is normal to have some skipped.)
+LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall 0 log-like improvement per frame over 372916 frames.
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.047377, occupation count 9.285965, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.056214, occupation count 9.444035, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.049898, occupation count 9.979586, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.061388, occupation count 9.883429, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.042322, occupation count 8.295202, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.057130, occupation count 9.997676, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.068965, occupation count 9.999994, vector size 39)
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 7756
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:229) Removed 7 Gaussians due to counts < --min-gaussian-occupancy=10 and --remove-low-count-gaussians=true
+LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 0.0846133 objective function improvement per frame over 372916 frames
+LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -82.5296 over 372916 frames.
+LOG (gmm-est:SplitByCount():am-diag-gmm.cc:116) Split 881 states with target = 8120, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 7756 to 8123
 LOG (gmm-est:main():gmm-est.cc:146) Written model to exp/tri1/19.mdl
-# Accounting: time=0 threads=1
-# Ended (code 0) at Wed Jun  8 14:02:24 BRT 2016, elapsed time 0 seconds
+# Accounting: time=1 threads=1
+# Ended (code 0) at Fri Jun 10 15:11:54 BRT 2016, elapsed time 1 seconds

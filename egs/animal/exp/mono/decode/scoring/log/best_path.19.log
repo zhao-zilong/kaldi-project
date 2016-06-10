@@ -1,0 +1,10 @@
+# lattice-best-path --lm-scale=19 --word-symbol-table=exp/mono/graph/words.txt "ark:gunzip -c exp/mono/decode/lat.*.gz|" ark,t:exp/mono/decode/scoring/19.tra 
+# Started at Fri Jun 10 15:10:36 BRT 2016
+#
+lattice-best-path --lm-scale=19 --word-symbol-table=exp/mono/graph/words.txt 'ark:gunzip -c exp/mono/decode/lat.*.gz|' ark,t:exp/mono/decode/scoring/19.tra 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_60seconds, best cost 8118.15 + 489525 = 497643 over 6061 frames.
+felipe_test_60seconds cavalo camarao peixe egua tenia esquilo minhoca aguia hiena cachorro gato minhoca galinha galo truta boi vaca <UNK> sardinha corsa formiga moreia passaro passaro-preto bicho-do-mato 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 82.1058 = 1.33941 [graph] + 80.7663 [acoustic] over 6061 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 10 15:10:36 BRT 2016, elapsed time 0 seconds
