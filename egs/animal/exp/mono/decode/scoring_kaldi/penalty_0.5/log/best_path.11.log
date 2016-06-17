@@ -1,0 +1,18 @@
+# lattice-scale --inv-acoustic-scale=11 "ark:gunzip -c exp/mono/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/mono/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/mono/graph/words.txt | cat > exp/mono/decode/scoring_kaldi/penalty_0.5/11.txt 
+# Started at Fri Jun 17 14:28:19 BRT 2016
+#
+lattice-scale --inv-acoustic-scale=11 'ark:gunzip -c exp/mono/decode/lat.*.gz|' ark:- 
+lattice-best-path --word-symbol-table=exp/mono/graph/words.txt ark:- ark,t:- 
+lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test0, best cost 382.101 + 48218.2 = 48600.3 over 6061 frames.
+felipe_test_test0 cavalo camarao peixe egua gnu esquilo baleia arara girino cachorro garca minhoca galinha galo cotovia coelha vaca zabele corsa ovino moreia paca passaro-preto hiena 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test1, best cost 391.542 + 45623.8 = 46015.3 over 6086 frames.
+felipe_test_test1 cachorro gato rato galinha cavalo porco lesma caracol mexilhao condor peixe polvo burro camarao leao tigre zebra girafa rinoceronte hipopotamo macaco orangotango crocodilo <UNK> <UNK> aguia <UNK> condor pombo morcego <UNK> 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 3 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test2, best cost 382.736 + 44809.2 = 45191.9 over 6073 frames.
+felipe_test_test2 cachorro rola gato ra tatu peixe tubarao baleia corvo pantera lula leao <UNK> potro camarao baleia-cachalote anta <UNK> <UNK> ra <UNK> <UNK> cao mula polvo zebra rinoceronte girafa saira condor girino 
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 3 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 7.6733 = 0.0634675 [graph] + 7.60983 [acoustic] over 18220 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 3 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 17 14:28:19 BRT 2016, elapsed time 0 seconds

@@ -1,22 +1,17 @@
-# gmm-acc-stats-ali exp/tri2b/12.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/12.mat ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri2b/ali.1.gz|" exp/tri2b/12.1.acc 
-# Started at Fri Jun 10 15:15:17 BRT 2016
+# gmm-acc-stats-ali exp/tri2b/12.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/1/utt2spk scp:data/train/split12/1/cmvn.scp scp:data/train/split12/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/12.mat ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri2b/ali.1.gz|" exp/tri2b/12.1.acc 
+# Started at Fri Jun 17 14:32:08 BRT 2016
 #
-gmm-acc-stats-ali exp/tri2b/12.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/12.mat ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri2b/ali.1.gz|' exp/tri2b/12.1.acc 
+gmm-acc-stats-ali exp/tri2b/12.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/1/utt2spk scp:data/train/split12/1/cmvn.scp scp:data/train/split12/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/12.mat ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri2b/ali.1.gz|' exp/tri2b/12.1.acc 
 splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split12/1/utt2spk scp:data/train/split12/1/cmvn.scp scp:data/train/split12/1/feats.scp ark:- 
 transform-feats exp/tri2b/12.mat ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- 
+WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance eduardo_Seduardo16
 WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance eduardo_Seduardo4
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 50 utterances; for utterance felipe_v2_Sfelipe_v219 avg. like is -42.5082 over 1611 frames.
-WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance felipe_vfive_Sfelipe_vfive14
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 100 utterances; for utterance felipe_vone_Sfelipe_vone10 avg. like is -42.1936 over 2111 frames.
-WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance felipe_vone_Sfelipe_vone17
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 150 utterances; for utterance felipe_vtwo_Sfelipe_vtwo20 avg. like is -41.6804 over 1548 frames.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:105) Processed 200 utterances; for utterance zilio_Szilio11 avg. like is -48.4516 over 1548 frames.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 220 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -90.3207 over 372916 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 220 utterances; 0 had errors.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 217 files, 3 with errors.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -43.311 over 368384 frames.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -89.9946 over 23996 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 18 files, 2 with errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -49.1129 over 21499 frames.
 LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:123) Written accs.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Fri Jun 10 15:15:18 BRT 2016, elapsed time 1 seconds
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 17 14:32:08 BRT 2016, elapsed time 0 seconds

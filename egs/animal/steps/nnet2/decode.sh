@@ -10,7 +10,8 @@
 # Begin configuration section.
 stage=1
 transform_dir=    # dir to find fMLLR transforms.
-nj=4 # number of decoding jobs.  If --transform-dir set, must match that number!
+nj=1 # number of decoding jobs.  If --transform-dir set, must match that number!  
+#change on 16/06/2016 from 4 to 1
 acwt=0.1  # Just a default value, used for adaptation and beam-pruning..
 cmd=run.pl
 beam=15.0
@@ -142,11 +143,15 @@ if [ $stage -le 1 ]; then
      $graphdir/HCLG.fst "$feats" "ark:|gzip -c > $dir/lat.JOB.gz" || exit 1;
 fi
 
+if [ $stage -le 2 ]; then
+  [ ! -z $iter ] && iter_opt="--iter $iter"
+  steps/diagnostic/analyze_lats.sh --cmd "$cmd" $iter_opt $graphdir $dir
+fi
+
 # The output of this script is the files "lat.*.gz"-- we'll rescore this at
 # different acoustic scales to get the final output.
 
-
-if [ $stage -le 2 ]; then
+if [ $stage -le 3 ]; then
   if ! $skip_scoring ; then
     [ ! -x local/score.sh ] && \
       echo "Not scoring because local/score.sh does not exist or not executable." && exit 1;

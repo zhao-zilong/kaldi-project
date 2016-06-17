@@ -1,0 +1,20 @@
+# gmm-gselect --n=50 "fgmm-global-to-gmm exp/ubm4c/0.ubm - |" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/9/utt2spk scp:data/train/split12/9/cmvn.scp scp:data/train/split12/9/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/9/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.9 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" "ark:|gzip -c >exp/ubm4c/gselect.9.gz" 
+# Started at Fri Jun 17 14:44:03 BRT 2016
+#
+gmm-gselect --n=50 'fgmm-global-to-gmm exp/ubm4c/0.ubm - |' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/9/utt2spk scp:data/train/split12/9/cmvn.scp scp:data/train/split12/9/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/9/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.9 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' 'ark:|gzip -c >exp/ubm4c/gselect.9.gz' 
+fgmm-global-to-gmm exp/ubm4c/0.ubm - 
+LOG (fgmm-global-to-gmm:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to -
+splice-feats ark:- ark:- 
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split12/9/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.9 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split12/9/utt2spk scp:data/train/split12/9/cmvn.scp scp:data/train/split12/9/feats.scp ark:- 
+LOG (gmm-gselect:main():gmm-gselect.cc:114) For 0'th file, average UBM likelihood over 1998 frames is -49.0574
+LOG (gmm-gselect:main():gmm-gselect.cc:114) For 10'th file, average UBM likelihood over 1636 frames is -49.9708
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.0940893 over 36833 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.7405 over 36833 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (gmm-gselect:main():gmm-gselect.cc:125) Done 20 files, 0 with errors, average UBM log-likelihood is -49.8949 over 36833 frames.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Fri Jun 17 14:44:06 BRT 2016, elapsed time 2 seconds

@@ -37,8 +37,9 @@ reduce_frames_per_eg=true  # If true, this script may reduce the frames_per_eg
                            # reduced frames_pe_eg, the number of
                            # samples_per_iter that would result is less than or
                            # equal to the user-specified value.
-num_utts_subset=300     # number of utterances in validation and training
+num_utts_subset=20     # number of utterances in validation and training
                         # subsets used for shrinkage and diagnostics.
+#changed on 16/06/2016 from 300 to 20
 num_valid_frames_combine=0 # #valid frames for combination weights at the very end.
 num_train_frames_combine=10000 # # train frames for the above.
 num_frames_diagnostic=4000 # number of frames for "compute_prob" jobs
@@ -50,7 +51,7 @@ transform_dir=     # If supplied, overrides alidir as the place to find fMLLR tr
 postdir=        # If supplied, we will use posteriors in it as soft training targets.
 
 stage=0
-io_opts="-tc 5" # for jobs with a lot of I/O, limits the number running at one time. 
+io_opts="-tc 5" # for jobs with a lot of I/O, limits the number running at one time.
 random_copy=false
 online_ivector_dir=  # can be used if we are including speaker information as iVectors.
 cmvn_opts=  # can be used for specifying CMVN options, if feature type is not lda (if lda,
@@ -82,7 +83,7 @@ if [ $# != 3 ]; then
   echo "                                                   # very end."
   echo "  --stage <stage|0>                                # Used to run a partially-completed training process from somewhere in"
   echo "                                                   # the middle."
-  
+
   exit 1;
 fi
 
@@ -108,7 +109,14 @@ utils/split_data.sh $data $nj
 mkdir -p $dir/log $dir/info
 cp $alidir/tree $dir
 
-# Get list of validation utterances. 
+num_utts=$(cat $data/utt2spk | wc -l)
+if ! [ $num_utts -gt $[$num_utts_subset*4] ]; then
+  echo "$0: number of utterances $num_utts in your training data is too small versus --num-utts-subset=$num_utts_subset"
+  echo "... you probably have so little data that it doesn't make sense to train a neural net."
+  exit 1
+fi
+
+# Get list of validation utterances.
 awk '{print $1}' $data/utt2spk | utils/shuffle_list.pl | head -$num_utts_subset \
     > $dir/valid_uttlist || exit 1;
 
@@ -128,7 +136,7 @@ awk '{print $1}' $data/utt2spk | utils/filter_scp.pl --exclude $dir/valid_uttlis
 
 [ -z "$transform_dir" ] && transform_dir=$alidir
 
-## Set up features. 
+## Set up features.
 if [ -z $feat_type ]; then
   if [ -f $alidir/final.mat ] && [ ! -f $transform_dir/raw_trans.1 ]; then feat_type=lda; else feat_type=raw; fi
 fi
@@ -146,7 +154,7 @@ case $feat_type in
       echo $delta_order >$dir/delta_order
     fi
    ;;
-  lda) 
+  lda)
     splice_opts=`cat $alidir/splice_opts 2>/dev/null`
     # caution: the top-level nnet training script should copy these to its own dir now.
     cp $alidir/{splice_opts,cmvn_opts,final.mat} $dir || exit 1;
@@ -289,13 +297,13 @@ if [ $stage -le 3 ]; then
     egs_list="$egs_list ark:$dir/egs_orig.$n.JOB.ark"
   done
   echo "$0: Generating training examples on disk"
-  # The examples will go round-robin to egs_list. 
+  # The examples will go round-robin to egs_list.
   if [ ! -z $postdir ]; then
     $cmd $io_opts JOB=1:$nj $dir/log/get_egs.JOB.log \
       nnet-get-egs $ivectors_opt $nnet_context_opts --num-frames=$frames_per_eg "$feats" \
       scp:$postdir/post.JOB.scp ark:- \| \
       nnet-copy-egs ark:- $egs_list || exit 1;
-  else 
+  else
     $cmd $io_opts JOB=1:$nj $dir/log/get_egs.JOB.log \
       nnet-get-egs $ivectors_opt $nnet_context_opts --num-frames=$frames_per_eg "$feats" \
       "ark,s,cs:gunzip -c $alidir/ali.JOB.gz | ali-to-pdf $alidir/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:- \| \
@@ -308,7 +316,7 @@ if [ $stage -le 4 ]; then
   # shuffle the order, writing to the egs.JOB.ark
 
   egs_list=
-  for n in $(seq $nj); do 
+  for n in $(seq $nj); do
     egs_list="$egs_list $dir/egs_orig.JOB.$n.ark"
   done
 

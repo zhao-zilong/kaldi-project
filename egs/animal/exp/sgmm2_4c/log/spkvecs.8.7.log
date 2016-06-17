@@ -1,0 +1,28 @@
+# ali-to-post "ark:gunzip -c exp/sgmm2_4c/ali.7.gz|" ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/8.mdl ark:- ark:- | sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split12/7/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.7 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.7.gz|" exp/sgmm2_4c/8.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/7/utt2spk scp:data/train/split12/7/cmvn.scp scp:data/train/split12/7/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/7/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.7 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.7 && mv exp/sgmm2_4c/tmp_vecs.7 exp/sgmm2_4c/vecs.7 
+# Started at Fri Jun 17 14:50:31 BRT 2016
+#
+ali-to-post 'ark:gunzip -c exp/sgmm2_4c/ali.7.gz|' ark:- 
+weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/8.mdl ark:- ark:- 
+sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split12/7/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.7 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.7.gz|' exp/sgmm2_4c/8.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/7/utt2spk scp:data/train/split12/7/cmvn.scp scp:data/train/split12/7/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/7/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.7 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.7 
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split12/7/utt2spk scp:data/train/split12/7/cmvn.scp scp:data/train/split12/7/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/train/split12/7/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.7 ark:- ark:- 
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 10 alignments.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 10 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 1.04126 over 18420 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 10 posteriors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.7405 over 18420 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 5 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 5 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 5 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 5 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 5 eigenvalues. 
+LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.00558726 per frame, over 9187.66 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker felipe_vten, auxf-impr from speaker vector is 0.00558726, over 9187.66 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.00558726 over 9187.66 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:252) Done 10 files, 0 with errors.
+# Accounting: time=5 threads=1
+# Ended (code 0) at Fri Jun 17 14:50:36 BRT 2016, elapsed time 5 seconds

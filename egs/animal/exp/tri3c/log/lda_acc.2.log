@@ -1,0 +1,18 @@
+# ali-to-post "ark:gunzip -c exp/tri2b_ali_raw/ali.2.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b_ali_raw/final.mdl ark:- ark:- | acc-lda --rand-prune=4.0 exp/tri2b_ali_raw/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/2/utt2spk scp:data/train/split12/2/cmvn.scp scp:data/train/split12/2/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/2/utt2spk ark,s,cs:exp/tri2b_ali_raw/raw_trans.2 ark:- ark:- | splice-feats  ark:- ark:- |" ark,s,cs:- exp/tri3c/lda.2.acc 
+# Started at Fri Jun 17 14:37:52 BRT 2016
+#
+ali-to-post 'ark:gunzip -c exp/tri2b_ali_raw/ali.2.gz|' ark:- 
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b_ali_raw/final.mdl ark:- ark:- 
+acc-lda --rand-prune=4.0 exp/tri2b_ali_raw/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/2/utt2spk scp:data/train/split12/2/cmvn.scp scp:data/train/split12/2/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/2/utt2spk ark,s,cs:exp/tri2b_ali_raw/raw_trans.2 ark:- ark:- | splice-feats  ark:- ark:- |' ark,s,cs:- exp/tri3c/lda.2.acc 
+transform-feats --utt2spk=ark:data/train/split12/2/utt2spk ark,s,cs:exp/tri2b_ali_raw/raw_trans.2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split12/2/utt2spk scp:data/train/split12/2/cmvn.scp scp:data/train/split12/2/feats.scp ark:- 
+splice-feats ark:- ark:- 
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 20 alignments.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 20 posteriors.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.378957 over 35689 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (acc-lda:main():acc-lda.cc:117) Done 20 files, failed for 0
+LOG (acc-lda:main():acc-lda.cc:122) Written statistics.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 17 14:37:52 BRT 2016, elapsed time 0 seconds

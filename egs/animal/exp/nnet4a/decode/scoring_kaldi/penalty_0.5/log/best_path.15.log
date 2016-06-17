@@ -1,0 +1,18 @@
+# lattice-scale --inv-acoustic-scale=15 "ark:gunzip -c exp/nnet4a/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri3c/graph/words.txt | cat > exp/nnet4a/decode/scoring_kaldi/penalty_0.5/15.txt 
+# Started at Fri Jun 17 15:39:35 BRT 2016
+#
+lattice-scale --inv-acoustic-scale=15 'ark:gunzip -c exp/nnet4a/decode/lat.*.gz|' ark:- 
+lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test0, best cost 534.094 + -1500.35 = -966.257 over 6061 frames.
+felipe_test_test0 buzio cavalo <UNK> boi chita boi egua boi <UNK> boi esquilo boi <UNK> burro naja boi hiena boi cachorro boi garca burro <UNK> boi saira bufalo boi <UNK> boi bode asno burro sardinha buzio bode asno bufalo <UNK> burro <UNK> bode corsa boi <UNK> boi <UNK> 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 3 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test1, best cost 396.023 + -1023.93 = -627.903 over 6086 frames.
+felipe_test_test1 cachorro gato rato galinha cavalo porco lesma caracol mexilhao <UNK> peixe polvo lula camarao leao tigre zebra girafa rinoceronte hipopotamo macaco orangotango gorila <UNK> <UNK> aguia codorna pomba morcego ra 
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 3 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test2, best cost 405.871 + -924.388 = -518.517 over 6073 frames.
+felipe_test_test2 cachorro ra gato <UNK> rato peixe tubarao baleia polvo <UNK> lula ra <UNK> potro camarao baleia-cachalote <UNK> <UNK> <UNK> ra foca <UNK> ra lula polvo zebra rinoceronte girafa <UNK> condor girino 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is -0.115954 = 0.0733254 [graph] + -0.189279 [acoustic] over 18220 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 3 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 17 15:39:35 BRT 2016, elapsed time 0 seconds

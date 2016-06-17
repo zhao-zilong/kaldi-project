@@ -1,0 +1,21 @@
+# gmm-est --power=0.2 --remove-low-count-gaussians=false exp/tri3b/35.mdl "gmm-sum-accs - exp/tri3b/35.*.acc|" exp/tri3b/35.alimdl 
+# Started at Fri Jun 17 14:36:37 BRT 2016
+#
+gmm-est --power=0.2 --remove-low-count-gaussians=false exp/tri3b/35.mdl 'gmm-sum-accs - exp/tri3b/35.*.acc|' exp/tri3b/35.alimdl 
+gmm-sum-accs - exp/tri3b/35.1.acc exp/tri3b/35.10.acc exp/tri3b/35.11.acc exp/tri3b/35.12.acc exp/tri3b/35.2.acc exp/tri3b/35.3.acc exp/tri3b/35.4.acc exp/tri3b/35.5.acc exp/tri3b/35.6.acc exp/tri3b/35.7.acc exp/tri3b/35.8.acc exp/tri3b/35.9.acc 
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 12 stats, total count 385980, avg like/frame -40.6827
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 385980
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:67) Written stats to -
+LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 0 per frame over 385980 frames. 
+LOG (gmm-est:MleUpdate():transition-model.cc:396) 245 probabilities floored, 4457 out of 6395 transition-states skipped due to insuffient data (it is normal to have some skipped.)
+LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall 0 log-like improvement per frame over 385980 frames.
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because remove-low-count-gaussians == false: g = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because remove-low-count-gaussians == false: g = 0, occ = 9.87307, weight = 0.0653846
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because remove-low-count-gaussians == false: g = 1, occ = 10, weight = 0.0684931
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because remove-low-count-gaussians == false: g = 0, occ = 0, weight = 1
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 9054
+LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 3.31368 objective function improvement per frame over 385980 frames
+LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -40.6827 over 385980 frames.
+LOG (gmm-est:main():gmm-est.cc:146) Written model to exp/tri3b/35.alimdl
+# Accounting: time=1 threads=1
+# Ended (code 0) at Fri Jun 17 14:36:38 BRT 2016, elapsed time 1 seconds

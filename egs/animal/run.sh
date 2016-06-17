@@ -4,6 +4,7 @@
 . ./cmd.sh || exit 1
 
 nj=1         # number of parallel jobs - 1 is perfect for such a small data set
+nt=12
 lm_order=1     # language model order (n-gram quantity) - 1 is enough for digits grammar
 
 # Safety mechanism (possible running this script with modified arguments)
@@ -11,7 +12,7 @@ lm_order=1     # language model order (n-gram quantity) - 1 is enough for digits
 [[ $# -ge 1 ]] && { echo "Wrong arguments!"; exit 1; }
 
 # Removing previously created data (from last run.sh execution)
-rm -rf exp mfcc data/train/spk2utt data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt
+rm -rf exp mfcc data/train/utt2dur data/train/spk2utt data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt
 
 echo
 echo "===== PREPARING ACOUSTIC DATA ====="
@@ -37,10 +38,10 @@ echo
 mfccdir=mfcc
 
 
-utils/validate_data_dir.sh data/train     # script for checking if prepared data is all right
+utils/validate_data_dir.sh --no-feats data/train     # script for checking if prepared data is all right
 utils/fix_data_dir.sh data/train          # tool for data sorting if something goes wrong above
 
-utils/validate_data_dir.sh data/test     # script for checking if prepared data is all right
+utils/validate_data_dir.sh --no-feats data/test     # script for checking if prepared data is all right
 utils/fix_data_dir.sh data/test          # tool for data sorting if something goes wrong above
 
 steps/make_mfcc.sh --nj $nj --cmd "$train_cmd" data/train exp/make_mfcc/train $mfccdir
@@ -103,7 +104,7 @@ echo
 echo "===== MONO TRAINING ====="
 echo
 
-steps/train_mono.sh --nj $nj --cmd "$train_cmd" data/train data/lang exp/mono  || exit 1
+steps/train_mono.sh --nj $nt --cmd "$train_cmd" data/train data/lang exp/mono  || exit 1
 
 echo
 echo "===== MONO DECODING ====="
@@ -116,7 +117,7 @@ echo
 echo "===== MONO ALIGNMENT ====="
 echo
 
-steps/align_si.sh --nj $nj --cmd "$train_cmd" data/train data/lang exp/mono exp/mono_ali || exit 1
+steps/align_si.sh --nj $nt --cmd "$train_cmd" data/train data/lang exp/mono exp/mono_ali || exit 1
 
 echo
 echo "===== TRI1 (first triphone pass) TRAINING ====="
@@ -137,35 +138,34 @@ echo
 echo "===== TRI1 (first triphone pass) ALIGNE ====="
 echo
 
-steps/align_si.sh --nj $nj --cmd "$train_cmd" data/train data/lang exp/tri1 exp/tri1_ali
+steps/align_si.sh --nj $nt --cmd "$train_cmd" data/train data/lang exp/tri1 exp/tri1_ali
 
 # train and decode tri2b [LDA+MLLT]
 steps/train_lda_mllt.sh --cmd "$train_cmd" 1800 9000 data/train data/lang exp/tri1_ali exp/tri2b
 utils/mkgraph.sh data/lang exp/tri2b exp/tri2b/graph
-
 steps/decode.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" exp/tri2b/graph data/test exp/tri2b/decode
 
 
-
 # Align all data with LDA+MLLT system (tri2b)
-steps/align_si.sh --nj $nj --cmd "$train_cmd" data/train data/lang exp/tri2b exp/tri2b_ali
+steps/align_si.sh --nj $nt --cmd "$train_cmd" data/train data/lang exp/tri2b exp/tri2b_ali
 
-#  Do MMI on top of LDA+MLLT.
-steps/make_denlats.sh --nj $nj --cmd "$train_cmd" data/train data/lang exp/tri2b exp/tri2b_denlats
-steps/train_mmi.sh data/train data/lang exp/tri2b_ali exp/tri2b_denlats exp/tri2b_mmi
 
-steps/decode.sh --config conf/decode.config --iter 4 --nj $nj --cmd "$decode_cmd" exp/tri2b/graph data/test exp/tri2b_mmi/decode_it4
-steps/decode.sh --config conf/decode.config --iter 3 --nj $nj --cmd "$decode_cmd" exp/tri2b/graph data/test exp/tri2b_mmi/decode_it3
 
-# Do the same with boosting.
-steps/train_mmi.sh --boost 0.05 data/train data/lang exp/tri2b_ali exp/tri2b_denlats exp/tri2b_mmi_b0.05
-steps/decode.sh --config conf/decode.config --iter 4 --nj $nj --cmd "$decode_cmd" exp/tri2b/graph data/test exp/tri2b_mmi_b0.05/decode_it4
-steps/decode.sh --config conf/decode.config --iter 3 --nj $nj --cmd "$decode_cmd" exp/tri2b/graph data/test exp/tri2b_mmi_b0.05/decode_it3
+## Do LDA+MLLT+SAT, and decode.
+steps/train_sat.sh 1800 9000 data/train data/lang exp/tri2b_ali exp/tri3b
+utils/mkgraph.sh data/lang exp/tri3b exp/tri3b/graph
+steps/decode_fmllr.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
+  exp/tri3b/graph data/test exp/tri3b/decode
 
-# Do MPE.
-steps/train_mpe.sh data/train data/lang exp/tri2b_ali exp/tri2b_denlats exp/tri2b_mpe
-steps/decode.sh --config conf/decode.config --iter 4 --nj $nj --cmd "$decode_cmd"  exp/tri2b/graph data/test exp/tri2b_mpe/decode_it4
-steps/decode.sh --config conf/decode.config --iter 3 --nj $nj --cmd "$decode_cmd"  exp/tri2b/graph data/test exp/tri2b_mpe/decode_it3
+# Align all data with LDA+MLLT+SAT system (tri3b)
+steps/align_fmllr.sh --nj $nt --cmd "$train_cmd"  \
+  data/train data/lang exp/tri3b exp/tri3b_ali
+
+
+# for dnn training, run the follow scripts
+local/run_raw_fmllr.sh
+local/nnet2/run_4a.sh
+
 
 
 echo

@@ -1,0 +1,12 @@
+# gmm-init-model-flat exp/tri3c/tree data/lang/topo exp/tri3c/1.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/1/utt2spk scp:data/train/split12/1/cmvn.scp scp:data/train/split12/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/1/utt2spk ark,s,cs:exp/tri2b_ali_raw/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali_raw/final.mat ark:- ark:- | subset-feats ark:- ark:-|" 
+# Started at Fri Jun 17 14:38:01 BRT 2016
+#
+gmm-init-model-flat exp/tri3c/tree data/lang/topo exp/tri3c/1.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/1/utt2spk scp:data/train/split12/1/cmvn.scp scp:data/train/split12/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/1/utt2spk ark,s,cs:exp/tri2b_ali_raw/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali_raw/final.mat ark:- ark:- | subset-feats ark:- ark:-|' 
+splice-feats ark:- ark:- 
+transform-feats exp/tri2b_ali_raw/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split12/1/utt2spk ark,s,cs:exp/tri2b_ali_raw/raw_trans.1 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split12/1/utt2spk scp:data/train/split12/1/cmvn.scp scp:data/train/split12/1/feats.scp ark:- 
+subset-feats ark:- ark:- 
+LOG (gmm-init-model-flat:main():gmm-init-model-flat.cc:148) Wrote model.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 17 14:38:01 BRT 2016, elapsed time 0 seconds
