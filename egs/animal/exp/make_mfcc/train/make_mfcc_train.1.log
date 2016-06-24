@@ -1,5 +1,5 @@
 # compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.1.scp ark:- | copy-feats --compress=true ark:- ark,scp:/home/nlpserver/zzilong/kaldi/egs/animal/mfcc/raw_mfcc_train.1.ark,/home/nlpserver/zzilong/kaldi/egs/animal/mfcc/raw_mfcc_train.1.scp 
-# Started at Fri Jun 17 14:26:01 BRT 2016
+# Started at Wed Jun 22 13:35:09 BRT 2016
 #
 copy-feats --compress=true ark:- ark,scp:/home/nlpserver/zzilong/kaldi/egs/animal/mfcc/raw_mfcc_train.1.ark,/home/nlpserver/zzilong/kaldi/egs/animal/mfcc/raw_mfcc_train.1.scp 
 compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.1.scp ark:- 
@@ -69,6 +69,44 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_v2_Sfelipe_v28
 LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 60 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_v2_Sfelipe_v29
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight1
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight10
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight11
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight12
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight13
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight14
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight15
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight16
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight17
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 70 utterances
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight18
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight19
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight2
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight20
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight3
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight4
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight5
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight6
+ERROR (compute-mfcc-feats:Read():wave-reader.cc:277) WaveData: failed to read data chunk (read no bytes)
+
+[ Stack-Trace: ]
+compute-mfcc-feats() [0x536788]
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveData::Read(std::istream&, kaldi::WaveData::ReadDataType)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+compute-mfcc-feats() [0x478d59]
+
+WARNING (compute-mfcc-feats:Read():feat/wave-reader.h:165) Exception caught in WaveHolder object (reading). 
+WARNING (compute-mfcc-feats:EnsureObjectLoaded():util/kaldi-table-inl.h:329) Failed to load object from /home/nlpserver/zzilong/kaldi/egs/animal/audio/train/felipe_veight/Sfelipe_veight7.wav
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight8
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_veight_Sfelipe_veight9
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 80 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive1
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive11
@@ -78,8 +116,8 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 70 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive18
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 90 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive19
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive20
@@ -89,8 +127,8 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 80 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfive_Sfelipe_vfive9
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 100 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour1
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour11
@@ -100,8 +138,8 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 90 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour18
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 110 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour19
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour20
@@ -111,8 +149,30 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 100 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vfour_Sfelipe_vfour9
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 120 utterances
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine1
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine10
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine11
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine12
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine13
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine14
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine15
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine16
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine17
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine18
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 130 utterances
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine19
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine2
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine20
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine3
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine4
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine5
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine6
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine7
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine8
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vnine_Sfelipe_vnine9
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 140 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone1
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone11
@@ -122,8 +182,8 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 110 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone18
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 150 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone19
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone20
@@ -133,9 +193,69 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 120 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vone_Sfelipe_vone9
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 160 utterances
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven1
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven10
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven11
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven12
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven13
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven14
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven15
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven16
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven17
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven18
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 170 utterances
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven19
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven2
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven20
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven3
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven4
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven5
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven6
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven7
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven8
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vseven_Sfelipe_vseven9
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 180 utterances
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix1
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix10
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix11
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix12
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix13
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix14
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix15
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix16
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix17
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix18
+ERROR (compute-mfcc-feats:Read():wave-reader.cc:277) WaveData: failed to read data chunk (read no bytes)
+
+[ Stack-Trace: ]
+compute-mfcc-feats() [0x536788]
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveData::Read(std::istream&, kaldi::WaveData::ReadDataType)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+compute-mfcc-feats() [0x478d59]
+
+WARNING (compute-mfcc-feats:Read():feat/wave-reader.h:165) Exception caught in WaveHolder object (reading). 
+WARNING (compute-mfcc-feats:EnsureObjectLoaded():util/kaldi-table-inl.h:329) Failed to load object from /home/nlpserver/zzilong/kaldi/egs/animal/audio/train/felipe_vsix/Sfelipe_vsix19.wav
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 190 utterances
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix2
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix20
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix3
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix4
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix5
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix6
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix7
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix8
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vsix_Sfelipe_vsix9
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten1
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 200 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten3
@@ -144,9 +264,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 130 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vten_Sfelipe_vten9
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree1
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 210 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree11
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree12
@@ -155,9 +275,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 140 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree18
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree19
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 220 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree20
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree3
@@ -166,9 +286,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 150 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vthree_Sfelipe_vthree9
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo1
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 230 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo11
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo12
@@ -177,9 +297,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 160 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo18
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo19
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 240 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo20
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo3
@@ -188,9 +308,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 170 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_vtwo_Sfelipe_vtwo9
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus1
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 250 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus11
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus12
@@ -199,9 +319,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 180 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus18
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus19
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 260 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus20
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus3
@@ -210,9 +330,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 190 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key matheus_Smatheus9
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio1
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 270 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio11
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio12
@@ -221,9 +341,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 200 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio18
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio19
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 280 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio20
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio3
@@ -232,9 +352,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 210 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key silvio_Ssilvio9
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio1
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 290 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio10
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio11
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio12
@@ -243,9 +363,9 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio15
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio16
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio17
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 220 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio18
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio19
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 300 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio2
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio20
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio3
@@ -254,9 +374,8 @@ VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio6
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio7
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio8
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:177) Processed 230 utterances
 VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key zilio_Szilio9
-LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:181)  Done 230 out of 230 utterances.
-LOG (copy-feats:main():copy-feats.cc:101) Copied 230 feature matrices.
-# Accounting: time=23 threads=1
-# Ended (code 0) at Fri Jun 17 14:26:24 BRT 2016, elapsed time 23 seconds
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:181)  Done 308 out of 308 utterances.
+LOG (copy-feats:main():copy-feats.cc:101) Copied 308 feature matrices.
+# Accounting: time=72 threads=1
+# Ended (code 0) at Wed Jun 22 13:36:21 BRT 2016, elapsed time 72 seconds

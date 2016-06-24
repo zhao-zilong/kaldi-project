@@ -1,7 +1,7 @@
 # set -o pipefail && ali-to-phones --write-lengths=true exp/mono/final.mdl "ark:gunzip -c exp/mono/ali.10.gz|" ark,t:- | sed -E "s/^[^ ]+ //" | awk 'BEGIN{FS=" ; "; OFS="\n";} {print "begin " $1; print "end " $NF; for (n=1;n<=NF;n++) print "all " $n; }' | sort | uniq -c | gzip -c > exp/mono/phone_stats.10.gz 
-# Started at Fri Jun 17 14:27:58 BRT 2016
+# Started at Wed Jun 22 13:39:39 BRT 2016
 #
 ali-to-phones --write-lengths=true exp/mono/final.mdl 'ark:gunzip -c exp/mono/ali.10.gz|' ark,t:- 
-LOG (ali-to-phones:main():ali-to-phones.cc:134) Done 20 utterances.
+LOG (ali-to-phones:main():ali-to-phones.cc:134) Done 19 utterances.
 # Accounting: time=0 threads=1
-# Ended (code 0) at Fri Jun 17 14:27:58 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Wed Jun 22 13:39:39 BRT 2016, elapsed time 0 seconds

@@ -1,25 +1,25 @@
 # build-tree-two-level --binary=false --verbose=1 --max-leaves-first=1000 --max-leaves-second=5000 exp/sgmm2_4c/treeacc data/lang/phones/roots.int exp/sgmm2_4c/questions.qst data/lang/topo exp/sgmm2_4c/tree exp/sgmm2_4c/pdf2group.map 
-# Started at Fri Jun 17 14:44:31 BRT 2016
+# Started at Wed Jun 22 14:10:35 BRT 2016
 #
 build-tree-two-level --binary=false --verbose=1 --max-leaves-first=1000 --max-leaves-second=5000 exp/sgmm2_4c/treeacc data/lang/phones/roots.int exp/sgmm2_4c/questions.qst data/lang/topo exp/sgmm2_4c/tree exp/sgmm2_4c/pdf2group.map 
-Number of separate statistics is 5021
+Number of separate statistics is 5162
 LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:325) ****BuildTreeTwoLevel: building first level tree
 LOG (build-tree-two-level:BuildTree():build-tree.cc:159) BuildTree: before building trees, map has 46 leaves.
 LOG (build-tree-two-level:SplitDecisionTree():build-tree-utils.cc:577) DoDecisionTreeSplit: split 954 times, #leaves now 1000
-VLOG[1] (build-tree-two-level:BuildTree():build-tree.cc:194) After decision tree split, num-leaves = 1000, like-impr = 6.92416 per frame over 387116 frames.
-VLOG[1] (build-tree-two-level:BuildTree():build-tree.cc:198) Including just phones that were split, improvement is 6.92416 per frame over 387116 frames.
+VLOG[1] (build-tree-two-level:BuildTree():build-tree.cc:194) After decision tree split, num-leaves = 1000, like-impr = 7.18342 per frame over 535129 frames.
+VLOG[1] (build-tree-two-level:BuildTree():build-tree.cc:198) Including just phones that were split, improvement is 7.18342 per frame over 535129 frames.
 LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:331) ****BuildTreeTwoLevel: done building first level tree
 LOG (build-tree-two-level:SplitDecisionTree():build-tree-utils.cc:577) DoDecisionTreeSplit: split 4000 times, #leaves now 5000
-LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:357) Building second-level tree: increased #leaves from 1000 to 5000, smallest split was 29.8331
-LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:364) After second decision tree split, num-leaves = 5000, like-impr = 2.2753 per frame over 387116 frames.
+LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:357) Building second-level tree: increased #leaves from 1000 to 5000, smallest split was 75.0613
+LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:364) After second decision tree split, num-leaves = 5000, like-impr = 2.21479 per frame over 535129 frames.
 LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:369) Clustering leaves of larger tree.
-LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:379) BuildTreeTwoLevel: removed 2 leaves.
-LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:386) Objf change due to clustering -0.000154992 per frame.
-LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:389) Num-leaves now 4998
+LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:379) BuildTreeTwoLevel: removed 18 leaves.
+LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:386) Objf change due to clustering -0.00211912 per frame.
+LOG (build-tree-two-level:BuildTreeTwoLevel():build-tree.cc:389) Num-leaves now 4982
 WARNING (build-tree-two-level:ComputeTreeMapping():build-tree.cc:268) No stats mapping to 1 in small tree. Continuing but this is a serious error.
 WARNING (build-tree-two-level:ComputeTreeMapping():build-tree.cc:293) In ComputeTreeMapping, could not get mapping from leaf 1
 WARNING (build-tree-two-level:ComputeTreeMapping():build-tree.cc:297) Assigning it to unseen small-tree leaf 1
 WARNING (build-tree-two-level:main():build-tree-two-level.cc:202) Saw no stats for following phones: 2 3 4 5 6 7 8 9 10 14 18 19 20 22 24 26 27 28 30 32 34 36 38 40 42 44 46 50 54 55 58 62 64 66 68 70 74 75 77 78 79 82 84 86 88 90 92 94 96 98 100 102 106 107 108 110 114 116 118 119 122 124 126 127 128 130 132 134 138 140 142 146 148 150 152 154 158 159 160 162 163 166 168 170 171 174 175 178 179 182 184 186 
 Wrote tree and mapping
-# Accounting: time=8 threads=1
-# Ended (code 0) at Fri Jun 17 14:44:39 BRT 2016, elapsed time 8 seconds
+# Accounting: time=13 threads=1
+# Ended (code 0) at Wed Jun 22 14:10:48 BRT 2016, elapsed time 13 seconds

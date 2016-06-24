@@ -1,18 +1,14 @@
 # lattice-scale --inv-acoustic-scale=17 "ark:gunzip -c exp/tri3b/decode.si/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri3b/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri3b/graph/words.txt | cat > exp/tri3b/decode.si/scoring_kaldi/penalty_1.0/17.txt 
-# Started at Fri Jun 17 14:36:51 BRT 2016
+# Started at Fri Jun 24 14:39:37 BRT 2016
 #
 lattice-scale --inv-acoustic-scale=17 'ark:gunzip -c exp/tri3b/decode.si/lat.*.gz|' ark:- 
-lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
 lattice-best-path --word-symbol-table=exp/tri3b/graph/words.txt ark:- ark,t:- 
-LOG (lattice-scale:main():lattice-scale.cc:90) Done 3 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test0, best cost 269.212 + 19269.6 = 19538.8 over 6061 frames.
-felipe_test_test0 cavalo egua garca vaca <UNK> passaro <UNK> 
-LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 3 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test1, best cost 432.415 + 15155.3 = 15587.7 over 6086 frames.
-felipe_test_test1 cachorro gato rato galinha cavalo porco lesma caracol mexilhao urubu peixe polvo lula camarao leao tigre zebra girafa rinoceronte hipopotamo macaco orangotango <UNK> gorila <UNK> <UNK> aguia corvo pomba morcego 
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test2, best cost 395.585 + 14879.7 = 15275.3 over 6073 frames.
-felipe_test_test2 cachorro calango gato <UNK> rato peixe tubarao baleia pulga <UNK> lula <UNK> potro camarao baleia-cachalote <UNK> <UNK> leoa lula polvo zebra rinoceronte girafa aguia condor girino 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 2.76629 = 0.0602201 [graph] + 2.70607 [acoustic] over 18220 frames.
-LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 3 lattices, failed for 0
-# Accounting: time=1 threads=1
-# Ended (code 0) at Fri Jun 17 14:36:52 BRT 2016, elapsed time 1 seconds
+lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test0, best cost 459.973 + 15257.3 = 15717.3 over 6061 frames.
+felipe_test_test0 cavalo camarao peixe egua tenia esquilo minhoca aguia boi hiena cachorro gato <UNK> minhoca galinha galo lobo truta boi vaca sardinha corsa formiga moreia passaro passaro-preto bicho-do-mato 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 2.59318 = 0.0758907 [graph] + 2.51729 [acoustic] over 6061 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jun 24 14:39:37 BRT 2016, elapsed time 0 seconds

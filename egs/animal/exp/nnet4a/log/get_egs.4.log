@@ -1,18 +1,18 @@
-# nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split12/4/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split12/4/utt2spk scp:data/train/split12/4/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split12/4/utt2spk ark:exp/tri3c_ali/raw_trans.4 ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c_ali/ali.4.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:- | nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.4.ark ark:exp/nnet4a/egs/egs_orig.2.4.ark ark:exp/nnet4a/egs/egs_orig.3.4.ark ark:exp/nnet4a/egs/egs_orig.4.4.ark ark:exp/nnet4a/egs/egs_orig.5.4.ark ark:exp/nnet4a/egs/egs_orig.6.4.ark ark:exp/nnet4a/egs/egs_orig.7.4.ark ark:exp/nnet4a/egs/egs_orig.8.4.ark ark:exp/nnet4a/egs/egs_orig.9.4.ark ark:exp/nnet4a/egs/egs_orig.10.4.ark ark:exp/nnet4a/egs/egs_orig.11.4.ark ark:exp/nnet4a/egs/egs_orig.12.4.ark ark:exp/nnet4a/egs/egs_orig.13.4.ark ark:exp/nnet4a/egs/egs_orig.14.4.ark ark:exp/nnet4a/egs/egs_orig.15.4.ark ark:exp/nnet4a/egs/egs_orig.16.4.ark 
-# Started at Fri Jun 17 15:13:49 BRT 2016
+# nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split16/4/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split16/4/utt2spk scp:data/train/split16/4/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split16/4/utt2spk ark:exp/tri3c_ali/raw_trans.4 ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c_ali/ali.4.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:- | nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.4.ark ark:exp/nnet4a/egs/egs_orig.2.4.ark ark:exp/nnet4a/egs/egs_orig.3.4.ark ark:exp/nnet4a/egs/egs_orig.4.4.ark ark:exp/nnet4a/egs/egs_orig.5.4.ark ark:exp/nnet4a/egs/egs_orig.6.4.ark ark:exp/nnet4a/egs/egs_orig.7.4.ark ark:exp/nnet4a/egs/egs_orig.8.4.ark ark:exp/nnet4a/egs/egs_orig.9.4.ark ark:exp/nnet4a/egs/egs_orig.10.4.ark ark:exp/nnet4a/egs/egs_orig.11.4.ark ark:exp/nnet4a/egs/egs_orig.12.4.ark ark:exp/nnet4a/egs/egs_orig.13.4.ark ark:exp/nnet4a/egs/egs_orig.14.4.ark ark:exp/nnet4a/egs/egs_orig.15.4.ark ark:exp/nnet4a/egs/egs_orig.16.4.ark 
+# Started at Wed Jun 22 14:47:22 BRT 2016
 #
-nnet-get-egs --left-context=5 --right-context=5 'ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split12/4/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split12/4/utt2spk scp:data/train/split12/4/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split12/4/utt2spk ark:exp/tri3c_ali/raw_trans.4 ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c_ali/ali.4.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |' ark:- 
 nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.4.ark ark:exp/nnet4a/egs/egs_orig.2.4.ark ark:exp/nnet4a/egs/egs_orig.3.4.ark ark:exp/nnet4a/egs/egs_orig.4.4.ark ark:exp/nnet4a/egs/egs_orig.5.4.ark ark:exp/nnet4a/egs/egs_orig.6.4.ark ark:exp/nnet4a/egs/egs_orig.7.4.ark ark:exp/nnet4a/egs/egs_orig.8.4.ark ark:exp/nnet4a/egs/egs_orig.9.4.ark ark:exp/nnet4a/egs/egs_orig.10.4.ark ark:exp/nnet4a/egs/egs_orig.11.4.ark ark:exp/nnet4a/egs/egs_orig.12.4.ark ark:exp/nnet4a/egs/egs_orig.13.4.ark ark:exp/nnet4a/egs/egs_orig.14.4.ark ark:exp/nnet4a/egs/egs_orig.15.4.ark ark:exp/nnet4a/egs/egs_orig.16.4.ark 
-transform-feats --utt2spk=ark:data/train/split12/4/utt2spk ark:exp/tri3c_ali/raw_trans.4 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split12/4/utt2spk scp:data/train/split12/4/cmvn.scp scp:- ark:- 
+nnet-get-egs --left-context=5 --right-context=5 'ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split16/4/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split16/4/utt2spk scp:data/train/split16/4/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split16/4/utt2spk ark:exp/tri3c_ali/raw_trans.4 ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c_ali/ali.4.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |' ark:- 
+transform-feats --utt2spk=ark:data/train/split16/4/utt2spk ark:exp/tri3c_ali/raw_trans.4 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/4/utt2spk scp:data/train/split16/4/cmvn.scp scp:- ark:- 
 ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- 
 ali-to-post ark:- ark:- 
-LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 20 alignments to pdf sequences.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 19 utterances, errors on 0
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 20 alignments.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.00653266 over 32048 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 19 utterances; 0 had errors.
-LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 19 feature files, wrote 32048 examples,  with 32048 egs in total; 0 files had errors.
-LOG (nnet-copy-egs:main():nnet-copy-egs.cc:170) Read 32048 neural-network training examples, wrote 32048
-# Accounting: time=6 threads=1
-# Ended (code 0) at Fri Jun 17 15:13:55 BRT 2016, elapsed time 6 seconds
+LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 19 alignments to pdf sequences.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 18 utterances, errors on 0
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 19 alignments.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.368578 over 34919 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 18 utterances; 0 had errors.
+LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 18 feature files, wrote 34919 examples,  with 34919 egs in total; 0 files had errors.
+LOG (nnet-copy-egs:main():nnet-copy-egs.cc:170) Read 34919 neural-network training examples, wrote 34919
+# Accounting: time=7 threads=1
+# Ended (code 0) at Wed Jun 22 14:47:29 BRT 2016, elapsed time 7 seconds

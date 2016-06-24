@@ -4,7 +4,7 @@
 . ./cmd.sh || exit 1
 
 nj=1         # number of parallel jobs - 1 is perfect for such a small data set
-nt=12
+nt=16
 lm_order=1     # language model order (n-gram quantity) - 1 is enough for digits grammar
 
 # Safety mechanism (possible running this script with modified arguments)
@@ -12,7 +12,7 @@ lm_order=1     # language model order (n-gram quantity) - 1 is enough for digits
 [[ $# -ge 1 ]] && { echo "Wrong arguments!"; exit 1; }
 
 # Removing previously created data (from last run.sh execution)
-rm -rf exp mfcc data/train/utt2dur data/train/spk2utt data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt
+rm -rf exp mfcc data/train/utt2dur data/train/spk2utt data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/utt2dur data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt
 
 echo
 echo "===== PREPARING ACOUSTIC DATA ====="

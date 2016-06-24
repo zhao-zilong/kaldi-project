@@ -1,18 +1,18 @@
-# gmm-acc-stats-ali exp/tri3c/2.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/11/utt2spk scp:data/train/split12/11/cmvn.scp scp:data/train/split12/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/0.mat ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c/ali.11.gz|" exp/tri3c/2.11.acc 
-# Started at Fri Jun 17 14:38:30 BRT 2016
+# gmm-acc-stats-ali exp/tri3c/2.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/0.mat ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c/ali.11.gz|" exp/tri3c/2.11.acc 
+# Started at Wed Jun 22 13:58:40 BRT 2016
 #
-gmm-acc-stats-ali exp/tri3c/2.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/11/utt2spk scp:data/train/split12/11/cmvn.scp scp:data/train/split12/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/0.mat ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c/ali.11.gz|' exp/tri3c/2.11.acc 
-apply-cmvn --utt2spk=ark:data/train/split12/11/utt2spk scp:data/train/split12/11/cmvn.scp scp:data/train/split12/11/feats.scp ark:- 
-transform-feats exp/tri3c/0.mat ark:- ark:- 
-transform-feats --utt2spk=ark:data/train/split12/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- 
+gmm-acc-stats-ali exp/tri3c/2.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/0.mat ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c/ali.11.gz|' exp/tri3c/2.11.acc 
 splice-feats ark:- ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.211278 over 32814 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -89.5842 over 32814 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 20 files, 0 with errors.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -50.4569 over 32814 frames.
+apply-cmvn --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/train/split16/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- 
+transform-feats exp/tri3c/0.mat ark:- ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 10 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 1.0432 over 18420 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.9186 over 18420 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 10 files, 0 with errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -48.0225 over 18420 frames.
 LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:123) Written accs.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Fri Jun 17 14:38:31 BRT 2016, elapsed time 1 seconds
+# Accounting: time=0 threads=1
+# Ended (code 0) at Wed Jun 22 13:58:40 BRT 2016, elapsed time 0 seconds

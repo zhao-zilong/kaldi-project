@@ -4,7 +4,7 @@
 
 
 nj=1         # number of parallel jobs - 1 is perfect for such a small data set
-nt=12
+nt=16
 
 steps/align_raw_fmllr.sh --nj $nt --cmd "$train_cmd" --use-graphs true \
     data/train data/lang exp/tri2b exp/tri2b_ali_raw
@@ -20,7 +20,7 @@ steps/decode_raw_fmllr.sh --config conf/decode.config --nj $nj --cmd "$decode_cm
 #steps/decode_raw_fmllr.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
 #   exp/tri3c/graph_ug data/test exp/tri3c/decode_ug
 
-steps/decode_raw_fmllr.sh --use-normal-fmllr true --config conf/decode.config --nj $nt --cmd "$decode_cmd" \
+steps/decode_raw_fmllr.sh --use-normal-fmllr true --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
    exp/tri3c/graph data/test exp/tri3c/decode_2fmllr
 
 #steps/decode_raw_fmllr.sh --use-normal-fmllr true --config conf/decode.config --nj $nt --cmd "$decode_cmd" \

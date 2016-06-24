@@ -1,28 +1,29 @@
-# ali-to-post "ark:gunzip -c exp/sgmm2_4c/ali.10.gz|" ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/17.mdl ark:- ark:- | sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split12/10/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.10 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.10.gz|" exp/sgmm2_4c/17.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/10/utt2spk scp:data/train/split12/10/cmvn.scp scp:data/train/split12/10/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/10/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.10 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.10 && mv exp/sgmm2_4c/tmp_vecs.10 exp/sgmm2_4c/vecs.10 
-# Started at Fri Jun 17 15:01:43 BRT 2016
+# ali-to-post "ark:gunzip -c exp/sgmm2_4c/ali.10.gz|" ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/17.mdl ark:- ark:- | sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split16/10/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.10 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.10.gz|" exp/sgmm2_4c/17.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/10/utt2spk scp:data/train/split16/10/cmvn.scp scp:data/train/split16/10/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/10/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.10 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.10 && mv exp/sgmm2_4c/tmp_vecs.10 exp/sgmm2_4c/vecs.10 
+# Started at Wed Jun 22 14:32:40 BRT 2016
 #
 weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/17.mdl ark:- ark:- 
-sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split12/10/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.10 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.10.gz|' exp/sgmm2_4c/17.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/10/utt2spk scp:data/train/split12/10/cmvn.scp scp:data/train/split12/10/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/10/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.10 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.10 
+sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split16/10/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.10 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.10.gz|' exp/sgmm2_4c/17.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/10/utt2spk scp:data/train/split16/10/cmvn.scp scp:data/train/split16/10/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/10/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.10 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.10 
 ali-to-post 'ark:gunzip -c exp/sgmm2_4c/ali.10.gz|' ark:- 
-transform-feats --utt2spk=ark:data/train/split12/10/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.10 ark:- ark:- 
-transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
 splice-feats ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split12/10/utt2spk scp:data/train/split12/10/cmvn.scp scp:data/train/split12/10/feats.scp ark:- 
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 20 alignments.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.382405 over 33790 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 20 posteriors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.7405 over 33790 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 8 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 8 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 8 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 8 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 8 eigenvalues. 
-LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.00402027 per frame, over 18937.6 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker matheus, auxf-impr from speaker vector is 0.00402027, over 18937.6 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.00402027 over 18937.6 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:252) Done 20 files, 0 with errors.
-# Accounting: time=16 threads=1
-# Ended (code 0) at Fri Jun 17 15:01:59 BRT 2016, elapsed time 16 seconds
+transform-feats --utt2spk=ark:data/train/split16/10/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.10 ark:- ark:- 
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/10/utt2spk scp:data/train/split16/10/cmvn.scp scp:data/train/split16/10/feats.scp ark:- 
+WARNING (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:147) Did not find features for utterance felipe_vsix_Sfelipe_vsix19
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 19 alignments.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 19 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.448372 over 37229 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 19 utterances; 0 had errors.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 19 posteriors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 37229 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 19 utterances; 0 had errors.
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 9 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 9 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 9 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 9 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 9 eigenvalues. 
+LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.00241714 per frame, over 21599.4 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker felipe_vsix, auxf-impr from speaker vector is 0.00241714, over 21599.4 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.00241714 over 21599.4 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:252) Done 19 files, 0 with errors.
+# Accounting: time=5 threads=1
+# Ended (code 0) at Wed Jun 22 14:32:45 BRT 2016, elapsed time 5 seconds

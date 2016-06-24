@@ -1,18 +1,19 @@
-# sgmm2-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.8.gz|" --utt2spk=ark:data/train/split12/8/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/5.mdl "ark:gunzip -c exp/sgmm2_4c/fsts.8.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/8/utt2spk scp:data/train/split12/8/cmvn.scp scp:data/train/split12/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" "ark:|gzip -c >exp/sgmm2_4c/ali.8.gz" 
-# Started at Fri Jun 17 14:47:27 BRT 2016
+# sgmm2-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.8.gz|" --utt2spk=ark:data/train/split16/8/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/5.mdl "ark:gunzip -c exp/sgmm2_4c/fsts.8.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:data/train/split16/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" "ark:|gzip -c >exp/sgmm2_4c/ali.8.gz" 
+# Started at Wed Jun 22 14:15:05 BRT 2016
 #
-sgmm2-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.8.gz|' --utt2spk=ark:data/train/split12/8/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/5.mdl 'ark:gunzip -c exp/sgmm2_4c/fsts.8.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/8/utt2spk scp:data/train/split12/8/cmvn.scp scp:data/train/split12/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' 'ark:|gzip -c >exp/sgmm2_4c/ali.8.gz' 
-apply-cmvn --utt2spk=ark:data/train/split12/8/utt2spk scp:data/train/split12/8/cmvn.scp scp:data/train/split12/8/feats.scp ark:- 
-transform-feats --utt2spk=ark:data/train/split12/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- 
-splice-feats ark:- ark:- 
+sgmm2-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.8.gz|' --utt2spk=ark:data/train/split16/8/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/5.mdl 'ark:gunzip -c exp/sgmm2_4c/fsts.8.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:data/train/split16/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' 'ark:|gzip -c >exp/sgmm2_4c/ali.8.gz' 
 transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:data/train/split16/8/feats.scp ark:- 
+WARNING (sgmm2-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_vone_Sfelipe_vone17 with beam 40
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.118539 over 38705 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.0674404 over 41890 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.7405 over 38705 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 41890 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:168) Overall log-likelihood per frame is -39.6269 over 38705 frames.
-LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:170) Retried 0 out of 20 utterances.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:168) Overall log-likelihood per frame is -40.1738 over 41890 frames.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:170) Retried 1 out of 20 utterances.
 LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:172) Done 20, errors on 0
-# Accounting: time=14 threads=1
-# Ended (code 0) at Fri Jun 17 14:47:41 BRT 2016, elapsed time 14 seconds
+# Accounting: time=11 threads=1
+# Ended (code 0) at Wed Jun 22 14:15:16 BRT 2016, elapsed time 11 seconds

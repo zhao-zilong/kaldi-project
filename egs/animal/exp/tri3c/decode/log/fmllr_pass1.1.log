@@ -1,27 +1,27 @@
 # gunzip -c exp/tri3c/decode.si/lat.1.gz | lattice-to-post --acoustic-scale=0.083333 ark:- ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3c/final.alimdl ark:- ark:- | gmm-post-to-gpost exp/tri3c/final.alimdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/final.mat ark:- ark:- |" ark:- ark:- | gmm-est-fmllr-raw-gpost --raw-feat-dim=13 --spk2utt=ark:data/test/split1/1/spk2utt exp/tri3c/final.mdl "get-full-lda-mat --print-args=false exp/tri3c/final.mat exp/tri3c/full.mat -|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- |" ark,s,cs:- ark:exp/tri3c/decode/pre_trans.1 
-# Started at Fri Jun 17 14:42:15 BRT 2016
+# Started at Fri Jun 24 14:40:44 BRT 2016
 #
-gmm-post-to-gpost exp/tri3c/final.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/final.mat ark:- ark:- |' ark:- ark:- 
 weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3c/final.alimdl ark:- ark:- 
-gmm-est-fmllr-raw-gpost --raw-feat-dim=13 --spk2utt=ark:data/test/split1/1/spk2utt exp/tri3c/final.mdl 'get-full-lda-mat --print-args=false exp/tri3c/final.mat exp/tri3c/full.mat -|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- |' ark,s,cs:- ark:exp/tri3c/decode/pre_trans.1 
+gmm-post-to-gpost exp/tri3c/final.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/final.mat ark:- ark:- |' ark:- ark:- 
 lattice-to-post --acoustic-scale=0.083333 ark:- ark:- 
-splice-feats ark:- ark:- 
+gmm-est-fmllr-raw-gpost --raw-feat-dim=13 --spk2utt=ark:data/test/split1/1/spk2utt exp/tri3c/final.mdl 'get-full-lda-mat --print-args=false exp/tri3c/final.mat exp/tri3c/full.mat -|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- |' ark,s,cs:- ark:exp/tri3c/decode/pre_trans.1 
 transform-feats exp/tri3c/final.mat ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 splice-feats ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 3 utterances, errors on 0
-LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -4.15364 over 18220 frames.  Average acoustic like/frame is -4.08448
-LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 3 lattices.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 3 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.7405 over 18220 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
-LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 3 posteriors.
-LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:124) Done 3 files, 0 with no posteriors, 0 with other errors.
-LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:128) Overall avg like per frame (Gaussian only) = -59.1365 over 5898.66 frames.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -3.80461 over 6061 frames.  Average acoustic like/frame is -3.73263
+LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 1 lattices.
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 6061 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 1 posteriors.
+LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:124) Done 1 files, 0 with no posteriors, 0 with other errors.
+LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:128) Overall avg like per frame (Gaussian only) = -59.9263 over 1749.28 frames.
 LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:131) Done converting post to gpost
-LOG (gmm-est-fmllr-raw-gpost:main():gmm-est-fmllr-raw-gpost.cc:144) For speaker felipe_test, auxf-impr from raw fMLLR is 4.72039 over 5898.57 frames.
-LOG (gmm-est-fmllr-raw-gpost:main():gmm-est-fmllr-raw-gpost.cc:187) Processed 3 utterances, 0 had errors.
-LOG (gmm-est-fmllr-raw-gpost:main():gmm-est-fmllr-raw-gpost.cc:189) Overall raw-fMLLR auxf impr per frame is 4.72039 over 5898.57 frames.
-# Accounting: time=3 threads=1
-# Ended (code 0) at Fri Jun 17 14:42:18 BRT 2016, elapsed time 3 seconds
+LOG (gmm-est-fmllr-raw-gpost:main():gmm-est-fmllr-raw-gpost.cc:144) For speaker felipe_test, auxf-impr from raw fMLLR is 9.72645 over 1749.25 frames.
+LOG (gmm-est-fmllr-raw-gpost:main():gmm-est-fmllr-raw-gpost.cc:187) Processed 1 utterances, 0 had errors.
+LOG (gmm-est-fmllr-raw-gpost:main():gmm-est-fmllr-raw-gpost.cc:189) Overall raw-fMLLR auxf impr per frame is 9.72645 over 1749.25 frames.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Fri Jun 24 14:40:46 BRT 2016, elapsed time 2 seconds

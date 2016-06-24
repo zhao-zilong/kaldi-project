@@ -1,19 +1,20 @@
-# ali-to-post "ark:gunzip -c exp/tri3c/ali.8.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3c/12.mdl ark:- ark:- | gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/train/split12/8/spk2utt exp/tri3c/12.mdl "get-full-lda-mat --print-args=false exp/tri3c/10.mat exp/tri3c/full.mat - |" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/8/utt2spk scp:data/train/split12/8/cmvn.scp scp:data/train/split12/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/8/utt2spk ark,s,cs:exp/tri3c/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- |" ark:- ark:exp/tri3c/tmp_trans.8 
-# Started at Fri Jun 17 14:39:54 BRT 2016
+# ali-to-post "ark:gunzip -c exp/tri3c/ali.8.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3c/12.mdl ark:- ark:- | gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/train/split16/8/spk2utt exp/tri3c/12.mdl "get-full-lda-mat --print-args=false exp/tri3c/10.mat exp/tri3c/full.mat - |" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:data/train/split16/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark,s,cs:exp/tri3c/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- |" ark:- ark:exp/tri3c/tmp_trans.8 
+# Started at Wed Jun 22 14:01:21 BRT 2016
 #
-ali-to-post 'ark:gunzip -c exp/tri3c/ali.8.gz|' ark:- 
-gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/train/split12/8/spk2utt exp/tri3c/12.mdl 'get-full-lda-mat --print-args=false exp/tri3c/10.mat exp/tri3c/full.mat - |' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split12/8/utt2spk scp:data/train/split12/8/cmvn.scp scp:data/train/split12/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split12/8/utt2spk ark,s,cs:exp/tri3c/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- |' ark:- ark:exp/tri3c/tmp_trans.8 
 weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3c/12.mdl ark:- ark:- 
+ali-to-post 'ark:gunzip -c exp/tri3c/ali.8.gz|' ark:- 
+gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/train/split16/8/spk2utt exp/tri3c/12.mdl 'get-full-lda-mat --print-args=false exp/tri3c/10.mat exp/tri3c/full.mat - |' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:data/train/split16/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark,s,cs:exp/tri3c/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- |' ark:- ark:exp/tri3c/tmp_trans.8 
 splice-feats ark:- ark:- 
-transform-feats --utt2spk=ark:data/train/split12/8/utt2spk ark,s,cs:exp/tri3c/raw_trans.8 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split12/8/utt2spk scp:data/train/split12/8/cmvn.scp scp:data/train/split12/8/feats.scp ark:- 
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 20 alignments.
+transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark,s,cs:exp/tri3c/raw_trans.8 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:data/train/split16/8/feats.scp ark:- 
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 19 alignments.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 19 posteriors.
+WARNING (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:121) Posteriors not found for utterance felipe_vone_Sfelipe_vone17
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 20 posteriors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.114636 over 38705 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.0536259 over 41890 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker felipe_vthree, auxf-impr from raw fMLLR is 0.0119638 over 21728 frames.
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:188) Processed 20 utterances, 0 had errors.
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:190) Overall raw-fMLLR auxf impr per frame is 0.0119638 over 21728 frames.
-# Accounting: time=22 threads=1
-# Ended (code 0) at Fri Jun 17 14:40:16 BRT 2016, elapsed time 22 seconds
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker felipe_vone, auxf-impr from raw fMLLR is 0.0153049 over 21646 frames.
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:188) Processed 19 utterances, 1 had errors.
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:190) Overall raw-fMLLR auxf impr per frame is 0.0153049 over 21646 frames.
+# Accounting: time=11 threads=1
+# Ended (code 0) at Wed Jun 22 14:01:32 BRT 2016, elapsed time 11 seconds
