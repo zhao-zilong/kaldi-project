@@ -1,0 +1,31 @@
+# gmm-est --power=0.2 --write-occs=exp/tri3c/33.occs --mix-up=9000 exp/tri3c/32.mdl "gmm-sum-accs - exp/tri3c/32.*.acc |" exp/tri3c/33.mdl 
+# Started at Mon Jul  4 16:26:51 BRT 2016
+#
+gmm-est --power=0.2 --write-occs=exp/tri3c/33.occs --mix-up=9000 exp/tri3c/32.mdl 'gmm-sum-accs - exp/tri3c/32.*.acc |' exp/tri3c/33.mdl 
+gmm-sum-accs - exp/tri3c/32.1.acc exp/tri3c/32.10.acc exp/tri3c/32.11.acc exp/tri3c/32.12.acc exp/tri3c/32.13.acc exp/tri3c/32.14.acc exp/tri3c/32.15.acc exp/tri3c/32.16.acc exp/tri3c/32.17.acc exp/tri3c/32.18.acc exp/tri3c/32.19.acc exp/tri3c/32.2.acc exp/tri3c/32.20.acc exp/tri3c/32.3.acc exp/tri3c/32.4.acc exp/tri3c/32.5.acc exp/tri3c/32.6.acc exp/tri3c/32.7.acc exp/tri3c/32.8.acc exp/tri3c/32.9.acc 
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 20 stats, total count 308780, avg like/frame -39.2613
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 308780
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:67) Written stats to -
+LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is -3.20434e-11 per frame over 308780 frames. 
+LOG (gmm-est:MleUpdate():transition-model.cc:396) 328 probabilities floored, 4333 out of 6220 transition-states skipped due to insuffient data (it is normal to have some skipped.)
+LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall -3.20434e-11 log-like improvement per frame over 308780 frames.
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.002582, occupation count 9.806445, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.002385, occupation count 9.059384, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.005649, occupation count 9.992405, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.153825, occupation count 9.998623, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 8, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.093274, occupation count 8.954279, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.063512, occupation count 9.399767, vector size 40)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 2, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 8, weight = 1
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 9084
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:229) Removed 6 Gaussians due to counts < --min-gaussian-occupancy=10 and --remove-low-count-gaussians=true
+LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 0.0434223 objective function improvement per frame over 308780 frames
+LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -39.2613 over 308780 frames.
+LOG (gmm-est:SplitByCount():am-diag-gmm.cc:116) Split 1394 states with target = 9000, power = 0.2, perturb_factor = 0.01 and min_count = 20, split #Gauss from 9084 to 9090
+LOG (gmm-est:main():gmm-est.cc:146) Written model to exp/tri3c/33.mdl
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Jul  4 16:26:52 BRT 2016, elapsed time 1 seconds

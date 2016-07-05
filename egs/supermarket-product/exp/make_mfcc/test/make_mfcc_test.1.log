@@ -1,0 +1,12 @@
+# compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.1.scp ark:- | copy-feats --compress=true ark:- ark,scp:/home/nlpserver/zzilong/kaldi/egs/supermarket-product/mfcc/raw_mfcc_test.1.ark,/home/nlpserver/zzilong/kaldi/egs/supermarket-product/mfcc/raw_mfcc_test.1.scp 
+# Started at Mon Jul  4 16:02:46 BRT 2016
+#
+copy-feats --compress=true ark:- ark,scp:/home/nlpserver/zzilong/kaldi/egs/supermarket-product/mfcc/raw_mfcc_test.1.ark,/home/nlpserver/zzilong/kaldi/egs/supermarket-product/mfcc/raw_mfcc_test.1.scp 
+compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.1.scp ark:- 
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_test
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_test1
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key felipe_test2
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:181)  Done 3 out of 3 utterances.
+LOG (copy-feats:main():copy-feats.cc:101) Copied 3 feature matrices.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Mon Jul  4 16:02:48 BRT 2016, elapsed time 2 seconds

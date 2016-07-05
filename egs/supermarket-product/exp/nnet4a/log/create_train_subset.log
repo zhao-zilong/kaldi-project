@@ -1,0 +1,16 @@
+# nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl exp/nnet4a/train_subset_uttlist data/train/feats.scp | apply-cmvn  --utt2spk=ark:data/train/utt2spk scp:data/train/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/utt2spk 'ark:cat exp/tri3c_ali/raw_trans.*|' ark:- ark:- |" "ark,s,cs:gunzip -c exp/nnet4a/ali_special.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:exp/nnet4a/egs/train_subset_all.egs 
+# Started at Mon Jul  4 17:40:59 BRT 2016
+#
+nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl exp/nnet4a/train_subset_uttlist data/train/feats.scp | apply-cmvn  --utt2spk=ark:data/train/utt2spk scp:data/train/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/utt2spk 'ark:cat exp/tri3c_ali/raw_trans.*|' ark:- ark:- |" 'ark,s,cs:gunzip -c exp/nnet4a/ali_special.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |' ark:exp/nnet4a/egs/train_subset_all.egs 
+apply-cmvn --utt2spk=ark:data/train/utt2spk scp:data/train/cmvn.scp scp:- ark:- 
+transform-feats --utt2spk=ark:data/train/utt2spk 'ark:cat exp/tri3c_ali/raw_trans.*|' ark:- ark:- 
+ali-to-post ark:- ark:- 
+ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- 
+LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 39 alignments to pdf sequences.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 19 utterances, errors on 0
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 39 alignments.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.313298 over 27178 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 19 utterances; 0 had errors.
+LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 19 feature files, wrote 27178 examples,  with 27178 egs in total; 0 files had errors.
+# Accounting: time=4 threads=1
+# Ended (code 0) at Mon Jul  4 17:41:03 BRT 2016, elapsed time 4 seconds

@@ -1,0 +1,31 @@
+# gmm-est --mix-up=7760 --power=0.25 --write-occs=exp/tri1/18.occs exp/tri1/17.mdl "gmm-sum-accs - exp/tri1/17.*.acc |" exp/tri1/18.mdl 
+# Started at Mon Jul  4 16:06:35 BRT 2016
+#
+gmm-est --mix-up=7760 --power=0.25 --write-occs=exp/tri1/18.occs exp/tri1/17.mdl 'gmm-sum-accs - exp/tri1/17.*.acc |' exp/tri1/18.mdl 
+gmm-sum-accs - exp/tri1/17.1.acc exp/tri1/17.10.acc exp/tri1/17.11.acc exp/tri1/17.12.acc exp/tri1/17.13.acc exp/tri1/17.14.acc exp/tri1/17.15.acc exp/tri1/17.16.acc exp/tri1/17.17.acc exp/tri1/17.18.acc exp/tri1/17.19.acc exp/tri1/17.2.acc exp/tri1/17.20.acc exp/tri1/17.3.acc exp/tri1/17.4.acc exp/tri1/17.5.acc exp/tri1/17.6.acc exp/tri1/17.7.acc exp/tri1/17.8.acc exp/tri1/17.9.acc 
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:63) Summed 20 stats, total count 308780, avg like/frame -76.4672
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:66) Total count of stats is 308780
+LOG (gmm-sum-accs:main():gmm-sum-accs.cc:67) Written stats to -
+LOG (gmm-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is -1.1968e-11 per frame over 308780 frames. 
+LOG (gmm-est:MleUpdate():transition-model.cc:396) 165 probabilities floored, 2760 out of 4031 transition-states skipped due to insuffient data (it is normal to have some skipped.)
+LOG (gmm-est:main():gmm-est.cc:102) Transition model update: Overall -1.1968e-11 log-like improvement per frame over 308780 frames.
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:365) Gaussian has too little data but not removing it because it is the last Gaussian: i = 0, occ = 0, weight = 1
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.053978, occupation count 9.824000, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.058748, occupation count 9.987191, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.053476, occupation count 9.999957, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.047038, occupation count 9.501610, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.074767, occupation count 9.943974, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.043875, occupation count 9.959611, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.053599, occupation count 9.915863, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.036941, occupation count 9.715591, vector size 39)
+WARNING (gmm-est:MleDiagGmmUpdate():mle-diag-gmm.cc:359) Too little data - removing Gaussian (weight 0.035986, occupation count 9.752164, vector size 39)
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:225) 0 variance elements floored in 0 Gaussians, out of 7399
+LOG (gmm-est:MleAmDiagGmmUpdate():mle-am-diag-gmm.cc:229) Removed 9 Gaussians due to counts < --min-gaussian-occupancy=10 and --remove-low-count-gaussians=true
+LOG (gmm-est:main():gmm-est.cc:113) GMM update: Overall 0.0877381 objective function improvement per frame over 308780 frames
+LOG (gmm-est:main():gmm-est.cc:116) GMM update: Overall avg like per frame = -76.4672 over 308780 frames.
+LOG (gmm-est:SplitByCount():am-diag-gmm.cc:116) Split 918 states with target = 7760, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 7399 to 7768
+LOG (gmm-est:main():gmm-est.cc:146) Written model to exp/tri1/18.mdl
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Jul  4 16:06:36 BRT 2016, elapsed time 1 seconds

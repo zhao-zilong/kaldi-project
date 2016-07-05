@@ -1,0 +1,19 @@
+# sgmm2-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.14.gz|" --utt2spk=ark:data/train/split20/14/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/5.mdl "ark:gunzip -c exp/sgmm2_4c/fsts.14.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/14/utt2spk scp:data/train/split20/14/cmvn.scp scp:data/train/split20/14/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/14/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.14 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" "ark:|gzip -c >exp/sgmm2_4c/ali.14.gz" 
+# Started at Mon Jul  4 16:37:57 BRT 2016
+#
+sgmm2-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.14.gz|' --utt2spk=ark:data/train/split20/14/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/5.mdl 'ark:gunzip -c exp/sgmm2_4c/fsts.14.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/14/utt2spk scp:data/train/split20/14/cmvn.scp scp:data/train/split20/14/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/14/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.14 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' 'ark:|gzip -c >exp/sgmm2_4c/ali.14.gz' 
+transform-feats --utt2spk=ark:data/train/split20/14/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.14 ark:- ark:- 
+splice-feats ark:- ark:- 
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/14/utt2spk scp:data/train/split20/14/cmvn.scp scp:data/train/split20/14/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 9 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.243609 over 13797 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 9 utterances; 0 had errors.
+WARNING (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:113) No feature found for utterance felipe_spp3-Sfelipe_spp37
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 13797 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 9 utterances; 0 had errors.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:168) Overall log-likelihood per frame is -37.6872 over 13797 frames.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:170) Retried 0 out of 10 utterances.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:172) Done 9, errors on 1
+# Accounting: time=16 threads=1
+# Ended (code 0) at Mon Jul  4 16:38:13 BRT 2016, elapsed time 16 seconds

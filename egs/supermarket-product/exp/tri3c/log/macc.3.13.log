@@ -1,0 +1,33 @@
+# ali-to-post "ark:gunzip -c exp/tri3c/ali.13.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3c/3.mdl ark:- ark:- | gmm-acc-mllt --rand-prune=4.0 exp/tri3c/3.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/13/utt2spk scp:data/train/split20/13/cmvn.scp scp:data/train/split20/13/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/13/utt2spk ark,s,cs:exp/tri3c/raw_trans.13 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/0.mat ark:- ark:- |" ark:- exp/tri3c/3.13.macc 
+# Started at Mon Jul  4 16:22:11 BRT 2016
+#
+gmm-acc-mllt --rand-prune=4.0 exp/tri3c/3.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/13/utt2spk scp:data/train/split20/13/cmvn.scp scp:data/train/split20/13/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/13/utt2spk ark,s,cs:exp/tri3c/raw_trans.13 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/0.mat ark:- ark:- |' ark:- exp/tri3c/3.13.macc 
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3c/3.mdl ark:- ark:- 
+ali-to-post 'ark:gunzip -c exp/tri3c/ali.13.gz|' ark:- 
+transform-feats exp/tri3c/0.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split20/13/utt2spk ark,s,cs:exp/tri3c/raw_trans.13 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/13/utt2spk scp:data/train/split20/13/cmvn.scp scp:data/train/split20/13/feats.scp ark:- 
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -62.1519 over 665 frames.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 10 alignments.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -58.9104 over 704 frames.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -56.8001 over 884 frames.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -57.4734 over 682 frames.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 10 utterances, errors on 0
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -56.5492 over 799 frames.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 10 posteriors.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -55.7442 over 751 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.119112 over 11658 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -57.6872 over 731 frames.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -57.1514 over 703 frames.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -56.5851 over 653 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -81.746 over 11658 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:108) Average like for this file is -57.8495 over 683 frames.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:114) Avg like per frame so far is -57.6246
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:119) Done 10 files, 0 with no posteriors, 0 with other errors.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:123) Overall avg like per frame (Gaussian only) = -57.6246 over 7255 frames.
+LOG (gmm-acc-mllt:main():gmm-acc-mllt.cc:127) Written accs.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jul  4 16:22:11 BRT 2016, elapsed time 0 seconds

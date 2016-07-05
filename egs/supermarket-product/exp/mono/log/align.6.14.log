@@ -1,0 +1,17 @@
+# gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.0 1 exp/mono/6.mdl - |" "ark:gunzip -c exp/mono/fsts.14.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/14/utt2spk scp:data/train/split20/14/cmvn.scp scp:data/train/split20/14/feats.scp ark:- | add-deltas ark:- ark:- |" "ark,t:|gzip -c >exp/mono/ali.14.gz" 
+# Started at Mon Jul  4 16:03:14 BRT 2016
+#
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/mono/6.mdl - |' 'ark:gunzip -c exp/mono/fsts.14.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/14/utt2spk scp:data/train/split20/14/cmvn.scp scp:data/train/split20/14/feats.scp ark:- | add-deltas ark:- ark:- |' 'ark,t:|gzip -c >exp/mono/ali.14.gz' 
+gmm-boost-silence --boost=1.0 1 exp/mono/6.mdl - 
+WARNING (gmm-boost-silence:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
+LOG (gmm-boost-silence:main():gmm-boost-silence.cc:103) Wrote model to -
+add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/14/utt2spk scp:data/train/split20/14/cmvn.scp scp:data/train/split20/14/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 9 utterances, errors on 0
+WARNING (gmm-align-compiled:main():gmm-align-compiled.cc:98) No features for utterance felipe_spp3-Sfelipe_spp37
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -82.5258 over 13797 frames.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 0 out of 10 utterances.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 9, errors on 1
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jul  4 16:03:14 BRT 2016, elapsed time 0 seconds

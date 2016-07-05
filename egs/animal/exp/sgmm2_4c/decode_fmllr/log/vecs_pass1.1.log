@@ -1,47 +1,47 @@
 # gunzip -c exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz | lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-to-post --acoustic-scale=0.1 ark:- ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.alimdl ark:- ark:- | sgmm2-post-to-gpost "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" exp/sgmm2_4c/final.alimdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark:- ark:- | sgmm2-est-spkvecs-gpost --spk2utt=ark:data/test/split1/1/spk2utt exp/sgmm2_4c/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/pre_vecs.1 
-# Started at Fri Jun 24 14:40:12 BRT 2016
+# Started at Tue Jun 28 15:15:52 BRT 2016
 #
 sgmm2-est-spkvecs-gpost --spk2utt=ark:data/test/split1/1/spk2utt exp/sgmm2_4c/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/pre_vecs.1 
 weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.alimdl ark:- ark:- 
 lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
-sgmm2-post-to-gpost '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' exp/sgmm2_4c/final.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark:- ark:- 
-lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
 lattice-to-post --acoustic-scale=0.1 ark:- ark:- 
-splice-feats ark:- ark:- 
-transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
+sgmm2-post-to-gpost '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' exp/sgmm2_4c/final.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark:- ark:- 
+LOG (lattice-prune:main():lattice-prune.cc:95) For utterance felipe_test_test7, pruned #states from 4892 to 3277 and #arcs from 9483 to 5127
 transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.127485 over 6061 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 6061 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
-transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
 splice-feats ark:- ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.127485 over 6061 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 6061 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (lattice-prune:main():lattice-prune.cc:95) For utterance felipe_test_test0, pruned #states from 69999 to 44305 and #arcs from 139556 to 72683
-LOG (lattice-prune:main():lattice-prune.cc:104) Overall, pruned from on average 69999 to 44305 states, and from 139556 to 72683 arcs, over 1 utterances.
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+LOG (lattice-prune:main():lattice-prune.cc:104) Overall, pruned from on average 4892 to 3277 states, and from 9483 to 5127 arcs, over 1 utterances.
 LOG (lattice-prune:main():lattice-prune.cc:108) Done 1 lattices.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 LOG (lattice-determinize-pruned:main():lattice-determinize-pruned.cc:111) Done 1 lattices, determinization finished earlier than specified by the beam on 0 of these.
-LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -4.85189 over 6061 frames.  Average acoustic like/frame is -4.77312
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -7.17521 over 527 frames.  Average acoustic like/frame is -7.06903
 LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 1 lattices.
 LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 1 posteriors.
-LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:173) Overall like per frame (Gaussian only) = -18.5441 over 6061 frames.
+splice-feats ark:- ark:- 
+transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:173) Overall like per frame (Gaussian only) = -40.1829 over 527 frames.
 LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:176) Done 1 files, 0 with errors.
+LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 9 eigenvalues. 
+LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 9 eigenvalues. 
+LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 8 eigenvalues. 
+LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 7 eigenvalues. 
 LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 6 eigenvalues. 
-LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 5 eigenvalues. 
-LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 4 eigenvalues. 
-LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 4 eigenvalues. 
-LOG (sgmm2-est-spkvecs-gpost:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 4 eigenvalues. 
-LOG (sgmm2-est-spkvecs-gpost:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.737964 per frame, over 1665.24 frames.
-LOG (sgmm2-est-spkvecs-gpost:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker felipe_test, auxf-impr from speaker vector is 0.737964, over 1665.24 frames.
+LOG (sgmm2-est-spkvecs-gpost:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 3.40959 per frame, over 230 frames.
+LOG (sgmm2-est-spkvecs-gpost:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker felipe_test, auxf-impr from speaker vector is 3.40959, over 230 frames.
 LOG (sgmm2-est-spkvecs-gpost:main():sgmm2-est-spkvecs-gpost.cc:208) Done 1 files, 0 with errors.
-LOG (sgmm2-est-spkvecs-gpost:main():sgmm2-est-spkvecs-gpost.cc:210) Overall auxf impr per frame is 0.737964 over 1665.24 frames.
-# Accounting: time=2 threads=1
-# Ended (code 0) at Fri Jun 24 14:40:14 BRT 2016, elapsed time 2 seconds
+LOG (sgmm2-est-spkvecs-gpost:main():sgmm2-est-spkvecs-gpost.cc:210) Overall auxf impr per frame is 3.40959 over 230 frames.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Tue Jun 28 15:15:53 BRT 2016, elapsed time 1 seconds

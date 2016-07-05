@@ -1,14 +1,14 @@
 # lattice-scale --inv-acoustic-scale=14 "ark:gunzip -c exp/mono/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/mono/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/mono/graph/words.txt | cat > exp/mono/decode/scoring_kaldi/penalty_0.5/14.txt 
-# Started at Fri Jun 24 14:39:15 BRT 2016
+# Started at Mon Jun 27 14:22:00 BRT 2016
 #
 lattice-scale --inv-acoustic-scale=14 'ark:gunzip -c exp/mono/decode/lat.*.gz|' ark:- 
-lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
 lattice-best-path --word-symbol-table=exp/mono/graph/words.txt ark:- ark,t:- 
+lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test0, best cost 412.743 + 34827.3 = 35240 over 6061 frames.
-felipe_test_test0 cavalo camarao peixe egua tenia esquilo minhoca aranha peixe girino cachorro gato minhoca galinha galo ra truta boi vaca <UNK> sardinha corsa formiga moreia passaro passaro-preto bicho-do-mato 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 5.81423 = 0.0680982 [graph] + 5.74613 [acoustic] over 6061 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test4, best cost 415.388 + 52188.4 = 52603.8 over 9411 frames.
+felipe_test_test4 camarao lagosta tenia minhoca vitelo mosca mosquito camelo escorpiao cobra escaravelho andorinha lobo leao crocodilo jiboia anaconda sapo javali corvo joaninha cavalo zebra mula tubarao cupim 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 5.58961 = 0.0441385 [graph] + 5.54547 [acoustic] over 9411 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
-# Accounting: time=0 threads=1
-# Ended (code 0) at Fri Jun 24 14:39:15 BRT 2016, elapsed time 0 seconds
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Jun 27 14:22:01 BRT 2016, elapsed time 1 seconds

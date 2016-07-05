@@ -1,0 +1,32 @@
+# ali-to-post "ark:gunzip -c exp/sgmm2_4c/ali.8.gz|" ark:- | sgmm2-post-to-gpost --spk-vecs=ark:exp/sgmm2_4c/vecs.8 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.8.gz|" --utt2spk=ark:data/train/split20/8/utt2spk exp/sgmm2_4c/25.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/8/utt2spk scp:data/train/split20/8/cmvn.scp scp:data/train/split20/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- ark:- | sgmm2-acc-stats-gpost --rand-prune=0.1 --update-flags=vMwcS exp/sgmm2_4c/26.alimdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/8/utt2spk scp:data/train/split20/8/cmvn.scp scp:data/train/split20/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- exp/sgmm2_4c/26.8.aliacc 
+# Started at Mon Jul  4 17:36:18 BRT 2016
+#
+ali-to-post 'ark:gunzip -c exp/sgmm2_4c/ali.8.gz|' ark:- 
+sgmm2-post-to-gpost --spk-vecs=ark:exp/sgmm2_4c/vecs.8 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.8.gz|' --utt2spk=ark:data/train/split20/8/utt2spk exp/sgmm2_4c/25.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/8/utt2spk scp:data/train/split20/8/cmvn.scp scp:data/train/split20/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- ark:- 
+sgmm2-acc-stats-gpost --rand-prune=0.1 --update-flags=vMwcS exp/sgmm2_4c/26.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/8/utt2spk scp:data/train/split20/8/cmvn.scp scp:data/train/split20/8/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- exp/sgmm2_4c/26.8.aliacc 
+apply-cmvn --utt2spk=ark:data/train/split20/8/utt2spk scp:data/train/split20/8/cmvn.scp scp:data/train/split20/8/feats.scp ark:- 
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split20/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- 
+splice-feats ark:- ark:- 
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split20/8/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.8 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/8/utt2spk scp:data/train/split20/8/cmvn.scp scp:data/train/split20/8/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 9 utterances, errors on 0
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 9 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.311388 over 12272 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 9 utterances; 0 had errors.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 9 alignments.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.311388 over 12272 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 9 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 12272 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 9 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 12272 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 9 utterances; 0 had errors.
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:173) Overall like per frame (Gaussian only) = -31.6125 over 12272 frames.
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:176) Done 9 files, 0 with errors.
+LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:164) Overall number of frames is 12272
+LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:165) Done 9 files, 0 with errors.
+LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:173) Written accs.
+# Accounting: time=17 threads=1
+# Ended (code 0) at Mon Jul  4 17:36:35 BRT 2016, elapsed time 17 seconds

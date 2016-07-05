@@ -1,0 +1,32 @@
+# ali-to-post "ark:gunzip -c exp/tri3b_ali/pre_ali.11.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.alimdl ark:- ark:- | gmm-post-to-gpost exp/tri3b/final.alimdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |" ark:- ark:- | gmm-est-fmllr-gpost --fmllr-update-type=full --spk2utt=ark:data/train/split20/11/spk2utt exp/tri3b/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/tri3b_ali/trans.11 
+# Started at Mon Jul  4 16:20:30 BRT 2016
+#
+gmm-est-fmllr-gpost --fmllr-update-type=full --spk2utt=ark:data/train/split20/11/spk2utt exp/tri3b/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/tri3b_ali/trans.11 
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.alimdl ark:- ark:- 
+gmm-post-to-gpost exp/tri3b/final.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |' ark:- ark:- 
+ali-to-post 'ark:gunzip -c exp/tri3b_ali/pre_ali.11.gz|' ark:- 
+transform-feats exp/tri3b/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- 
+splice-feats ark:- ark:- 
+transform-feats exp/tri3b/final.mat ark:- ark:- 
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 20 alignments.
+LOG (gmm-est-fmllr-gpost:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 9.24946 per frame over 8645 frames.
+LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:141) For speaker felipe_spp2, auxf-impr from fMLLR is 9.24946, over 8645 frames.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 20 posteriors.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -82.5515 over 30202 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:124) Done 20 files, 0 with no posteriors, 0 with other errors.
+LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:128) Overall avg like per frame (Gaussian only) = -47.0193 over 16072 frames.
+LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:131) Done converting post to gpost
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -82.5515 over 30202 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (gmm-est-fmllr-gpost:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.94875 per frame over 7427 frames.
+LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:141) For speaker felipe_spp20, auxf-impr from fMLLR is 1.94875, over 7427 frames.
+LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:186) Done 20 files, 0 with no gposts, 0 with other errors.
+LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:188) Overall fMLLR auxf impr per frame is 5.87574 over 16072 frames.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Jul  4 16:20:31 BRT 2016, elapsed time 1 seconds

@@ -1,14 +1,14 @@
 # lattice-scale --inv-acoustic-scale=10 "ark:gunzip -c exp/tri3c/decode.si/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri3c/graph/words.txt | cat > exp/tri3c/decode.si/scoring_kaldi/penalty_1.0/10.txt 
-# Started at Fri Jun 24 14:40:43 BRT 2016
+# Started at Tue Jun 28 15:16:00 BRT 2016
 #
 lattice-scale --inv-acoustic-scale=10 'ark:gunzip -c exp/tri3c/decode.si/lat.*.gz|' ark:- 
-lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- 
 lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test0, best cost 471.308 + 27144.9 = 27616.2 over 6061 frames.
-felipe_test_test0 cavalo camarao peixe egua tenia esquilo leoa aranha juriti girino <UNK> cachorro gato <UNK> mula galinha galo galo truta boi vaca <UNK> sardinha corsa formiga moreia passaro passaro-preto bicho-do-mato 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 4.55637 = 0.0777608 [graph] + 4.47861 [acoustic] over 6061 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test7, best cost 57.5062 + 3264.3 = 3321.81 over 527 frames.
+felipe_test_test7 <UNK> gato rato pato 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 6.30324 = 0.10912 [graph] + 6.19412 [acoustic] over 527 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Fri Jun 24 14:40:43 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Tue Jun 28 15:16:00 BRT 2016, elapsed time 0 seconds

@@ -1,0 +1,21 @@
+# gmm-latgen-faster --max-active=2000 --beam=10.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri3c/graph/words.txt exp/tri3c/final.alimdl exp/tri3c/graph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/final.mat ark:- ark:- |" "ark:|gzip -c > exp/tri3c/decode.si/lat.1.gz" 
+# Started at Mon Jul  4 16:27:22 BRT 2016
+#
+gmm-latgen-faster --max-active=2000 --beam=10.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri3c/graph/words.txt exp/tri3c/final.alimdl exp/tri3c/graph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/final.mat ark:- ark:- |' 'ark:|gzip -c > exp/tri3c/decode.si/lat.1.gz' 
+transform-feats exp/tri3c/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 3 utterances, errors on 0
+felipe_test feijao arroz carne detergente escova-de-dente desodorante <UNK> pasta-de-dente cha coco <UNK> porco rucula alface tomate batata <cough> sucrilhos leite ovos pao <UNK> iogurte oleo massa-de-tomate tempero massas aveia farinha amendoim farofa <cough> 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test is -5.10482 over 6798 frames.
+felipe_test1 carne <hesitation> rum morango galinha <hesitation> cebola cenoura tomate beterraba <cough> <UNK> agriao rucula arroz feijao farofa chas nescau cafe filtro-de-papel azeite cloro massa queijos iogurte leite pao ovos refrigerante vodca <cough> <UNK> <hesitation> <hesitation> ovo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test1 is -4.63047 over 6173 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 19069 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
+felipe_test2 comida-de-cachorro comida-de-gato pasta-de-dente shampoo oleo azeite molho-de-tomate massa queijo cebola cenoura batata alface tomate maçã abacaxi <cough> pao leite ovos iogurte papel-higienico aparelho-de-barbear <cough> veneno-para-matar-mosquito detergente saco-de-lixo 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test2 is -4.61258 over 6098 frames.
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:175) Time taken 9.68474s: real-time factor assuming 100 frames/sec is 0.0507879
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:178) Done 3 utterances, failed for 0
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:180) Overall log-likelihood per frame is -4.79385 over 19069 frames.
+# Accounting: time=10 threads=1
+# Ended (code 0) at Mon Jul  4 16:27:32 BRT 2016, elapsed time 10 seconds

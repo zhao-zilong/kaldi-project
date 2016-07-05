@@ -1,0 +1,18 @@
+# gmm-acc-stats-ali exp/tri3c/19.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/10.mat ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c/ali.11.gz|" exp/tri3c/19.11.acc 
+# Started at Mon Jul  4 16:24:54 BRT 2016
+#
+gmm-acc-stats-ali exp/tri3c/19.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split20/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/10.mat ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c/ali.11.gz|' exp/tri3c/19.11.acc 
+transform-feats exp/tri3c/10.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split20/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/11/utt2spk scp:data/train/split20/11/cmvn.scp scp:data/train/split20/11/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.431221 over 30202 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 30202 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 20 files, 0 with errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -42.2047 over 30202 frames.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:123) Written accs.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Jul  4 16:24:55 BRT 2016, elapsed time 1 seconds

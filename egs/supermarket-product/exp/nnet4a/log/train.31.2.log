@@ -1,0 +1,17 @@
+# nnet-shuffle-egs --buffer-size=5000 --srand=31 ark:exp/nnet4a/egs/egs.2.3.ark ark:- | nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=31 exp/nnet4a/31.mdl ark:- exp/nnet4a/32.2.mdl 
+# Started at Mon Jul  4 17:50:21 BRT 2016
+#
+nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=31 exp/nnet4a/31.mdl ark:- exp/nnet4a/32.2.mdl 
+nnet-shuffle-egs --buffer-size=5000 --srand=31 ark:exp/nnet4a/egs/egs.2.3.ark ark:- 
+LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 4373 neural-network training examples using a buffer (partial randomization)
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.991619, for component index 4
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.979315, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.933271, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.888954, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.852983, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.854989, for component index 2
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 4373 examples, average log-prob per frame is -0.880417
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-0.880417
+LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 4373 training examples (weighted).  Wrote model to exp/nnet4a/32.2.mdl
+# Accounting: time=4 threads=1
+# Ended (code 0) at Mon Jul  4 17:50:25 BRT 2016, elapsed time 4 seconds

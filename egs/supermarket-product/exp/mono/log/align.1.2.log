@@ -1,0 +1,17 @@
+# gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=6 --retry-beam=24 --careful=false "gmm-boost-silence --boost=1.0 1 exp/mono/1.mdl - |" "ark:gunzip -c exp/mono/fsts.2.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/2/utt2spk scp:data/train/split20/2/cmvn.scp scp:data/train/split20/2/feats.scp ark:- | add-deltas ark:- ark:- |" "ark,t:|gzip -c >exp/mono/ali.2.gz" 
+# Started at Mon Jul  4 16:02:52 BRT 2016
+#
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=6 --retry-beam=24 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/mono/1.mdl - |' 'ark:gunzip -c exp/mono/fsts.2.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/2/utt2spk scp:data/train/split20/2/cmvn.scp scp:data/train/split20/2/feats.scp ark:- | add-deltas ark:- ark:- |' 'ark,t:|gzip -c >exp/mono/ali.2.gz' 
+gmm-boost-silence --boost=1.0 1 exp/mono/1.mdl - 
+WARNING (gmm-boost-silence:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
+LOG (gmm-boost-silence:main():gmm-boost-silence.cc:103) Wrote model to -
+apply-cmvn --utt2spk=ark:data/train/split20/2/utt2spk scp:data/train/split20/2/cmvn.scp scp:data/train/split20/2/feats.scp ark:- 
+add-deltas ark:- ark:- 
+WARNING (gmm-align-compiled:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance felipe_spp11-Sfelipe_spp115 with beam 24
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 10 utterances, errors on 0
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -92.7715 over 15495 frames.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 1 out of 10 utterances.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 10, errors on 0
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Jul  4 16:02:53 BRT 2016, elapsed time 1 seconds

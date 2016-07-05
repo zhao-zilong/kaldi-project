@@ -1,0 +1,18 @@
+# gmm-acc-stats-ali exp/tri3b/23.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/5/utt2spk scp:data/train/split20/5/cmvn.scp scp:data/train/split20/5/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split20/5/utt2spk ark:exp/tri3b/trans.5 ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3b/ali.5.gz|" exp/tri3b/23.5.acc 
+# Started at Mon Jul  4 16:17:48 BRT 2016
+#
+gmm-acc-stats-ali exp/tri3b/23.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split20/5/utt2spk scp:data/train/split20/5/cmvn.scp scp:data/train/split20/5/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split20/5/utt2spk ark:exp/tri3b/trans.5 ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3b/ali.5.gz|' exp/tri3b/23.5.acc 
+transform-feats --utt2spk=ark:data/train/split20/5/utt2spk ark:exp/tri3b/trans.5 ark:- ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/5/utt2spk scp:data/train/split20/5/cmvn.scp scp:data/train/split20/5/feats.scp ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 10 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -82.5515 over 13609 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 1.12265 over 13609 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 10 files, 0 with errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -38.4344 over 13609 frames.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:123) Written accs.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Jul  4 16:17:49 BRT 2016, elapsed time 1 seconds

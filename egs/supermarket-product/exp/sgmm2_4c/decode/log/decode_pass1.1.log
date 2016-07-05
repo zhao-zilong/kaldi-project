@@ -1,0 +1,29 @@
+# sgmm2-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.1 --determinize-lattice=false --allow-partial=true --word-symbol-table=exp/sgmm2_4c/graph/words.txt --max-mem=50000000 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode/gselect.1.gz| copy-gselect --n=3 ark:- ark:- |" exp/sgmm2_4c/final.alimdl exp/sgmm2_4c/graph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" "ark:|gzip -c > exp/sgmm2_4c/decode/pre_lat.1.gz" 
+# Started at Mon Jul  4 17:40:00 BRT 2016
+#
+sgmm2-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.1 --determinize-lattice=false --allow-partial=true --word-symbol-table=exp/sgmm2_4c/graph/words.txt --max-mem=50000000 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode/gselect.1.gz| copy-gselect --n=3 ark:- ark:- |' exp/sgmm2_4c/final.alimdl exp/sgmm2_4c/graph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' 'ark:|gzip -c > exp/sgmm2_4c/decode/pre_lat.1.gz' 
+transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 3 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -1.27549 over 19069 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
+copy-gselect --n=3 ark:- ark:- 
+felipe_test feijao arroz carne detergente escova-de-dente desodorante pasta-de-dente shampoo repolho coco coador alface tomate batata sucrilhos leite ovos pao iogurte oleo massa-de-tomate tempero massa aveia farinha amendoim farofa 
+LOG (sgmm2-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test is -5.5854 over 6798 frames.
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance felipe_test is -5.5854 over 6798 frames.
+felipe_test1 carne <hesitation> <hesitation> molho galinha cebola cenoura tomate beterraba <cough> agriao coco arroz feijao farofa cha nescau cafe filtro-de-papel azeite oleo massa queijo iogurte leite pao ovos refrigerante vodca <hesitation> <hesitation> ovo 
+LOG (sgmm2-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test1 is -5.49781 over 6173 frames.
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance felipe_test1 is -5.49781 over 6173 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 19069 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
+LOG (copy-gselect:main():copy-gselect.cc:71) Copied 3 gselect objects,  limiting sizes to 3
+felipe_test2 comida-de-cachorro comida-de-gato <hesitation> pasta-de-dente shampoo oleo azeite molho-de-tomate massa queijo cebola cera batata alface tomate maçã abacaxi pao leite ovos iogurte papel-higienico aparelho-de-barbear veneno-para-matar-mosquito detergente saco-de-lixo 
+LOG (sgmm2-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test2 is -5.41637 over 6098 frames.
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance felipe_test2 is -5.41637 over 6098 frames.
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:252) Time taken [excluding initialization] 19.5007s: real-time factor assuming 100 frames/sec is 0.102264
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:255) Done 3 utterances, failed for 0
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:257) Overall log-likelihood per frame = -5.50299 over 19069 frames.
+# Accounting: time=21 threads=1
+# Ended (code 0) at Mon Jul  4 17:40:21 BRT 2016, elapsed time 21 seconds

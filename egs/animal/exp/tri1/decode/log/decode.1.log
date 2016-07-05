@@ -1,14 +1,14 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph/words.txt exp/tri1/final.mdl exp/tri1/graph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > exp/tri1/decode/lat.1.gz" 
-# Started at Fri Jun 24 14:39:17 BRT 2016
+# Started at Mon Jun 27 14:22:02 BRT 2016
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/tri1/graph/words.txt exp/tri1/final.mdl exp/tri1/graph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > exp/tri1/decode/lat.1.gz' 
 add-deltas ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-felipe_test_test0 cavalo camarao peixe egua tenia esquilo minhoca aguia juriti hiena cachorro gato minhoca galinha galo truta boi vaca sardinha corsa formiga moreia passaro passaro-preto bicho-do-mato 
-LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test_test0 is -6.80215 over 6061 frames.
-LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:175) Time taken 5.95474s: real-time factor assuming 100 frames/sec is 0.0982468
+felipe_test_test4 camarao urso tenia minhoca verme mosca mosquito camelo escorpiao escaravelho andorinha lobo leao crocodilo jiboia anaconda sapo javali porco galinha cavalo vieira mula tubarao golfinho 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test_test4 is -6.49582 over 9411 frames.
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:175) Time taken 9.23881s: real-time factor assuming 100 frames/sec is 0.0981703
 LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:178) Done 1 utterances, failed for 0
-LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:180) Overall log-likelihood per frame is -6.80215 over 6061 frames.
-# Accounting: time=6 threads=1
-# Ended (code 0) at Fri Jun 24 14:39:23 BRT 2016, elapsed time 6 seconds
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:180) Overall log-likelihood per frame is -6.49582 over 9411 frames.
+# Accounting: time=9 threads=1
+# Ended (code 0) at Mon Jun 27 14:22:11 BRT 2016, elapsed time 9 seconds

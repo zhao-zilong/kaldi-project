@@ -1,14 +1,14 @@
 # lattice-scale --inv-acoustic-scale=14 "ark:gunzip -c exp/tri2b/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri2b/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri2b/graph/words.txt | cat > exp/tri2b/decode/scoring_kaldi/penalty_0.5/14.txt 
-# Started at Fri Jun 24 14:39:30 BRT 2016
+# Started at Mon Jun 27 14:22:22 BRT 2016
 #
 lattice-scale --inv-acoustic-scale=14 'ark:gunzip -c exp/tri2b/decode/lat.*.gz|' ark:- 
 lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
 lattice-best-path --word-symbol-table=exp/tri2b/graph/words.txt ark:- ark,t:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test0, best cost 448.302 + 18540.4 = 18988.7 over 6061 frames.
-felipe_test_test0 cavalo camarao peixe egua tenia esquilo leoa aguia <UNK> cachorro gato minhoca galinha galo truta boi vaca sardinha corsa formiga moreia passaro passaro-preto bicho-do-mato 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 3.13293 = 0.0739651 [graph] + 3.05897 [acoustic] over 6061 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test4, best cost 418.777 + 25437 = 25855.8 over 9411 frames.
+felipe_test_test4 camarao <UNK> minhoca verme mosca mosquito <UNK> camelo escorpiao cobra escaravelho andorinha lobo leao crocodilo <UNK> jiboia anaconda sapo javali boi galinha cavalo zebra mula tubarao golfinho 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 2.7474 = 0.0444987 [graph] + 2.7029 [acoustic] over 9411 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Fri Jun 24 14:39:30 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Mon Jun 27 14:22:22 BRT 2016, elapsed time 0 seconds
