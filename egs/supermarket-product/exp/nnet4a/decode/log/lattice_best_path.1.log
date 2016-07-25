@@ -1,7 +1,7 @@
-# ali-to-phones --per-frame=true exp/nnet4a/decode/../final.mdl "ark:gunzip -c exp/nnet4a/decode/ali_tmp.1.gz|" ark,t:- | paste /dev/stdin <( gunzip -c exp/nnet4a/decode/depth_tmp.1.gz ) | awk '{ half=NF/2; for (n=2; n<=half; n++) { m=n+half; count[$n " " $m]++;}} END{for(k in count) print k, count[k]; }' | gzip -c > exp/nnet4a/decode/depth_stats_tmp.1.gz 
-# Started at Mon Jul  4 18:17:47 BRT 2016
-#
+# Running on red-black-tea
+# Started at Mon Jul 18 17:10:23 BRT 2016
+# ali-to-phones --per-frame=true exp/nnet4a/decode/../final.mdl "ark:gunzip -c exp/nnet4a/decode/ali_tmp.1.gz|" ark,t:- | paste /dev/stdin <( gunzip -c exp/nnet4a/decode/depth_tmp.1.gz ) | awk '{ half=NF/2; for (n=2; n<=half; n++) { m=n+half; count[ " " ]++;}} END{for(k in count) print k, count[k]; }' | gzip -c > exp/nnet4a/decode/depth_stats_tmp.1.gz 
 ali-to-phones --per-frame=true exp/nnet4a/decode/../final.mdl 'ark:gunzip -c exp/nnet4a/decode/ali_tmp.1.gz|' ark,t:- 
 LOG (ali-to-phones:main():ali-to-phones.cc:134) Done 3 utterances.
 # Accounting: time=0 threads=1
-# Ended (code 0) at Mon Jul  4 18:17:47 BRT 2016, elapsed time 0 seconds
+# Finished at Mon Jul 18 17:10:23 BRT 2016 with status 0

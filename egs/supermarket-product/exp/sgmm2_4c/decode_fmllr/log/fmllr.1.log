@@ -1,0 +1,45 @@
+# gunzip -c exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz | sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --utt2spk=ark:data/test/split1/1/utt2spk "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" exp/sgmm2_4c/final.mdl ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark:- | lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-to-post --acoustic-scale=0.1 ark:- ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.mdl ark:- ark:- | sgmm2-est-fmllr --spk2utt=ark:data/test/split1/1/spk2utt "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --fmllr-iters=10 --fmllr-min-count=1000 exp/sgmm2_4c/final.fmllr_mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/trans.1 
+# Started at Tue Jul  5 11:59:27 BRT 2016
+#
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.mdl ark:- ark:- 
+sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --utt2spk=ark:data/test/split1/1/utt2spk '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' exp/sgmm2_4c/final.mdl ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark:- 
+lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
+lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
+lattice-to-post --acoustic-scale=0.1 ark:- ark:- 
+sgmm2-est-fmllr --spk2utt=ark:data/test/split1/1/spk2utt '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --fmllr-iters=10 --fmllr-min-count=1000 exp/sgmm2_4c/final.fmllr_mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/trans.1 
+transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+splice-feats ark:- ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 3 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -1.27549 over 19069 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
+transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 3 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -1.27549 over 19069 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
+LOG (lattice-prune:main():lattice-prune.cc:95) For utterance felipe_test, pruned #states from 10961 to 7252 and #arcs from 19586 to 10886
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 19069 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
+LOG (lattice-prune:main():lattice-prune.cc:95) For utterance felipe_test1, pruned #states from 13250 to 9707 and #arcs from 23987 to 14860
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -79.7442 over 19069 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 3 utterances; 0 had errors.
+LOG (sgmm2-rescore-lattice:main():sgmm2-rescore-lattice.cc:159) Done 3 lattices, errors on 0
+LOG (lattice-prune:main():lattice-prune.cc:95) For utterance felipe_test2, pruned #states from 9701 to 7441 and #arcs from 17323 to 11561
+LOG (lattice-prune:main():lattice-prune.cc:104) Overall, pruned from on average 11304 to 8133.33 states, and from 20298.7 to 12435.7 arcs, over 3 utterances.
+LOG (lattice-prune:main():lattice-prune.cc:108) Done 3 lattices.
+LOG (lattice-determinize-pruned:main():lattice-determinize-pruned.cc:111) Done 3 lattices, determinization finished earlier than specified by the beam on 0 of these.
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -5.96922 over 19069 frames.  Average acoustic like/frame is -5.90427
+LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 3 lattices.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 3 posteriors.
+WARNING (sgmm2-est-fmllr:CalcFmllrStepSize():fmllr-sgmm2.cc:343) Objective function decreased (-31221.2->-31221.2). Halving step size change (0.212463 -> 0.212453)
+WARNING (sgmm2-est-fmllr:CalcFmllrStepSize():fmllr-sgmm2.cc:343) Objective function decreased (-32242.5->-32242.5). Halving step size change (0.173478 -> 0.173471)
+WARNING (sgmm2-est-fmllr:CalcFmllrStepSize():fmllr-sgmm2.cc:343) Objective function decreased (-33514.4->-33514.4). Halving step size change (0.173815 -> 0.17381)
+LOG (sgmm2-est-fmllr:Update():fmllr-sgmm2.cc:490) Auxiliary function improvement for FMLLR = 7.16964 per frame over 5640.87 frames. Log-determinant = -6.02283
+LOG (sgmm2-est-fmllr:main():sgmm2-est-fmllr.cc:293) Done 3 files, 0 with errors.
+LOG (sgmm2-est-fmllr:main():sgmm2-est-fmllr.cc:294) Overall auxf impr per frame is 7.16964 per frame, over 5640.87 frames.
+# Accounting: time=8 threads=1
+# Ended (code 0) at Tue Jul  5 11:59:35 BRT 2016, elapsed time 8 seconds

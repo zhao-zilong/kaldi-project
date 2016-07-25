@@ -45,7 +45,7 @@ steps/decode_sgmm2.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
 #steps/decode_sgmm2.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
 #  --transform-dir exp/tri3c/decode_ug  exp/sgmm2_4c/graph_ug data/test exp/sgmm2_4c/decode_ug || exit 1;
 
-steps/decode_sgmm2.sh --use-fmllr true --config conf/decode.config --nj 20 --cmd "$decode_cmd" \
+steps/decode_sgmm2.sh --use-fmllr true --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
   --transform-dir exp/tri3c/decode  exp/sgmm2_4c/graph data/test exp/sgmm2_4c/decode_fmllr || exit 1;
  
 

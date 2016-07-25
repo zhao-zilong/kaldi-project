@@ -1,10 +1,10 @@
-# nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split20/18/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split20/18/utt2spk scp:data/train/split20/18/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split20/18/utt2spk ark:exp/tri3c_ali/raw_trans.18 ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c_ali/ali.18.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:- | nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.18.ark ark:exp/nnet4a/egs/egs_orig.2.18.ark ark:exp/nnet4a/egs/egs_orig.3.18.ark ark:exp/nnet4a/egs/egs_orig.4.18.ark ark:exp/nnet4a/egs/egs_orig.5.18.ark ark:exp/nnet4a/egs/egs_orig.6.18.ark ark:exp/nnet4a/egs/egs_orig.7.18.ark ark:exp/nnet4a/egs/egs_orig.8.18.ark ark:exp/nnet4a/egs/egs_orig.9.18.ark ark:exp/nnet4a/egs/egs_orig.10.18.ark ark:exp/nnet4a/egs/egs_orig.11.18.ark ark:exp/nnet4a/egs/egs_orig.12.18.ark ark:exp/nnet4a/egs/egs_orig.13.18.ark ark:exp/nnet4a/egs/egs_orig.14.18.ark ark:exp/nnet4a/egs/egs_orig.15.18.ark ark:exp/nnet4a/egs/egs_orig.16.18.ark 
-# Started at Mon Jul  4 17:41:16 BRT 2016
-#
+# Running on water1
+# Started at Mon Jul 18 11:18:54 BRT 2016
+# nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split20/18/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split20/18/utt2spk scp:data/train/split20/18/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split20/18/utt2spk ark:exp/tri3c_ali/raw_trans.18 ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c_ali/ali.18.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:- | nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.18.ark ark:exp/nnet4a/egs/egs_orig.2.18.ark ark:exp/nnet4a/egs/egs_orig.3.18.ark ark:exp/nnet4a/egs/egs_orig.4.18.ark ark:exp/nnet4a/egs/egs_orig.5.18.ark ark:exp/nnet4a/egs/egs_orig.6.18.ark ark:exp/nnet4a/egs/egs_orig.7.18.ark ark:exp/nnet4a/egs/egs_orig.8.18.ark 
 nnet-get-egs --left-context=5 --right-context=5 'ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split20/18/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split20/18/utt2spk scp:data/train/split20/18/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split20/18/utt2spk ark:exp/tri3c_ali/raw_trans.18 ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c_ali/ali.18.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |' ark:- 
-nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.18.ark ark:exp/nnet4a/egs/egs_orig.2.18.ark ark:exp/nnet4a/egs/egs_orig.3.18.ark ark:exp/nnet4a/egs/egs_orig.4.18.ark ark:exp/nnet4a/egs/egs_orig.5.18.ark ark:exp/nnet4a/egs/egs_orig.6.18.ark ark:exp/nnet4a/egs/egs_orig.7.18.ark ark:exp/nnet4a/egs/egs_orig.8.18.ark ark:exp/nnet4a/egs/egs_orig.9.18.ark ark:exp/nnet4a/egs/egs_orig.10.18.ark ark:exp/nnet4a/egs/egs_orig.11.18.ark ark:exp/nnet4a/egs/egs_orig.12.18.ark ark:exp/nnet4a/egs/egs_orig.13.18.ark ark:exp/nnet4a/egs/egs_orig.14.18.ark ark:exp/nnet4a/egs/egs_orig.15.18.ark ark:exp/nnet4a/egs/egs_orig.16.18.ark 
-apply-cmvn --utt2spk=ark:data/train/split20/18/utt2spk scp:data/train/split20/18/cmvn.scp scp:- ark:- 
+nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.18.ark ark:exp/nnet4a/egs/egs_orig.2.18.ark ark:exp/nnet4a/egs/egs_orig.3.18.ark ark:exp/nnet4a/egs/egs_orig.4.18.ark ark:exp/nnet4a/egs/egs_orig.5.18.ark ark:exp/nnet4a/egs/egs_orig.6.18.ark ark:exp/nnet4a/egs/egs_orig.7.18.ark ark:exp/nnet4a/egs/egs_orig.8.18.ark 
 transform-feats --utt2spk=ark:data/train/split20/18/utt2spk ark:exp/tri3c_ali/raw_trans.18 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split20/18/utt2spk scp:data/train/split20/18/cmvn.scp scp:- ark:- 
 ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- 
 ali-to-post ark:- ark:- 
 LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 10 alignments to pdf sequences.
@@ -14,5 +14,5 @@ LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 8 utterances; 0 had errors.
 LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 8 feature files, wrote 11986 examples,  with 11986 egs in total; 0 files had errors.
 LOG (nnet-copy-egs:main():nnet-copy-egs.cc:170) Read 11986 neural-network training examples, wrote 11986
-# Accounting: time=2 threads=1
-# Ended (code 0) at Mon Jul  4 17:41:18 BRT 2016, elapsed time 2 seconds
+# Accounting: time=1 threads=1
+# Finished at Mon Jul 18 11:18:56 BRT 2016 with status 0

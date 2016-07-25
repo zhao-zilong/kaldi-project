@@ -1,18 +1,18 @@
+# Running on water1
+# Started at Mon Jul 18 17:11:39 BRT 2016
 # lattice-scale --inv-acoustic-scale=18 "ark:gunzip -c exp/nnet4a/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri3c/graph/words.txt | cat > exp/nnet4a/decode/scoring_kaldi/penalty_0.5/18.txt 
-# Started at Mon Jul  4 18:17:47 BRT 2016
-#
-lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- 
 lattice-scale --inv-acoustic-scale=18 'ark:gunzip -c exp/nnet4a/decode/lat.*.gz|' ark:- 
+lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- 
 lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test, best cost 476.231 + -949.859 = -473.628 over 6798 frames.
+felipe_test feijao arroz carne detergente escova-de-dente desodorante pasta-de-dente shampoo repolho rucula alface tomate batata sucrilhos leite ovos pao iogurte <UNK> oleo massa-de-tomate tempero massa aveia <cough> <UNK> farinha amendoim farofa 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test1, best cost 480.635 + -902.391 = -421.756 over 6173 frames.
+felipe_test1 carne <hesitation> uva molho galinha CD bolo cenoura tomate beterraba <cough> agriao rucula arroz feijao farofa cha nescau cafe filtro-de-papel azeite oleo massa queijo iogurte leite pao ovos <UNK> rim geleia vodca <cough> <hesitation> ovo 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 3 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test, best cost 444.79 + -1147.48 = -702.69 over 6798 frames.
-felipe_test feijao arroz carne detergente escova-de-dente desodorante pasta-de-dente shampoo repolho rucula alface tomate batata sucrilhos leite ovos pao iogurte oleo massa-de-tomate tempero massa aveia <UNK> farinha amendoim farofa 
-LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 3 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test1, best cost 456.24 + -1043.39 = -587.149 over 6173 frames.
-felipe_test1 carne <hesitation> molho galinha cebola cenoura tomate beterraba <cough> agriao rucula arroz feijao farofa cha nescau cafe filtro-de-papel azeite oleo massa queijo iogurte leite pao ovos <hesitation> ervilha yakult vodca maçã <hesitation> ovo 
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test2, best cost 393.675 + -1070.5 = -676.826 over 6098 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test2, best cost 393.686 + -966.144 = -572.458 over 6098 frames.
 felipe_test2 comida-de-cachorro comida-de-gato pasta-de-dente shampoo oleo azeite molho-de-tomate massa queijo cebola cenoura batata alface tomate maçã abacaxi pao leite ovos iogurte papel-higienico aparelho-de-barbear veneno-para-matar-mosquito detergente saco-de-lixo 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is -0.103134 = 0.0678958 [graph] + -0.17103 [acoustic] over 19069 frames.
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 3 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is -0.0769753 = 0.0708245 [graph] + -0.1478 [acoustic] over 19069 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 3 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Mon Jul  4 18:17:47 BRT 2016, elapsed time 0 seconds
+# Finished at Mon Jul 18 17:11:39 BRT 2016 with status 0

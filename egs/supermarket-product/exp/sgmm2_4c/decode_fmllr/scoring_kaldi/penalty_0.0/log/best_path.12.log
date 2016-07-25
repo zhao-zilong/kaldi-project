@@ -1,0 +1,18 @@
+# lattice-scale --inv-acoustic-scale=12 "ark:gunzip -c exp/sgmm2_4c/decode_fmllr/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/sgmm2_4c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/sgmm2_4c/graph/words.txt | cat > exp/sgmm2_4c/decode_fmllr/scoring_kaldi/penalty_0.0/12.txt 
+# Started at Tue Jul  5 11:59:47 BRT 2016
+#
+lattice-scale --inv-acoustic-scale=12 'ark:gunzip -c exp/sgmm2_4c/decode_fmllr/lat.*.gz|' ark:- 
+lattice-best-path --word-symbol-table=exp/sgmm2_4c/graph/words.txt ark:- ark,t:- 
+lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
+LOG (lattice-scale:main():lattice-scale.cc:90) Done 3 lattices.
+LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 3 lattices.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test, best cost 411.03 + 25786 = 26197 over 6798 frames.
+felipe_test feijao arroz carne detergente escova-de-dente desodorante pasta-de-dente shampoo repolho coco coador alface tomate batata sucrilhos leite ovos pao iogurte oleo massa-de-tomate tempero massa aveia farinha amendoim farofa 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test1, best cost 431.506 + 24767.3 = 25198.8 over 6173 frames.
+felipe_test1 carne <hesitation> molho galinha cebola cenoura tomate beterraba <cough> agriao coco arroz feijao farofa cha nescau cafe filtro-de-papel azeite oleo massa queijo iogurte leite pao ovos refrigerante vodca <hesitation> <hesitation> ovo 
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test2, best cost 394.257 + 24072.9 = 24467.2 over 6098 frames.
+felipe_test2 comida-de-cachorro comida-de-gato <hesitation> pasta-de-dente shampoo oleo azeite molho-de-tomate massa queijo cebola cera batata alface tomate maçã abacaxi pao leite ovos iogurte papel-higienico aparelho-de-barbear veneno-para-matar-mosquito detergente saco-de-lixo 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 3.97834 = 0.0648588 [graph] + 3.91348 [acoustic] over 19069 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 3 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Jul  5 11:59:47 BRT 2016, elapsed time 0 seconds

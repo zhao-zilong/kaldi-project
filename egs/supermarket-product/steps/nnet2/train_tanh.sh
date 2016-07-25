@@ -34,8 +34,10 @@ minibatch_size=128 # by default use a smallish minibatch size for neural net
 
 samples_per_iter=200000 # each iteration of training, see this many samples
                         # per job.  This option is passed to get_egs.sh
+
 num_jobs_nnet=16   # Number of neural net jobs to run in parallel.  This option
                    # is passed to get_egs.sh.
+		  #changed from 16 to 4 because of the slots numbers
 get_egs_stage=0
 
 shuffle_buffer_size=5000 # This "buffer_size" variable controls randomization of the samples

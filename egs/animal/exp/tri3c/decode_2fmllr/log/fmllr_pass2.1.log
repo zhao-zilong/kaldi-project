@@ -1,23 +1,23 @@
-# lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 "ark:gunzip -c exp/tri3c/decode_2fmllr/lat.tmp.1.gz|" ark:- | lattice-to-post --acoustic-scale=0.083333 ark:- ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3c/final.mdl ark:- ark:- | gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/test/split1/1/spk2utt exp/tri3c/final.mdl "get-full-lda-mat --print-args=false exp/tri3c/final.mat exp/tri3c/full.mat -|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark:exp/tri3c/decode_2fmllr/pre_trans.1 ark:- ark:- | splice-feats  ark:- ark:- |" ark,s,cs:- ark:exp/tri3c/decode_2fmllr/trans_tmp.1 && compose-transforms --b-is-affine=true ark:exp/tri3c/decode_2fmllr/trans_tmp.1 ark:exp/tri3c/decode_2fmllr/pre_trans.1 ark:exp/tri3c/decode_2fmllr/raw_trans.1 
-# Started at Tue Jun 28 15:16:07 BRT 2016
+# lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 "ark:gunzip -c /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/lat.tmp.1.gz|" ark:- | lattice-to-post --acoustic-scale=0.083333 ark:- ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/final.mdl ark:- ark:- | gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/spk2utt /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/final.mdl "get-full-lda-mat --print-args=false /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/final.mat /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/full.mat -|" "ark,s,cs:apply-cmvn  --utt2spk=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/utt2spk scp:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/cmvn.scp scp:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/utt2spk ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/pre_trans.1 ark:- ark:- | splice-feats  ark:- ark:- |" ark,s,cs:- ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/trans_tmp.1 && compose-transforms --b-is-affine=true ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/trans_tmp.1 ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/pre_trans.1 ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/raw_trans.1 
+# Started at Mon Jul 18 14:57:55 BRT 2016
 #
+gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/spk2utt /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/final.mdl 'get-full-lda-mat --print-args=false /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/final.mat /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/full.mat -|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/utt2spk scp:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/cmvn.scp scp:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/utt2spk ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/pre_trans.1 ark:- ark:- | splice-feats  ark:- ark:- |' ark,s,cs:- ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/trans_tmp.1 
 lattice-to-post --acoustic-scale=0.083333 ark:- ark:- 
-lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 'ark:gunzip -c exp/tri3c/decode_2fmllr/lat.tmp.1.gz|' ark:- 
-weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3c/final.mdl ark:- ark:- 
-gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/test/split1/1/spk2utt exp/tri3c/final.mdl 'get-full-lda-mat --print-args=false exp/tri3c/final.mat exp/tri3c/full.mat -|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark:exp/tri3c/decode_2fmllr/pre_trans.1 ark:- ark:- | splice-feats  ark:- ark:- |' ark,s,cs:- ark:exp/tri3c/decode_2fmllr/trans_tmp.1 
-transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark:exp/tri3c/decode_2fmllr/pre_trans.1 ark:- ark:- 
+lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 'ark:gunzip -c /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/lat.tmp.1.gz|' ark:- 
+weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/final.mdl ark:- ark:- 
+transform-feats --utt2spk=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/utt2spk ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/pre_trans.1 ark:- ark:- 
 splice-feats ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+apply-cmvn --utt2spk=ark:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/utt2spk scp:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/cmvn.scp scp:/home/nlpserver/zzilong/kaldi/egs/animal/data/test/split1/1/feats.scp ark:- 
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -1.10353 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.892744 over 6073 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 LOG (lattice-determinize-pruned:main():lattice-determinize-pruned.cc:111) Done 1 lattices, determinization finished earlier than specified by the beam on 0 of these.
-LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -4.39873 over 527 frames.  Average acoustic like/frame is -4.29542
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -3.75598 over 6073 frames.  Average acoustic like/frame is -3.69142
 LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 1 lattices.
 LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 1 posteriors.
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker felipe_test, auxf-impr from raw fMLLR is 0.729348 over 174.575 frames.
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker felipe_test, auxf-impr from raw fMLLR is 0.202735 over 1581.37 frames.
 LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:188) Processed 1 utterances, 0 had errors.
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:190) Overall raw-fMLLR auxf impr per frame is 0.729348 over 174.575 frames.
-compose-transforms --b-is-affine=true ark:exp/tri3c/decode_2fmllr/trans_tmp.1 ark:exp/tri3c/decode_2fmllr/pre_trans.1 ark:exp/tri3c/decode_2fmllr/raw_trans.1 
-# Accounting: time=0 threads=1
-# Ended (code 0) at Tue Jun 28 15:16:07 BRT 2016, elapsed time 0 seconds
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:190) Overall raw-fMLLR auxf impr per frame is 0.202735 over 1581.37 frames.
+compose-transforms --b-is-affine=true ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/trans_tmp.1 ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/pre_trans.1 ark:/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr/raw_trans.1 
+# Accounting: time=2 threads=1
+# Ended (code 0) at Mon Jul 18 14:57:57 BRT 2016, elapsed time 2 seconds

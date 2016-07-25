@@ -1,14 +1,21 @@
-# nnet-shuffle-egs --buffer-size=5000 --srand=18 ark:exp/nnet4a/egs/egs.1.2.ark ark:- | nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=18 exp/nnet4a/18.mdl ark:- exp/nnet4a/19.1.mdl 
-# Started at Mon Jul  4 17:46:45 BRT 2016
-#
-nnet-shuffle-egs --buffer-size=5000 --srand=18 ark:exp/nnet4a/egs/egs.1.2.ark ark:- 
-nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=18 exp/nnet4a/18.mdl ark:- exp/nnet4a/19.1.mdl 
-LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 4374 neural-network training examples using a buffer (partial randomization)
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.956297, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.999483, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.995728, for component index 4
-LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 4374 examples, average log-prob per frame is -1.11271
-LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-1.11271
-LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 4374 training examples (weighted).  Wrote model to exp/nnet4a/19.1.mdl
-# Accounting: time=3 threads=1
-# Ended (code 0) at Mon Jul  4 17:46:48 BRT 2016, elapsed time 3 seconds
+# Running on red-black-tea
+# Started at Mon Jul 18 11:47:38 BRT 2016
+# nnet-shuffle-egs --buffer-size=5000 --srand=18 ark:exp/nnet4a/egs/egs.1.0.ark ark:- | nnet-train-parallel --num-threads=8 --minibatch-size=128 --srand=18 exp/nnet4a/18.mdl ark:- exp/nnet4a/19.1.mdl 
+nnet-train-parallel --num-threads=8 --minibatch-size=128 --srand=18 exp/nnet4a/18.mdl ark:- exp/nnet4a/19.1.mdl 
+nnet-shuffle-egs --buffer-size=5000 --srand=18 ark:exp/nnet4a/egs/egs.1.0.ark ark:- 
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.733716, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.723475, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.737856, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.707507, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.700353, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.800136, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.755945, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.661585, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.750869, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.711855, for component index 2
+LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 3888 neural-network training examples using a buffer (partial randomization)
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 3888 examples, average log-prob per frame is -1.09631
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-1.09631
+LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 3888 training examples (weighted).  Wrote model to exp/nnet4a/19.1.mdl
+# Accounting: time=1 threads=1
+# Finished at Mon Jul 18 11:47:39 BRT 2016 with status 0

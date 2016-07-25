@@ -1,0 +1,15 @@
+# Running on red-black-tea
+# Started at Mon Jul 18 16:03:53 BRT 2016
+# nnet-shuffle-egs --buffer-size=5000 --srand=212 ark:exp/nnet4a/egs/egs.3.5.ark ark:- | nnet-train-parallel --num-threads=8 --minibatch-size=128 --srand=212 exp/nnet4a/212.mdl ark:- exp/nnet4a/213.3.mdl 
+nnet-shuffle-egs --buffer-size=5000 --srand=212 ark:exp/nnet4a/egs/egs.3.5.ark ark:- 
+nnet-train-parallel --num-threads=8 --minibatch-size=128 --srand=212 exp/nnet4a/212.mdl ark:- exp/nnet4a/213.3.mdl 
+LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 3886 neural-network training examples using a buffer (partial randomization)
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.799738, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.585246, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.669851, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.743373, for component index 2
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 3886 examples, average log-prob per frame is -1.06948
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-1.06948
+LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 3886 training examples (weighted).  Wrote model to exp/nnet4a/213.3.mdl
+# Accounting: time=1 threads=1
+# Finished at Mon Jul 18 16:03:54 BRT 2016 with status 0

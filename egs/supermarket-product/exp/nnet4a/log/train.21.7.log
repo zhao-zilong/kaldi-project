@@ -1,21 +1,21 @@
-# nnet-shuffle-egs --buffer-size=5000 --srand=21 ark:exp/nnet4a/egs/egs.7.1.ark ark:- | nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=21 exp/nnet4a/21.mdl ark:- exp/nnet4a/22.7.mdl 
-# Started at Mon Jul  4 17:47:39 BRT 2016
-#
-nnet-shuffle-egs --buffer-size=5000 --srand=21 ark:exp/nnet4a/egs/egs.7.1.ark ark:- 
-nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=21 exp/nnet4a/21.mdl ark:- exp/nnet4a/22.7.mdl 
-LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 4373 neural-network training examples using a buffer (partial randomization)
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.806131, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.992189, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.815315, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.809183, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.784405, for component index 2
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.936882, for component index 2
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.763119, for component index 2
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.717969, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.742066, for component index 4
-LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.726046, for component index 4
-LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 4373 examples, average log-prob per frame is -1.33541
-LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-1.33541
-LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 4373 training examples (weighted).  Wrote model to exp/nnet4a/22.7.mdl
-# Accounting: time=4 threads=1
-# Ended (code 0) at Mon Jul  4 17:47:43 BRT 2016, elapsed time 4 seconds
+# Running on red-black-tea
+# Started at Mon Jul 18 11:51:53 BRT 2016
+# nnet-shuffle-egs --buffer-size=5000 --srand=21 ark:exp/nnet4a/egs/egs.7.3.ark ark:- | nnet-train-parallel --num-threads=8 --minibatch-size=128 --srand=21 exp/nnet4a/21.mdl ark:- exp/nnet4a/22.7.mdl 
+nnet-shuffle-egs --buffer-size=5000 --srand=21 ark:exp/nnet4a/egs/egs.7.3.ark ark:- 
+nnet-train-parallel --num-threads=8 --minibatch-size=128 --srand=21 exp/nnet4a/21.mdl ark:- exp/nnet4a/22.7.mdl 
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.982437, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.945829, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.889862, for component index 4
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.642493, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.739919, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.884118, for component index 4
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.967325, for component index 4
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.668489, for component index 2
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.833102, for component index 4
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.631867, for component index 2
+LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 3886 neural-network training examples using a buffer (partial randomization)
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 3886 examples, average log-prob per frame is -0.992464
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-0.992464
+LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 3886 training examples (weighted).  Wrote model to exp/nnet4a/22.7.mdl
+# Accounting: time=1 threads=1
+# Finished at Mon Jul 18 11:51:54 BRT 2016 with status 0

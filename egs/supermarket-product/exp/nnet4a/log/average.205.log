@@ -1,0 +1,9 @@
+# Running on red-black-tea
+# Started at Mon Jul 18 15:56:23 BRT 2016
+# nnet-am-average exp/nnet4a/206.1.mdl exp/nnet4a/206.2.mdl exp/nnet4a/206.3.mdl exp/nnet4a/206.4.mdl exp/nnet4a/206.5.mdl exp/nnet4a/206.6.mdl exp/nnet4a/206.7.mdl exp/nnet4a/206.8.mdl - | nnet-am-copy --learning-rates=0.004:0.002:0.002 - exp/nnet4a/206.mdl 
+nnet-am-copy --learning-rates=0.004:0.002:0.002 - exp/nnet4a/206.mdl 
+nnet-am-average exp/nnet4a/206.1.mdl exp/nnet4a/206.2.mdl exp/nnet4a/206.3.mdl exp/nnet4a/206.4.mdl exp/nnet4a/206.5.mdl exp/nnet4a/206.6.mdl exp/nnet4a/206.7.mdl exp/nnet4a/206.8.mdl - 
+LOG (nnet-am-average:main():nnet-am-average.cc:252) Averaged parameters of 8 neural nets, and wrote to -
+LOG (nnet-am-copy:main():nnet-am-copy.cc:207) Copied neural net from - to exp/nnet4a/206.mdl
+# Accounting: time=1 threads=1
+# Finished at Mon Jul 18 15:56:24 BRT 2016 with status 0
