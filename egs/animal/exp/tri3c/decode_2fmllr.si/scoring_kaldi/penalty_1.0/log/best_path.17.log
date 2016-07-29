@@ -1,14 +1,14 @@
-# lattice-scale --inv-acoustic-scale=17 "ark:gunzip -c /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr.si/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/graph/words.txt | cat > /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr.si/scoring_kaldi/penalty_1.0/17.txt 
-# Started at Mon Jul 18 14:57:48 BRT 2016
+# lattice-scale --inv-acoustic-scale=17 "ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/decode_2fmllr.si/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/graph/words.txt | cat > /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/decode_2fmllr.si/scoring_kaldi/penalty_1.0/17.txt 
+# Started at Tue Jul 26 13:23:28 BRT 2016
 #
-lattice-scale --inv-acoustic-scale=17 'ark:gunzip -c /home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/decode_2fmllr.si/lat.*.gz|' ark:- 
-lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/kaldi/egs/animal/exp/tri3c/graph/words.txt ark:- ark,t:- 
+lattice-scale --inv-acoustic-scale=17 'ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/decode_2fmllr.si/lat.*.gz|' ark:- 
 lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
+lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/graph/words.txt ark:- ark,t:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test-test2, best cost 433.886 + 15633.9 = 16067.8 over 6073 frames.
-felipe_test-test2 cachorro anta gato <UNK> rato peixe tubarao baleia polvo lobo galo potro camarao baleia-cachalote anta <UNK> anta lula polvo zebra rinoceronte girafa aguia condor girino 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 2.64578 = 0.071445 [graph] + 2.57433 [acoustic] over 6073 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe-test5, best cost 87.2247 + 7671.64 = 7758.86 over 1662 frames.
+felipe-test5 cavalo 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 4.66839 = 0.0524818 [graph] + 4.61591 [acoustic] over 1662 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Mon Jul 18 14:57:48 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Tue Jul 26 13:23:28 BRT 2016, elapsed time 0 seconds

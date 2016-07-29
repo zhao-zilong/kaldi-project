@@ -14,7 +14,7 @@ nj=1         # number of parallel jobs - 1 is perfect for such a small data set
 
 # Removing previously created data (from last run.sh execution)
 # rm -rf exp mfcc data/train/spk2utt data/train/utt2dur data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt
-rm -rf  $prefix/mfcc/cmvn_test.scp $prefix/mfcc/cmvn_test.ark $prefix/mfcc/raw_mfcc_test.1.ark $prefix/mfcc/raw_mfcc_test.1.scp $prefix/data/test/spk2utt $prefix/data/test/cmvn.scp $prefix/data/test/feats.scp $prefix/data/test/split1 $prefix/data/test/split8 $prefix/data/test/split20
+rm -rf  $prefix/mfcc/cmvn_test.scp $prefix/mfcc/cmvn_test.ark $prefix/mfcc/raw_mfcc_test.1.ark $prefix/mfcc/raw_mfcc_test.1.scp $prefix/data/test/spk2utt $prefix/data/test/cmvn.scp $prefix/data/test/feats.scp $prefix/data/test/split*
 # echo
 # echo "===== PREPARING ACOUSTIC DATA ====="
 # echo
@@ -191,13 +191,6 @@ steps/compute_cmvn_stats.sh $prefix/data/test $prefix/exp/make_mfcc/test $mfccdi
 #     data/train data/lang exp/tri3b exp/tri3b_ali
 
 
-echo
-echo "===== SGMM  DECODING ====="
-echo
-
-$prefix/steps/decode_sgmm2.sh --config $prefix/conf/decode.config --nj $nj --cmd "$decode_cmd" \
-  --transform-dir $prefix/exp/tri3c/decode  $prefix/exp/sgmm2_4c/graph $prefix/data/test $prefix/exp/sgmm2_4c/decode || exit 1;
-
 
 # echo
 # echo "===== DNN  DECODING ====="
@@ -208,21 +201,30 @@ $prefix/steps/decode_sgmm2.sh --config $prefix/conf/decode.config --nj $nj --cmd
 #     exp/tri3c/graph data/test exp/nnet4a/decode
 #
 
+#echo
+#echo "===== Raw_fMLLR  DECODING ====="
+#echo
+
+#steps/decode_raw_fmllr.sh --config $prefix/conf/decode.config --nj 1 --cmd "$decode_cmd" \
+#       $prefix/exp/tri3c/graph $prefix/data/test $prefix/exp/tri3c/decode
+
+
+#echo
+#echo "===== Normal_fMLLR  DECODING ====="
+#echo
+
+#steps/decode_raw_fmllr.sh --use-normal-fmllr true --config $prefix/conf/decode.config --nj 1 --cmd "$decode_cmd" \
+#      $prefix/exp/tri3c/graph $prefix/data/test $prefix/exp/tri3c/decode_2fmllr
+
 echo
-echo "===== Raw_fMLLR  DECODING ====="
+echo "===== SGMM  DECODING ====="
 echo
 
-steps/decode_raw_fmllr.sh --config $prefix/conf/decode.config --nj 1 --cmd "$decode_cmd" \
-       $prefix/exp/tri3c/graph $prefix/data/test $prefix/exp/tri3c/decode
+steps/decode_sgmm2.sh --config $prefix/conf/decode.config --nj $nj --cmd "$decode_cmd" \
+  --transform-dir $prefix/exp/tri3c/decode  $prefix/exp/sgmm2_4c/graph $prefix/data/test $prefix/exp/sgmm2_4c/decode || exit 1;
 
-
-echo
-echo "===== Normal_fMLLR  DECODING ====="
-echo
-
-steps/decode_raw_fmllr.sh --use-normal-fmllr true --config $prefix/conf/decode.config --nj 1 --cmd "$decode_cmd" \
-      $prefix/exp/tri3c/graph $prefix/data/test $prefix/exp/tri3c/decode_2fmllr
-
+# get ctm file, used to calculate timestamp of a word in an audio
+ steps/get_ctm.sh $prefix/data/train $prefix/data/lang $prefix/exp/sgmm2_4c/decode
 
 # local/run_raw_fmllr.sh
 # local/nnet2/run_4a.sh

@@ -1,0 +1,11 @@
+# set -o pipefail && mkdir -p /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/score_20/ && lattice-1best --lm-scale=20 "ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/lat.*.gz|" ark:- | lattice-align-words /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/data/lang/phones/word_boundary.int /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/../final.mdl ark:- ark:- | nbest-to-ctm --frame-shift=0.01 ark:- - | utils/int2sym.pl -f 5 /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/data/lang/words.txt | cat > /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/score_20/train.ctm 
+# Started at Fri Jul 29 11:41:10 BRT 2016
+#
+lattice-1best --lm-scale=20 'ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/lat.*.gz|' ark:- 
+nbest-to-ctm --frame-shift=0.01 ark:- - 
+lattice-align-words /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/data/lang/phones/word_boundary.int /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/../final.mdl ark:- ark:- 
+LOG (lattice-1best:main():lattice-1best.cc:92) Done converting 1 to best path, 0 had errors.
+LOG (lattice-align-words:main():lattice-align-words.cc:125) Successfully aligned 1 lattices; 0 had errors.
+LOG (nbest-to-ctm:main():nbest-to-ctm.cc:111) Converted 1 linear lattices to ctm format; 0 had errors.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Fri Jul 29 11:41:11 BRT 2016, elapsed time 0 seconds

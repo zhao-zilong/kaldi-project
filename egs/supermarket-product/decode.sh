@@ -42,17 +42,6 @@ steps/decode_fmllr.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
   exp/tri3b/graph data/test exp/tri3b/decode
 
 
-echo
-echo "===== SGMM  DECODING ====="
-echo
-
-steps/decode_sgmm2.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
-  --transform-dir exp/tri3c/decode  exp/sgmm2_4c/graph data/test exp/sgmm2_4c/decode || exit 1;
-
-
-steps/decode_sgmm2.sh --use-fmllr true --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
-  --transform-dir exp/tri3c/decode  exp/sgmm2_4c/graph data/test exp/sgmm2_4c/decode_fmllr || exit 1;
-
 
 #echo
 #echo "===== DNN  DECODING ====="
@@ -77,6 +66,18 @@ echo
 
 steps/decode_raw_fmllr.sh --use-normal-fmllr true --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
       exp/tri3c/graph data/test exp/tri3c/decode_2fmllr
+
+
+echo
+echo "===== SGMM  DECODING ====="
+echo
+
+steps/decode_sgmm2.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
+  --transform-dir exp/tri3c/decode  exp/sgmm2_4c/graph data/test exp/sgmm2_4c/decode || exit 1;
+
+
+steps/decode_sgmm2.sh --use-fmllr true --config conf/decode.config --nj $nj --cmd "$decode_cmd" \
+  --transform-dir exp/tri3c/decode  exp/sgmm2_4c/graph data/test exp/sgmm2_4c/decode_fmllr || exit 1;
 
 
 # local/run_raw_fmllr.sh
