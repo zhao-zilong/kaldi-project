@@ -1,14 +1,14 @@
-# lattice-scale --inv-acoustic-scale=18 "ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/graph/words.txt | cat > /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/scoring_kaldi/penalty_0.0/18.txt 
-# Started at Fri Jul 29 11:41:05 BRT 2016
+# lattice-scale --inv-acoustic-scale=18 "ark:gunzip -c exp/sgmm2_4c/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/sgmm2_4c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/sgmm2_4c/graph/words.txt | cat > exp/sgmm2_4c/decode/scoring_kaldi/penalty_0.0/18.txt 
+# Started at Wed Aug  3 14:36:16 BRT 2016
 #
-lattice-scale --inv-acoustic-scale=18 'ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/lat.*.gz|' ark:- 
+lattice-scale --inv-acoustic-scale=18 'ark:gunzip -c exp/sgmm2_4c/decode/lat.*.gz|' ark:- 
+lattice-best-path --word-symbol-table=exp/sgmm2_4c/graph/words.txt ark:- ark,t:- 
 lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
-lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/graph/words.txt ark:- ark,t:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe-test7, best cost 444.743 + 13653.1 = 14097.8 over 6036 frames.
-felipe-test7 gato rato coelha cavalo galinha egua pato <UNK> <UNK> passaro aguia condor camelo dromedario escorpiao formiga borboleta cupim baleia tubarao golfinho polvo lula lesma mexilhao caracol <UNK> minhoca <UNK> cobra ra sapo tartaruga crocodilo mosquito 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 2.33563 = 0.0736817 [graph] + 2.26194 [acoustic] over 6036 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance arthur-arthur, best cost 316.653 + 13945.9 = 14262.6 over 6236 frames.
+arthur-arthur cachorro gato lobo leao iguana anta cascavel <UNK> leao hiena <UNK> peru barata galo <UNK> tigre <UNK> <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 2.28714 = 0.0507783 [graph] + 2.23636 [acoustic] over 6236 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Fri Jul 29 11:41:05 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Wed Aug  3 14:36:16 BRT 2016, elapsed time 0 seconds

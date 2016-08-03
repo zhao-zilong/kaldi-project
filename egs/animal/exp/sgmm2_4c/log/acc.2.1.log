@@ -1,5 +1,5 @@
 # sgmm2-acc-stats --utt2spk=ark:data/train/split16/1/utt2spk --update-flags=vwSct "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.1.gz|" --rand-prune=0.1 exp/sgmm2_4c/2.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" "ark,s,cs:gunzip -c exp/sgmm2_4c/ali.1.gz | ali-to-post ark:- ark:-|" exp/sgmm2_4c/2.1.acc 
-# Started at Wed Jun 22 14:12:39 BRT 2016
+# Started at Tue Aug  2 16:14:54 BRT 2016
 #
 sgmm2-acc-stats --utt2spk=ark:data/train/split16/1/utt2spk --update-flags=vwSct '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.1.gz|' --rand-prune=0.1 exp/sgmm2_4c/2.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' 'ark,s,cs:gunzip -c exp/sgmm2_4c/ali.1.gz | ali-to-post ark:- ark:-|' exp/sgmm2_4c/2.1.acc 
 apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
@@ -7,16 +7,17 @@ transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark,s,cs:exp/tri3c_al
 transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
 splice-feats ark:- ark:- 
 ali-to-post ark:- ark:- 
-WARNING (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:145) No posterior info available for utterance eduardo_Seduardo16 (or wrong size)
-WARNING (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:145) No posterior info available for utterance eduardo_Seduardo4 (or wrong size)
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 18 alignments.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.920182 over 23996 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 23996 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:203) Overall like per frame (Gaussian only) = -46.5267 over 21499 frames.
-LOG (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:206) Done 18 files, 2 with errors.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 35 alignments.
+WARNING (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:145) No posterior info available for utterance dieniffer1-Sdieniffer13 (or wrong size)
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 38 utterances, errors on 0
+WARNING (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:145) No posterior info available for utterance dieniffer1-Sdieniffer17 (or wrong size)
+WARNING (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:145) No posterior info available for utterance dieniffer1-Sdieniffer18 (or wrong size)
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.0949557 over 40765 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 38 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 40765 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 38 utterances; 0 had errors.
+LOG (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:203) Overall like per frame (Gaussian only) = -45.9418 over 38933 frames.
+LOG (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:206) Done 35 files, 3 with errors.
 LOG (sgmm2-acc-stats:main():sgmm2-acc-stats.cc:215) Written accs.
-# Accounting: time=4 threads=1
-# Ended (code 0) at Wed Jun 22 14:12:43 BRT 2016, elapsed time 4 seconds
+# Accounting: time=9 threads=1
+# Ended (code 0) at Tue Aug  2 16:15:03 BRT 2016, elapsed time 9 seconds

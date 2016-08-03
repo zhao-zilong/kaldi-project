@@ -1,17 +1,22 @@
 # ali-to-post "ark:gunzip -c exp/tri2b_ali_raw/pre_ali.1.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b/final.mdl ark:- ark:- | gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/train/split16/1/spk2utt exp/tri2b/final.mdl "get-full-lda-mat --print-args=false exp/tri2b/final.mat exp/tri2b/full.mat -|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | splice-feats  ark:- ark:- |" ark,s,cs:- ark:exp/tri2b_ali_raw/raw_trans.1 
-# Started at Wed Jun 22 13:56:35 BRT 2016
+# Started at Tue Aug  2 16:01:59 BRT 2016
 #
 ali-to-post 'ark:gunzip -c exp/tri2b_ali_raw/pre_ali.1.gz|' ark:- 
 weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b/final.mdl ark:- ark:- 
 gmm-est-fmllr-raw --raw-feat-dim=13 --spk2utt=ark:data/train/split16/1/spk2utt exp/tri2b/final.mdl 'get-full-lda-mat --print-args=false exp/tri2b/final.mat exp/tri2b/full.mat -|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | splice-feats  ark:- ark:- |' ark,s,cs:- ark:exp/tri2b_ali_raw/raw_trans.1 
 apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
 splice-feats ark:- ark:- 
-WARNING (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:121) Posteriors not found for utterance eduardo_Seduardo16
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 19 alignments.
-LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 19 posteriors.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker eduardo, auxf-impr from raw fMLLR is 4.08914 over 16978 frames.
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:188) Processed 19 utterances, 1 had errors.
-LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:190) Overall raw-fMLLR auxf impr per frame is 4.08914 over 16978 frames.
-# Accounting: time=11 threads=1
-# Ended (code 0) at Wed Jun 22 13:56:46 BRT 2016, elapsed time 11 seconds
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker alfeu, auxf-impr from raw fMLLR is 2.80427 over 6752 frames.
+WARNING (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:116) Features not found for utterance alfeu1-Salfeu15
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker alfeu1, auxf-impr from raw fMLLR is 2.81313 over 6251 frames.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 36 alignments.
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker arthur1, auxf-impr from raw fMLLR is 4.47786 over 5475 frames.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 36 posteriors.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 38 utterances, errors on 0
+WARNING (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:121) Posteriors not found for utterance dieniffer1-Sdieniffer17
+WARNING (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:121) Posteriors not found for utterance dieniffer1-Sdieniffer18
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:145) For speaker dieniffer1, auxf-impr from raw fMLLR is 3.27751 over 4650 frames.
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:188) Processed 36 utterances, 3 had errors.
+LOG (gmm-est-fmllr-raw:main():gmm-est-fmllr-raw.cc:190) Overall raw-fMLLR auxf impr per frame is 3.29799 over 23128 frames.
+# Accounting: time=25 threads=1
+# Ended (code 0) at Tue Aug  2 16:02:24 BRT 2016, elapsed time 25 seconds

@@ -1,7 +1,7 @@
 # ali-to-phones --write-lengths=true exp/sgmm2_4c/decode_fmllr/../final.mdl "ark:gunzip -c exp/sgmm2_4c/decode_fmllr/ali_tmp.1.gz|" ark,t:- | sed -E "s/^[^ ]+ //" | awk 'BEGIN{FS=" ; "; OFS="\n";} {print "begin " $1; print "end " $NF; for (n=1;n<=NF;n++) print "all " $n; }' | sort | uniq -c | gzip -c > exp/sgmm2_4c/decode_fmllr/phone_stats.1.gz 
-# Started at Tue Jun 28 15:15:55 BRT 2016
+# Started at Wed Aug  3 14:36:47 BRT 2016
 #
 ali-to-phones --write-lengths=true exp/sgmm2_4c/decode_fmllr/../final.mdl 'ark:gunzip -c exp/sgmm2_4c/decode_fmllr/ali_tmp.1.gz|' ark,t:- 
 LOG (ali-to-phones:main():ali-to-phones.cc:134) Done 1 utterances.
 # Accounting: time=0 threads=1
-# Ended (code 0) at Tue Jun 28 15:15:55 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Wed Aug  3 14:36:47 BRT 2016, elapsed time 0 seconds

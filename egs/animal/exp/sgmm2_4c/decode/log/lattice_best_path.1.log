@@ -1,7 +1,7 @@
-# ali-to-phones --per-frame=true /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/../final.mdl "ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/ali_tmp.1.gz|" ark,t:- | paste /dev/stdin <( gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/depth_tmp.1.gz ) | awk '{ half=NF/2; for (n=2; n<=half; n++) { m=n+half; count[$n " " $m]++;}} END{for(k in count) print k, count[k]; }' | gzip -c > /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/depth_stats_tmp.1.gz 
-# Started at Fri Jul 29 11:41:04 BRT 2016
+# ali-to-phones --per-frame=true exp/sgmm2_4c/decode/../final.mdl "ark:gunzip -c exp/sgmm2_4c/decode/ali_tmp.1.gz|" ark,t:- | paste /dev/stdin <( gunzip -c exp/sgmm2_4c/decode/depth_tmp.1.gz ) | awk '{ half=NF/2; for (n=2; n<=half; n++) { m=n+half; count[$n " " $m]++;}} END{for(k in count) print k, count[k]; }' | gzip -c > exp/sgmm2_4c/decode/depth_stats_tmp.1.gz 
+# Started at Wed Aug  3 14:36:15 BRT 2016
 #
-ali-to-phones --per-frame=true /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/../final.mdl 'ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/sgmm2_4c/decode/ali_tmp.1.gz|' ark,t:- 
+ali-to-phones --per-frame=true exp/sgmm2_4c/decode/../final.mdl 'ark:gunzip -c exp/sgmm2_4c/decode/ali_tmp.1.gz|' ark,t:- 
 LOG (ali-to-phones:main():ali-to-phones.cc:134) Done 1 utterances.
 # Accounting: time=0 threads=1
-# Ended (code 0) at Fri Jul 29 11:41:04 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Wed Aug  3 14:36:15 BRT 2016, elapsed time 0 seconds

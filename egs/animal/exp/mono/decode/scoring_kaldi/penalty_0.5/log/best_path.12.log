@@ -1,14 +1,14 @@
 # lattice-scale --inv-acoustic-scale=12 "ark:gunzip -c exp/mono/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- | lattice-best-path --word-symbol-table=exp/mono/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/mono/graph/words.txt | cat > exp/mono/decode/scoring_kaldi/penalty_0.5/12.txt 
-# Started at Mon Jun 27 14:22:00 BRT 2016
+# Started at Tue Aug  2 15:50:36 BRT 2016
 #
 lattice-best-path --word-symbol-table=exp/mono/graph/words.txt ark:- ark,t:- 
-lattice-scale --inv-acoustic-scale=12 'ark:gunzip -c exp/mono/decode/lat.*.gz|' ark:- 
 lattice-add-penalty --word-ins-penalty=0.5 ark:- ark:- 
+lattice-scale --inv-acoustic-scale=12 'ark:gunzip -c exp/mono/decode/lat.*.gz|' ark:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test4, best cost 415.388 + 60886.5 = 61301.9 over 9411 frames.
-felipe_test_test4 camarao lagosta tenia minhoca vitelo mosca mosquito camelo escorpiao cobra escaravelho andorinha lobo leao crocodilo jiboia anaconda sapo javali corvo joaninha cavalo zebra mula tubarao cupim 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 6.51386 = 0.0441385 [graph] + 6.46972 [acoustic] over 9411 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe-test7, best cost 400.672 + 39819.7 = 40220.4 over 6036 frames.
+felipe-test7 gato rato coelho cavalo tainha egua pato <UNK> passaro aguia condor camelo dromedario escorpiao formiga borboleta cupim baleia tubarao golfinho polvo mula lesma mexilhao caracol minhoca cobra cao sapo tartaruga crocodilo mosquito 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 6.66342 = 0.0663804 [graph] + 6.59704 [acoustic] over 6036 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Mon Jun 27 14:22:00 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Tue Aug  2 15:50:36 BRT 2016, elapsed time 0 seconds

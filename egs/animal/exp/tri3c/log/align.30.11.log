@@ -1,22 +1,22 @@
 # gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 "gmm-boost-silence --boost=1.0 1 exp/tri3c/30.mdl - |" "ark:gunzip -c exp/tri3c/fsts.11.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/10.mat ark:- ark:- |" "ark:|gzip -c >exp/tri3c/ali.11.gz" 
-# Started at Wed Jun 22 14:03:49 BRT 2016
+# Started at Tue Aug  2 16:09:11 BRT 2016
 #
 gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 'gmm-boost-silence --boost=1.0 1 exp/tri3c/30.mdl - |' 'ark:gunzip -c exp/tri3c/fsts.11.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/10.mat ark:- ark:- |' 'ark:|gzip -c >exp/tri3c/ali.11.gz' 
 gmm-boost-silence --boost=1.0 1 exp/tri3c/30.mdl - 
 WARNING (gmm-boost-silence:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
 LOG (gmm-boost-silence:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
 LOG (gmm-boost-silence:main():gmm-boost-silence.cc:103) Wrote model to -
+apply-cmvn --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/train/split16/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- 
 transform-feats exp/tri3c/10.mat ark:- ark:- 
 splice-feats ark:- ark:- 
-transform-feats --utt2spk=ark:data/train/split16/11/utt2spk ark,s,cs:exp/tri3c/raw_trans.11 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 10 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.970491 over 18420 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 18420 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -41.5991 over 18420 frames.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 0 out of 10 utterances.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 10, errors on 0
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 29 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.0787069 over 37076 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 29 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 37076 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 29 utterances; 0 had errors.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -46.5711 over 37076 frames.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 0 out of 29 utterances.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 29, errors on 0
 # Accounting: time=1 threads=1
-# Ended (code 0) at Wed Jun 22 14:03:50 BRT 2016, elapsed time 1 seconds
+# Ended (code 0) at Tue Aug  2 16:09:12 BRT 2016, elapsed time 1 seconds

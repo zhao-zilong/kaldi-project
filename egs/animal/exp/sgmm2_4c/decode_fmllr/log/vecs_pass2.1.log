@@ -1,46 +1,46 @@
 # gunzip -c exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz | sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/pre_vecs.1 --utt2spk=ark:data/test/split1/1/utt2spk "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" exp/sgmm2_4c/final.mdl ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark:- | lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-to-post --acoustic-scale=0.1 ark:- ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.mdl ark:- ark:- | sgmm2-est-spkvecs --spk2utt=ark:data/test/split1/1/spk2utt "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/pre_vecs.1 exp/sgmm2_4c/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/vecs.1 
-# Started at Tue Jun 28 15:15:53 BRT 2016
+# Started at Wed Aug  3 14:36:28 BRT 2016
 #
-sgmm2-est-spkvecs --spk2utt=ark:data/test/split1/1/spk2utt '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/pre_vecs.1 exp/sgmm2_4c/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/vecs.1 
-lattice-to-post --acoustic-scale=0.1 ark:- ark:- 
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.mdl ark:- ark:- 
 sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/pre_vecs.1 --utt2spk=ark:data/test/split1/1/utt2spk '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' exp/sgmm2_4c/final.mdl ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark:- 
 lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
+sgmm2-est-spkvecs --spk2utt=ark:data/test/split1/1/spk2utt '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/pre_vecs.1 exp/sgmm2_4c/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/vecs.1 
+lattice-to-post --acoustic-scale=0.1 ark:- ark:- 
 lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
-weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.mdl ark:- ark:- 
 transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
-splice-feats ark:- ark:- 
 transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
 splice-feats ark:- ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.193653 over 6236 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+splice-feats ark:- ark:- 
+transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
 transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.193653 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 6236 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 LOG (sgmm2-rescore-lattice:main():sgmm2-rescore-lattice.cc:159) Done 1 lattices, errors on 0
-LOG (lattice-prune:main():lattice-prune.cc:95) For utterance felipe_test_test7, pruned #states from 4892 to 2608 and #arcs from 9483 to 4095
-LOG (lattice-prune:main():lattice-prune.cc:104) Overall, pruned from on average 4892 to 2608 states, and from 9483 to 4095 arcs, over 1 utterances.
+LOG (lattice-prune:main():lattice-prune.cc:95) For utterance arthur-arthur, pruned #states from 53263 to 32871 and #arcs from 101583 to 51026
+LOG (lattice-prune:main():lattice-prune.cc:104) Overall, pruned from on average 53263 to 32871 states, and from 101583 to 51026 arcs, over 1 utterances.
 LOG (lattice-prune:main():lattice-prune.cc:108) Done 1 lattices.
 LOG (lattice-determinize-pruned:main():lattice-determinize-pruned.cc:111) Done 1 lattices, determinization finished earlier than specified by the beam on 0 of these.
-LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -6.82423 over 527 frames.  Average acoustic like/frame is -6.72692
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -4.02844 over 6236 frames.  Average acoustic like/frame is -3.97201
 LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 1 lattices.
 LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 1 posteriors.
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 7 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 7 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 6 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 6 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 6 eigenvalues. 
-LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.547957 per frame, over 232 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker felipe_test, auxf-impr from speaker vector is 0.547957, over 232 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.547957 over 232 frames.
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.141174 per frame, over 752.29 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker arthur, auxf-impr from speaker vector is 0.141174, over 752.29 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.141174 over 752.29 frames.
 LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:252) Done 1 files, 0 with errors.
-# Accounting: time=0 threads=1
-# Ended (code 0) at Tue Jun 28 15:15:53 BRT 2016, elapsed time 0 seconds
+# Accounting: time=3 threads=1
+# Ended (code 0) at Wed Aug  3 14:36:31 BRT 2016, elapsed time 3 seconds

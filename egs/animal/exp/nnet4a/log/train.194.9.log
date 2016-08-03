@@ -1,0 +1,11 @@
+# nnet-shuffle-egs --buffer-size=5000 --srand=194 ark:exp/nnet4a/egs/egs.9.5.ark ark:- | nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=194 exp/nnet4a/194.mdl ark:- exp/nnet4a/195.9.mdl 
+# Started at Tue Aug  2 17:41:13 BRT 2016
+#
+nnet-shuffle-egs --buffer-size=5000 --srand=194 ark:exp/nnet4a/egs/egs.9.5.ark ark:- 
+nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=194 exp/nnet4a/194.mdl ark:- exp/nnet4a/195.9.mdl 
+LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 6750 neural-network training examples using a buffer (partial randomization)
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 6750 examples, average log-prob per frame is -0.655248
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-0.655248
+LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 6750 training examples (weighted).  Wrote model to exp/nnet4a/195.9.mdl
+# Accounting: time=9 threads=1
+# Ended (code 0) at Tue Aug  2 17:41:22 BRT 2016, elapsed time 9 seconds

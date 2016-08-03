@@ -1,19 +1,18 @@
 # nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split16/8/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark:exp/tri3c_ali/raw_trans.8 ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c_ali/ali.8.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:- | nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.8.ark ark:exp/nnet4a/egs/egs_orig.2.8.ark ark:exp/nnet4a/egs/egs_orig.3.8.ark ark:exp/nnet4a/egs/egs_orig.4.8.ark ark:exp/nnet4a/egs/egs_orig.5.8.ark ark:exp/nnet4a/egs/egs_orig.6.8.ark ark:exp/nnet4a/egs/egs_orig.7.8.ark ark:exp/nnet4a/egs/egs_orig.8.8.ark ark:exp/nnet4a/egs/egs_orig.9.8.ark ark:exp/nnet4a/egs/egs_orig.10.8.ark ark:exp/nnet4a/egs/egs_orig.11.8.ark ark:exp/nnet4a/egs/egs_orig.12.8.ark ark:exp/nnet4a/egs/egs_orig.13.8.ark ark:exp/nnet4a/egs/egs_orig.14.8.ark ark:exp/nnet4a/egs/egs_orig.15.8.ark ark:exp/nnet4a/egs/egs_orig.16.8.ark 
-# Started at Wed Jun 22 14:47:29 BRT 2016
+# Started at Tue Aug  2 16:42:53 BRT 2016
 #
-nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.8.ark ark:exp/nnet4a/egs/egs_orig.2.8.ark ark:exp/nnet4a/egs/egs_orig.3.8.ark ark:exp/nnet4a/egs/egs_orig.4.8.ark ark:exp/nnet4a/egs/egs_orig.5.8.ark ark:exp/nnet4a/egs/egs_orig.6.8.ark ark:exp/nnet4a/egs/egs_orig.7.8.ark ark:exp/nnet4a/egs/egs_orig.8.8.ark ark:exp/nnet4a/egs/egs_orig.9.8.ark ark:exp/nnet4a/egs/egs_orig.10.8.ark ark:exp/nnet4a/egs/egs_orig.11.8.ark ark:exp/nnet4a/egs/egs_orig.12.8.ark ark:exp/nnet4a/egs/egs_orig.13.8.ark ark:exp/nnet4a/egs/egs_orig.14.8.ark ark:exp/nnet4a/egs/egs_orig.15.8.ark ark:exp/nnet4a/egs/egs_orig.16.8.ark 
 nnet-get-egs --left-context=5 --right-context=5 'ark,s,cs:utils/filter_scp.pl --exclude exp/nnet4a/valid_uttlist data/train/split16/8/feats.scp | apply-cmvn  --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark:exp/tri3c_ali/raw_trans.8 ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c_ali/ali.8.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |' ark:- 
-apply-cmvn --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:- ark:- 
+nnet-copy-egs ark:- ark:exp/nnet4a/egs/egs_orig.1.8.ark ark:exp/nnet4a/egs/egs_orig.2.8.ark ark:exp/nnet4a/egs/egs_orig.3.8.ark ark:exp/nnet4a/egs/egs_orig.4.8.ark ark:exp/nnet4a/egs/egs_orig.5.8.ark ark:exp/nnet4a/egs/egs_orig.6.8.ark ark:exp/nnet4a/egs/egs_orig.7.8.ark ark:exp/nnet4a/egs/egs_orig.8.8.ark ark:exp/nnet4a/egs/egs_orig.9.8.ark ark:exp/nnet4a/egs/egs_orig.10.8.ark ark:exp/nnet4a/egs/egs_orig.11.8.ark ark:exp/nnet4a/egs/egs_orig.12.8.ark ark:exp/nnet4a/egs/egs_orig.13.8.ark ark:exp/nnet4a/egs/egs_orig.14.8.ark ark:exp/nnet4a/egs/egs_orig.15.8.ark ark:exp/nnet4a/egs/egs_orig.16.8.ark 
 transform-feats --utt2spk=ark:data/train/split16/8/utt2spk ark:exp/tri3c_ali/raw_trans.8 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/8/utt2spk scp:data/train/split16/8/cmvn.scp scp:- ark:- 
 ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- 
 ali-to-post ark:- ark:- 
-WARNING (nnet-get-egs:main():nnet-get-egs.cc:156) No pdf-level posterior for key felipe_vone_Sfelipe_vone17
-LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 19 alignments to pdf sequences.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 19 alignments.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.0674404 over 41890 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 19 feature files, wrote 40167 examples,  with 40167 egs in total; 1 files had errors.
-LOG (nnet-copy-egs:main():nnet-copy-egs.cc:170) Read 40167 neural-network training examples, wrote 40167
-# Accounting: time=9 threads=1
-# Ended (code 0) at Wed Jun 22 14:47:38 BRT 2016, elapsed time 9 seconds
+LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 30 alignments to pdf sequences.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 30 alignments.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 29 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.390221 over 45317 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 29 utterances; 0 had errors.
+LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 29 feature files, wrote 45317 examples,  with 45317 egs in total; 0 files had errors.
+LOG (nnet-copy-egs:main():nnet-copy-egs.cc:170) Read 45317 neural-network training examples, wrote 45317
+# Accounting: time=7 threads=1
+# Ended (code 0) at Tue Aug  2 16:43:01 BRT 2016, elapsed time 7 seconds

@@ -1,18 +1,19 @@
 # sgmm2-gselect exp/sgmm2_4c/0.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/2/utt2spk scp:data/train/split16/2/cmvn.scp scp:data/train/split16/2/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/2/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.2 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" "ark,t:|gzip -c >exp/sgmm2_4c/gselect.2.gz" 
-# Started at Wed Jun 22 14:10:52 BRT 2016
+# Started at Tue Aug  2 16:13:22 BRT 2016
 #
 sgmm2-gselect exp/sgmm2_4c/0.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/2/utt2spk scp:data/train/split16/2/cmvn.scp scp:data/train/split16/2/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/2/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.2 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' 'ark,t:|gzip -c >exp/sgmm2_4c/gselect.2.gz' 
-transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/train/split16/2/utt2spk scp:data/train/split16/2/cmvn.scp scp:data/train/split16/2/feats.scp ark:- 
 splice-feats ark:- ark:- 
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
 transform-feats --utt2spk=ark:data/train/split16/2/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.2 ark:- ark:- 
-LOG (sgmm2-gselect:main():sgmm2-gselect.cc:86) For 0'th file, average UBM likelihood over 1836 frames is -46.1624
-LOG (sgmm2-gselect:main():sgmm2-gselect.cc:86) For 10'th file, average UBM likelihood over 1723 frames is -48.6946
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.142185 over 35689 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 35689 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (sgmm2-gselect:main():sgmm2-gselect.cc:97) Done 20 files, 0 with errors, average UBM log-likelihood is -46.6302 over 35689 frames.
-# Accounting: time=5 threads=1
-# Ended (code 0) at Wed Jun 22 14:10:57 BRT 2016, elapsed time 5 seconds
+LOG (sgmm2-gselect:main():sgmm2-gselect.cc:86) For 0'th file, average UBM likelihood over 1098 frames is -54.9491
+LOG (sgmm2-gselect:main():sgmm2-gselect.cc:86) For 10'th file, average UBM likelihood over 1202 frames is -47.4943
+LOG (sgmm2-gselect:main():sgmm2-gselect.cc:86) For 20'th file, average UBM likelihood over 1086 frames is -51.379
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 30 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.624568 over 36478 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 36478 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (sgmm2-gselect:main():sgmm2-gselect.cc:97) Done 30 files, 0 with errors, average UBM log-likelihood is -50.959 over 36478 frames.
+# Accounting: time=8 threads=1
+# Ended (code 0) at Tue Aug  2 16:13:30 BRT 2016, elapsed time 8 seconds

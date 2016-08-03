@@ -1,79 +1,77 @@
 # sgmm2-est --update-flags=vwSct --split-substates=5266 --power=0.25 --write-occs=exp/sgmm2_4c/3.occs exp/sgmm2_4c/2.mdl "sgmm2-sum-accs - exp/sgmm2_4c/2.*.acc|" exp/sgmm2_4c/3.mdl 
-# Started at Wed Jun 22 14:13:11 BRT 2016
+# Started at Tue Aug  2 16:15:21 BRT 2016
 #
 sgmm2-est --update-flags=vwSct --split-substates=5266 --power=0.25 --write-occs=exp/sgmm2_4c/3.occs exp/sgmm2_4c/2.mdl 'sgmm2-sum-accs - exp/sgmm2_4c/2.*.acc|' exp/sgmm2_4c/3.mdl 
 sgmm2-sum-accs - exp/sgmm2_4c/2.1.acc exp/sgmm2_4c/2.10.acc exp/sgmm2_4c/2.11.acc exp/sgmm2_4c/2.12.acc exp/sgmm2_4c/2.13.acc exp/sgmm2_4c/2.14.acc exp/sgmm2_4c/2.15.acc exp/sgmm2_4c/2.16.acc exp/sgmm2_4c/2.2.acc exp/sgmm2_4c/2.3.acc exp/sgmm2_4c/2.4.acc exp/sgmm2_4c/2.5.acc exp/sgmm2_4c/2.6.acc exp/sgmm2_4c/2.7.acc exp/sgmm2_4c/2.8.acc exp/sgmm2_4c/2.9.acc 
 LOG (sgmm2-sum-accs:main():sgmm2-sum-accs.cc:84) Written stats to -
-LOG (sgmm2-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 2.04946e-11 per frame over 535129 frames. 
-LOG (sgmm2-est:MleUpdate():transition-model.cc:396) 530 probabilities floored, 12788 out of 17306 transition-states skipped due to insuffient data (it is normal to have some skipped.)
-LOG (sgmm2-est:main():sgmm2-est.cc:109) Transition model update: Overall 2.04946e-11 log-like improvement per frame over 535129 frames.
-LOG (sgmm2-est:Check():estimate-am-sgmm2.cc:216) Sgmm2PdfModel: J1 = 1000, J2 = 4982, D = 40, S = 41, T = 40, I = 400
+LOG (sgmm2-est:MleUpdate():transition-model.cc:393) TransitionModel::Update, objf change is 0 per frame over 786200 frames. 
+LOG (sgmm2-est:MleUpdate():transition-model.cc:396) 288 probabilities floored, 10844 out of 15468 transition-states skipped due to insuffient data (it is normal to have some skipped.)
+LOG (sgmm2-est:main():sgmm2-est.cc:109) Transition model update: Overall 0 log-like improvement per frame over 786200 frames.
+LOG (sgmm2-est:Check():estimate-am-sgmm2.cc:216) Sgmm2PdfModel: J1 = 1000, J2 = 4856, D = 40, S = 41, T = 40, I = 400
 LOG (sgmm2-est:Check():estimate-am-sgmm2.cc:362) Subspace GMM model properties: Y: yes, nonzero. Z, R: no.  S: yes, nonzero. y: yes, nonzero. a: no.  gamma: yes.  gamma: yes, nonzero. gamma_c: yes, nonzero. t: no.  U: no.  
 LOG (sgmm2-est:UpdatePhoneVectors():estimate-am-sgmm2.cc:782) Updating phone vectors
-LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 0 m = 0 is 0.0194898 per frame over 745.7 frames.
-LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 0 m = 1 is 0.0229842 per frame over 748.9 frames.
-LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 0 m = 2 is 0.0230697 per frame over 1440.1 frames.
+LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 0 m = 0 is 0.0126912 per frame over 2123 frames.
+LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 0 m = 1 is 0.0139347 per frame over 2139.3 frames.
+LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 0 m = 2 is 0.0140096 per frame over 2197.9 frames.
 WARNING (sgmm2-est:SolveQuadraticProblem<double>():sp-matrix.cc:667) Zero quadratic term in quadratic vector problem for v: leaving it unchanged.
 LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 1 m = 0 is -nan per frame over 0 frames.
-LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 2 m = 0 is 0.160015 per frame over 74.8555 frames.
-LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 2 m = 1 is 0.243405 per frame over 44.1518 frames.
-LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 2 m = 2 is 0.0822548 per frame over 104.592 frames.
-LOG (sgmm2-est:UpdatePhoneVectors():estimate-am-sgmm2.cc:794) **Overall auxf impr for v is 0.168868 over 535345 frames
+LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 2 m = 0 is 0.138092 per frame over 68.578 frames.
+LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 2 m = 1 is 0.164918 per frame over 105.686 frames.
+LOG (sgmm2-est:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:928) Auxf impr for j = 2 m = 2 is 1.74699 per frame over 9.59372 frames.
+LOG (sgmm2-est:UpdatePhoneVectors():estimate-am-sgmm2.cc:794) **Overall auxf impr for v is 0.122139 over 785832 frames
 LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1319) Updating weight projections
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 0 is 0.0307022 per frame over 1273.41 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 1 is 0.0223295 per frame over 2269.36 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 2 is 0.0274 per frame over 1708.62 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 3 is 0.0360047 per frame over 1815.36 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 4 is 0.0232583 per frame over 1767.29 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 5 is 0.0304639 per frame over 2562.77 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 6 is 0.0298599 per frame over 2467.19 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 7 is 0.036851 per frame over 1625.25 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 8 is 0.0322362 per frame over 2404.89 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 9 is 0.0365344 per frame over 751.64 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 0 is 0.00512937 per frame over 1273.41 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 1 is 0.00522249 per frame over 2269.36 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 2 is 0.00596266 per frame over 1708.62 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 3 is 0.00823102 per frame over 1815.36 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 4 is 0.00651998 per frame over 1767.29 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 5 is 0.00616938 per frame over 2562.77 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 6 is 0.00526808 per frame over 2467.19 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 7 is 0.00884706 per frame over 1625.25 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 8 is 0.00723533 per frame over 2404.89 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 9 is 0.0119633 per frame over 751.64 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 0 is 0.00223832 per frame over 1273.41 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 1 is 0.002211 per frame over 2269.36 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 2 is 0.00264341 per frame over 1708.62 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 3 is 0.00413623 per frame over 1815.36 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 4 is 0.00261935 per frame over 1767.29 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 5 is 0.00264496 per frame over 2562.77 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 6 is 0.00276412 per frame over 2467.19 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 7 is 0.00398554 per frame over 1625.25 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 8 is 0.002699 per frame over 2404.89 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 9 is 0.00642025 per frame over 751.64 frames.
-LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1427) **Overall objf impr for w is 0.0538452, actual 0.0806978, over 535345 frames
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 0 is 0.0296893 per frame over 2553.3 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 1 is 0.0317112 per frame over 3539.78 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 2 is 0.0161738 per frame over 2516.24 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 3 is 0.0282406 per frame over 3524.91 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 4 is 0.0291662 per frame over 2351.47 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 5 is 0.0262338 per frame over 4328.66 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 6 is 0.0322872 per frame over 4338.63 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 7 is 0.0678948 per frame over 931.22 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 8 is 0.0424306 per frame over 1076.94 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 0, i = 9 is 0.0241723 per frame over 2185.11 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 0 is 0.00318672 per frame over 2553.3 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 1 is 0.0052761 per frame over 3539.78 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 2 is 0.00354222 per frame over 2516.24 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 3 is 0.00644201 per frame over 3524.91 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 4 is 0.00647243 per frame over 2351.47 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 5 is 0.00646235 per frame over 4328.66 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 6 is 0.00323824 per frame over 4338.63 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 7 is 0.0201646 per frame over 931.22 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 8 is 0.0127624 per frame over 1076.94 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 1, i = 9 is 0.00456397 per frame over 2185.11 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 0 is 0.00109023 per frame over 2553.3 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 1 is 0.00160101 per frame over 3539.78 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 2 is 0.00162931 per frame over 2516.24 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 3 is 0.00251585 per frame over 3524.91 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 4 is 0.00135603 per frame over 2351.47 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 5 is 0.00220077 per frame over 4328.66 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 6 is 0.00103163 per frame over 4338.63 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 7 is 0.00605912 per frame over 931.22 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 8 is 0.00398849 per frame over 1076.94 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1373) Predicted objf impr for w, iter = 2, i = 9 is 0.00136199 per frame over 2185.11 frames.
+LOG (sgmm2-est:UpdateW():estimate-am-sgmm2.cc:1427) **Overall objf impr for w is 0.0427237, actual 0.0616688, over 785832 frames
 WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 12: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 17: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 51: Floored 1 covariance eigenvalues.
 WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 57: Floored 1 covariance eigenvalues.
-WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 82: Floored 1 covariance eigenvalues.
-WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 165: Floored 1 covariance eigenvalues.
-WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 174: Floored 1 covariance eigenvalues.
-WARNING (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1643) For Gaussian component 261: Floored 1 covariance eigenvalues.
-LOG (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1669) **Overall objf impr for variance update = 0.0666632 over 535345 frames
+LOG (sgmm2-est:UpdateVars():estimate-am-sgmm2.cc:1669) **Overall objf impr for variance update = 0.0508158 over 785832 frames
 LOG (sgmm2-est:UpdateSubstateWeights():estimate-am-sgmm2.cc:1678) Updating substate mixture weights
-LOG (sgmm2-est:UpdateSubstateWeights():estimate-am-sgmm2.cc:1701) **Overall objf impr for c is 0.0250918, over 535345 frames.
+LOG (sgmm2-est:UpdateSubstateWeights():estimate-am-sgmm2.cc:1701) **Overall objf impr for c is 0.022365, over 785832 frames.
 LOG (sgmm2-est:RenormalizeV():estimate-am-sgmm2.cc:963) Scatter of vectors v is : 
-LOG (sgmm2-est:PrintEigs():matrix/sp-matrix.h:217) PrintEigs: Sigma:  [ 0.853923 1.52766 1.05479 1.08001 1.0953 1.13188 1.14366 1.15088 1.44063 1.42984 1.17287 1.18837 1.19666 1.20445 1.2149 1.41101 1.2317 1.23881 1.24501 1.25248 1.26689 1.26002 1.26269 1.27749 1.28138 1.3913 1.38342 1.37934 1.3742 1.29332 1.36698 1.35871 1.29918 1.30844 1.31761 1.3149 1.33916 1.33004 1.33322 1.3455 1.34381 ]
+LOG (sgmm2-est:PrintEigs():matrix/sp-matrix.h:217) PrintEigs: Sigma:  [ 0.826372 1.03518 1.45308 1.06219 1.08645 1.40672 1.09694 1.10896 1.11875 1.13035 1.14421 1.14853 1.15983 1.1676 1.17724 1.18424 1.18868 1.1962 1.20342 1.20759 1.22099 1.2373 1.23846 1.24801 1.2488 1.25325 1.26157 1.26527 1.27448 1.38125 1.28196 1.29572 1.30612 1.30458 1.31898 1.31429 1.36256 1.32379 1.33652 1.34938 1.34027 ]
 LOG (sgmm2-est:RenormalizeV():estimate-am-sgmm2.cc:985) Note on the next diagnostic: the first number is generally not that meaningful as it relates to the static offset
-LOG (sgmm2-est:PrintEigs():matrix/sp-matrix.h:217) PrintEigs: H_sm_proj (Significance of dims in vector space.. note):  [ 49.4228 4.48716 4.15612 3.82933 2.52135 2.32321 1.72942 1.70635 1.23934 1.16795 0.960711 0.908015 0.86309 0.748507 0.697553 0.66782 0.62371 0.590231 0.564077 0.510094 0.481818 0.47116 0.438581 0.395811 0.379506 0.375715 0.352998 0.33249 0.320734 0.296603 0.269909 0.238259 0.213716 0.192814 0.201917 0.107367 0.124172 0.181789 0.178202 0.135399 0.147857 ]
+LOG (sgmm2-est:PrintEigs():matrix/sp-matrix.h:217) PrintEigs: H_sm_proj (Significance of dims in vector space.. note):  [ 35.9364 3.86994 3.43349 3.05882 2.30137 2.18546 1.75807 1.56632 1.14283 0.971524 0.874207 0.77901 0.752647 0.669214 0.630072 0.575348 0.528256 0.492723 0.461231 0.440068 0.413648 0.372436 0.379097 0.37699 0.341087 0.330984 0.307061 0.268768 0.252623 0.231573 0.218829 0.197944 0.184105 0.16546 0.164291 0.161227 0.0842367 0.104854 0.114337 0.127866 0.133627 ]
 LOG (sgmm2-est:RenormalizeV():estimate-am-sgmm2.cc:1031) Renormalized subspace.
-LOG (sgmm2-est:Update():estimate-am-sgmm2.cc:673) *Overall auxf improvement, combining all parameters, is 0.34132
-LOG (sgmm2-est:Update():estimate-am-sgmm2.cc:676) ***Overall data likelihood is -42.6672 over 535345 frames.
-WARNING (sgmm2-est:ComputeHsmFromModel():am-sgmm2.cc:1282) Limited 21 eigenvalues of H_sm
-LOG (sgmm2-est:ComputeHsmFromModel():am-sgmm2.cc:1287) total count is 535342
+LOG (sgmm2-est:Update():estimate-am-sgmm2.cc:673) *Overall auxf improvement, combining all parameters, is 0.256989
+LOG (sgmm2-est:Update():estimate-am-sgmm2.cc:676) ***Overall data likelihood is -43.0872 over 785832 frames.
+WARNING (sgmm2-est:ComputeHsmFromModel():am-sgmm2.cc:1282) Limited 17 eigenvalues of H_sm
+LOG (sgmm2-est:ComputeHsmFromModel():am-sgmm2.cc:1287) total count is 785827
 LOG (sgmm2-est:SplitSubstates():am-sgmm2.cc:692) Getting rid of normalizers as they will no longer be valid
-LOG (sgmm2-est:SplitSubstates():am-sgmm2.cc:694) Split 6517 substates to 6597
+LOG (sgmm2-est:SplitSubstates():am-sgmm2.cc:694) Split 6224 substates to 6291
 LOG (sgmm2-est:ComputeNormalizers():am-sgmm2.cc:852) Computing normalizers
-LOG (sgmm2-est:ComputeNormalizers():am-sgmm2.cc:859) Entropy of weights in substates is 2.26595 over 6597 substates, equivalent to perplexity of 9.64029
+LOG (sgmm2-est:ComputeNormalizers():am-sgmm2.cc:859) Entropy of weights in substates is 2.25448 over 6291 substates, equivalent to perplexity of 9.53031
 LOG (sgmm2-est:ComputeNormalizers():am-sgmm2.cc:863) Done computing normalizers
 LOG (sgmm2-est:main():sgmm2-est.cc:158) Written model to exp/sgmm2_4c/3.mdl
-# Accounting: time=13 threads=1
-# Ended (code 0) at Wed Jun 22 14:13:24 BRT 2016, elapsed time 13 seconds
+# Accounting: time=9 threads=1
+# Ended (code 0) at Tue Aug  2 16:15:30 BRT 2016, elapsed time 9 seconds

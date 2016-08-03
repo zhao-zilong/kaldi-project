@@ -1,28 +1,30 @@
 # ali-to-post "ark:gunzip -c exp/sgmm2_4c/ali.3.gz|" ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/12.mdl ark:- ark:- | sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split16/3/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.3 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.3.gz|" exp/sgmm2_4c/12.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/3/utt2spk scp:data/train/split16/3/cmvn.scp scp:data/train/split16/3/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/3/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.3 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.3 && mv exp/sgmm2_4c/tmp_vecs.3 exp/sgmm2_4c/vecs.3 
-# Started at Wed Jun 22 14:25:10 BRT 2016
+# Started at Tue Aug  2 16:25:13 BRT 2016
 #
-ali-to-post 'ark:gunzip -c exp/sgmm2_4c/ali.3.gz|' ark:- 
 sgmm2-est-spkvecs --rand-prune=0.1 --spk2utt=ark:data/train/split16/3/spk2utt --spk-vecs=ark:exp/sgmm2_4c/vecs.3 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.3.gz|' exp/sgmm2_4c/12.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/3/utt2spk scp:data/train/split16/3/cmvn.scp scp:data/train/split16/3/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/3/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.3 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/tmp_vecs.3 
+ali-to-post 'ark:gunzip -c exp/sgmm2_4c/ali.3.gz|' ark:- 
 weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/12.mdl ark:- ark:- 
-transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/3/utt2spk scp:data/train/split16/3/cmvn.scp scp:data/train/split16/3/feats.scp ark:- 
 splice-feats ark:- ark:- 
 transform-feats --utt2spk=ark:data/train/split16/3/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.3 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split16/3/utt2spk scp:data/train/split16/3/cmvn.scp scp:data/train/split16/3/feats.scp ark:- 
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 20 alignments.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.300683 over 34627 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 20 posteriors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 34627 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 10 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 10 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 10 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 10 eigenvalues. 
-LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 10 eigenvalues. 
-LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.00401501 per frame, over 22669.9 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker felipe_v2, auxf-impr from speaker vector is 0.00401501, over 22669.9 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.00401501 over 22669.9 frames.
-LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:252) Done 20 files, 0 with errors.
+transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
+LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.000626154 per frame, over 23572.4 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker felipe, auxf-impr from speaker vector is 0.000626154, over 23572.4 frames.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 30 alignments.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 30 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.0592824 over 46422 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 30 posteriors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 46422 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:SolveQuadraticProblem<double>():sp-matrix.cc:710) Solving quadratic problem for v_s: floored 1 eigenvalues. 
+LOG (sgmm2-est-spkvecs:UpdateWithU():estimate-am-sgmm2.cc:1931) *Objf impr for speaker vector is 0.00174607 per frame, over 7203.2 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:186) For speaker felipe_Tuesday, auxf-impr from speaker vector is 0.00174607, over 7203.2 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.000888277 over 30775.6 frames.
+LOG (sgmm2-est-spkvecs:main():sgmm2-est-spkvecs.cc:252) Done 30 files, 0 with errors.
 # Accounting: time=5 threads=1
-# Ended (code 0) at Wed Jun 22 14:25:15 BRT 2016, elapsed time 5 seconds
+# Ended (code 0) at Tue Aug  2 16:25:18 BRT 2016, elapsed time 5 seconds

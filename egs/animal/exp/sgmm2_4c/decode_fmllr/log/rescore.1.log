@@ -1,21 +1,21 @@
 # sgmm2-rescore-lattice "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" --utt2spk=ark:data/test/split1/1/utt2spk --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 exp/sgmm2_4c/final.mdl "ark:gunzip -c exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/sgmm2_4c/decode_fmllr/trans.1 ark:- ark:- |" ark:- | lattice-determinize-pruned --acoustic-scale=0.1 --beam=6.0 ark:- "ark:|gzip -c > exp/sgmm2_4c/decode_fmllr/lat.1.gz" 
-# Started at Tue Jun 28 15:15:54 BRT 2016
+# Started at Wed Aug  3 14:36:43 BRT 2016
 #
-sgmm2-rescore-lattice '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' --utt2spk=ark:data/test/split1/1/utt2spk --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 exp/sgmm2_4c/final.mdl 'ark:gunzip -c exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/sgmm2_4c/decode_fmllr/trans.1 ark:- ark:- |' ark:- 
 lattice-determinize-pruned --acoustic-scale=0.1 --beam=6.0 ark:- 'ark:|gzip -c > exp/sgmm2_4c/decode_fmllr/lat.1.gz' 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
-splice-feats ark:- ark:- 
-transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
+sgmm2-rescore-lattice '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' --utt2spk=ark:data/test/split1/1/utt2spk --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 exp/sgmm2_4c/final.mdl 'ark:gunzip -c exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/sgmm2_4c/decode_fmllr/trans.1 ark:- ark:- |' ark:- 
 transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
 transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/sgmm2_4c/decode_fmllr/trans.1 ark:- ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.193653 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 LOG (sgmm2-rescore-lattice:main():sgmm2-rescore-lattice.cc:159) Done 1 lattices, errors on 0
 LOG (lattice-determinize-pruned:main():lattice-determinize-pruned.cc:111) Done 1 lattices, determinization finished earlier than specified by the beam on 0 of these.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Tue Jun 28 15:15:55 BRT 2016, elapsed time 1 seconds
+# Accounting: time=4 threads=1
+# Ended (code 0) at Wed Aug  3 14:36:47 BRT 2016, elapsed time 4 seconds

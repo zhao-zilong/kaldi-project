@@ -1,40 +1,40 @@
 # gunzip -c exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz | sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --utt2spk=ark:data/test/split1/1/utt2spk "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" exp/sgmm2_4c/final.mdl ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark:- | lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-to-post --acoustic-scale=0.1 ark:- ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.mdl ark:- ark:- | sgmm2-est-fmllr --spk2utt=ark:data/test/split1/1/spk2utt "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|" --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --fmllr-iters=10 --fmllr-min-count=1000 exp/sgmm2_4c/final.fmllr_mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/trans.1 
-# Started at Tue Jun 28 15:15:53 BRT 2016
+# Started at Wed Aug  3 14:36:39 BRT 2016
 #
-sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --utt2spk=ark:data/test/split1/1/utt2spk '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' exp/sgmm2_4c/final.mdl ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark:- 
 weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/sgmm2_4c/final.mdl ark:- ark:- 
-sgmm2-est-fmllr --spk2utt=ark:data/test/split1/1/spk2utt '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --fmllr-iters=10 --fmllr-min-count=1000 exp/sgmm2_4c/final.fmllr_mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/trans.1 
+sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --utt2spk=ark:data/test/split1/1/utt2spk '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' exp/sgmm2_4c/final.mdl ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark:- 
 lattice-to-post --acoustic-scale=0.1 ark:- ark:- 
 lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
 lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
-splice-feats ark:- ark:- 
-transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
 splice-feats ark:- ark:- 
 transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.193653 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
+sgmm2-est-fmllr --spk2utt=ark:data/test/split1/1/spk2utt '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz|' --spk-vecs=ark:exp/sgmm2_4c/decode_fmllr/vecs.1 --fmllr-iters=10 --fmllr-min-count=1000 exp/sgmm2_4c/final.fmllr_mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4c/decode_fmllr/trans.1 
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
+transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+splice-feats ark:- ark:- 
+transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.193653 over 6236 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 LOG (sgmm2-rescore-lattice:main():sgmm2-rescore-lattice.cc:159) Done 1 lattices, errors on 0
-LOG (lattice-prune:main():lattice-prune.cc:95) For utterance felipe_test_test7, pruned #states from 4892 to 2323 and #arcs from 9483 to 3604
-LOG (lattice-prune:main():lattice-prune.cc:104) Overall, pruned from on average 4892 to 2323 states, and from 9483 to 3604 arcs, over 1 utterances.
+LOG (lattice-prune:main():lattice-prune.cc:95) For utterance arthur-arthur, pruned #states from 53263 to 32975 and #arcs from 101583 to 51315
+LOG (lattice-prune:main():lattice-prune.cc:104) Overall, pruned from on average 53263 to 32975 states, and from 101583 to 51315 arcs, over 1 utterances.
 LOG (lattice-prune:main():lattice-prune.cc:108) Done 1 lattices.
 LOG (lattice-determinize-pruned:main():lattice-determinize-pruned.cc:111) Done 1 lattices, determinization finished earlier than specified by the beam on 0 of these.
-LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -6.81286 over 527 frames.  Average acoustic like/frame is -6.7154
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -4.01998 over 6236 frames.  Average acoustic like/frame is -3.96386
 LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 1 lattices.
 LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 1 posteriors.
-WARNING (sgmm2-est-fmllr:Update():fmllr-sgmm2.cc:498) Not updating FMLLR because count is 231 < 1000
+WARNING (sgmm2-est-fmllr:Update():fmllr-sgmm2.cc:498) Not updating FMLLR because count is 747.148 < 1000
 LOG (sgmm2-est-fmllr:main():sgmm2-est-fmllr.cc:293) Done 1 files, 0 with errors.
-LOG (sgmm2-est-fmllr:main():sgmm2-est-fmllr.cc:294) Overall auxf impr per frame is 0 per frame, over 231 frames.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Tue Jun 28 15:15:54 BRT 2016, elapsed time 1 seconds
+LOG (sgmm2-est-fmllr:main():sgmm2-est-fmllr.cc:294) Overall auxf impr per frame is 0 per frame, over 747.148 frames.
+# Accounting: time=4 threads=1
+# Ended (code 0) at Wed Aug  3 14:36:43 BRT 2016, elapsed time 4 seconds

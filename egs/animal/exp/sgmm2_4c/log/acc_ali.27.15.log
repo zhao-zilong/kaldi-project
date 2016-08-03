@@ -1,34 +1,35 @@
 # ali-to-post "ark:gunzip -c exp/sgmm2_4c/ali.15.gz|" ark:- | sgmm2-post-to-gpost --spk-vecs=ark:exp/sgmm2_4c/vecs.15 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.15.gz|" --utt2spk=ark:data/train/split16/15/utt2spk exp/sgmm2_4c/25.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- ark:- | sgmm2-acc-stats-gpost --rand-prune=0.1 --update-flags=vMwcS exp/sgmm2_4c/27.alimdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" ark,s,cs:- exp/sgmm2_4c/27.15.aliacc 
-# Started at Wed Jun 22 14:45:38 BRT 2016
+# Started at Tue Aug  2 16:41:29 BRT 2016
 #
 ali-to-post 'ark:gunzip -c exp/sgmm2_4c/ali.15.gz|' ark:- 
-sgmm2-acc-stats-gpost --rand-prune=0.1 --update-flags=vMwcS exp/sgmm2_4c/27.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- exp/sgmm2_4c/27.15.aliacc 
 sgmm2-post-to-gpost --spk-vecs=ark:exp/sgmm2_4c/vecs.15 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.15.gz|' --utt2spk=ark:data/train/split16/15/utt2spk exp/sgmm2_4c/25.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- ark:- 
-transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- 
+sgmm2-acc-stats-gpost --rand-prune=0.1 --update-flags=vMwcS exp/sgmm2_4c/27.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' ark,s,cs:- exp/sgmm2_4c/27.15.aliacc 
 transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
 splice-feats ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- 
-apply-cmvn --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- 
 transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/15/utt2spk scp:data/train/split16/15/cmvn.scp scp:data/train/split16/15/feats.scp ark:- 
 splice-feats ark:- ark:- 
 transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
-LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -39.1369
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 20 alignments.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.423463 over 32814 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.423463 over 32814 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 32814 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 32814 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -37.8931
-LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:173) Overall like per frame (Gaussian only) = -37.8931 over 32814 frames.
-LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:176) Done 20 files, 0 with errors.
-LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:164) Overall number of frames is 32814
-LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:165) Done 20 files, 0 with errors.
+transform-feats --utt2spk=ark:data/train/split16/15/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.15 ark:- ark:- 
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -36.855
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -37.1712
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 30 utterances, errors on 0
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 30 utterances, errors on 0
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 30 alignments.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.0845654 over 37011 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.0845654 over 37011 frames.
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -37.0416
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 37011 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 37011 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 30 utterances; 0 had errors.
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:173) Overall like per frame (Gaussian only) = -37.0416 over 37011 frames.
+LOG (sgmm2-post-to-gpost:main():sgmm2-post-to-gpost.cc:176) Done 30 files, 0 with errors.
+LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:164) Overall number of frames is 37011
+LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:165) Done 30 files, 0 with errors.
 LOG (sgmm2-acc-stats-gpost:main():sgmm2-acc-stats-gpost.cc:173) Written accs.
-# Accounting: time=10 threads=1
-# Ended (code 0) at Wed Jun 22 14:45:48 BRT 2016, elapsed time 10 seconds
+# Accounting: time=11 threads=1
+# Ended (code 0) at Tue Aug  2 16:41:42 BRT 2016, elapsed time 11 seconds

@@ -1,20 +1,24 @@
 # ali-to-post "ark:gunzip -c exp/tri2b_ali/ali.11.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b_ali/final.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/train/split16/11/spk2utt exp/tri2b_ali/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- |" ark:- ark:exp/tri3b/trans.11 
-# Started at Wed Jun 22 13:50:17 BRT 2016
+# Started at Tue Aug  2 15:57:50 BRT 2016
 #
+ali-to-post 'ark:gunzip -c exp/tri2b_ali/ali.11.gz|' ark:- 
 weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b_ali/final.mdl ark:- ark:- 
 gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/train/split16/11/spk2utt exp/tri2b_ali/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- |' ark:- ark:exp/tri3b/trans.11 
-ali-to-post 'ark:gunzip -c exp/tri2b_ali/ali.11.gz|' ark:- 
 transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
-splice-feats ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/train/split16/11/utt2spk scp:data/train/split16/11/cmvn.scp scp:data/train/split16/11/feats.scp ark:- 
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 10 alignments.
-LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 10 posteriors.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 10 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.5567 over 18420 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 10 utterances; 0 had errors.
-LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.7359 per frame over 8623 frames.
-LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker felipe_vten, auxf-impr from fMLLR is 2.7359, over 8623 frames.
-LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:188) Done 10 files, 0 with no posts, 0 with other errors.
-LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 2.7359 over 8623 frames.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Wed Jun 22 13:50:18 BRT 2016, elapsed time 1 seconds
+splice-feats ark:- ark:- 
+LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.37563 per frame over 7558 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker henriquedias1, auxf-impr from fMLLR is 2.37563, over 7558 frames.
+LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.07056 per frame over 8186 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker karine, auxf-impr from fMLLR is 2.07056, over 8186 frames.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 29 alignments.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 29 posteriors.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 29 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -89.9609 over 37076 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 29 utterances; 0 had errors.
+LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.8358 per frame over 6794 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker luiz_souza, auxf-impr from fMLLR is 1.8358, over 6794 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:188) Done 29 files, 0 with no posts, 0 with other errors.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 2.1021 over 22538 frames.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Tue Aug  2 15:57:52 BRT 2016, elapsed time 2 seconds

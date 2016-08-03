@@ -1,14 +1,14 @@
 # lattice-scale --inv-acoustic-scale=10 "ark:gunzip -c exp/tri1/decode/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri1/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri1/graph/words.txt | cat > exp/tri1/decode/scoring_kaldi/penalty_0.0/10.txt 
-# Started at Mon Jun 27 14:22:11 BRT 2016
+# Started at Tue Aug  2 15:54:12 BRT 2016
 #
 lattice-scale --inv-acoustic-scale=10 'ark:gunzip -c exp/tri1/decode/lat.*.gz|' ark:- 
 lattice-best-path --word-symbol-table=exp/tri1/graph/words.txt ark:- ark,t:- 
 lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test4, best cost 401.797 + 72877.5 = 73279.3 over 9411 frames.
-felipe_test_test4 camarao urso <UNK> tenia minhoca verme mosca mosquito camelo escorpiao escaravelho andorinha lobo leao crocodilo jiboia anaconda sapo javali porco galinha cavalo vieira mula tubarao golfinho 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 7.78656 = 0.0426944 [graph] + 7.74387 [acoustic] over 9411 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe-test7, best cost 388.195 + 47504.5 = 47892.6 over 6036 frames.
+felipe-test7 gato rato coelho cavalo galinha egua pato <UNK> passaro aguia condor camelo dromedario escorpiao formiga borboleta cupim baleia tubarao golfinho polvo mula lesma peixe leao caracol minhoca cobra ra sapo tartaruga crocodilo <UNK> mosquito 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 7.9345 = 0.0643132 [graph] + 7.87019 [acoustic] over 6036 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Mon Jun 27 14:22:11 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Tue Aug  2 15:54:12 BRT 2016, elapsed time 0 seconds

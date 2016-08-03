@@ -1,20 +1,21 @@
 # gmm-acc-stats-ali exp/tri3c/29.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark,s,cs:exp/tri3c/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/10.mat ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3c/ali.1.gz|" exp/tri3c/29.1.acc 
-# Started at Wed Jun 22 14:03:39 BRT 2016
+# Started at Tue Aug  2 16:09:03 BRT 2016
 #
 gmm-acc-stats-ali exp/tri3c/29.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark,s,cs:exp/tri3c/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c/10.mat ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3c/ali.1.gz|' exp/tri3c/29.1.acc 
 transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark,s,cs:exp/tri3c/raw_trans.1 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
 splice-feats ark:- ark:- 
 transform-feats exp/tri3c/10.mat ark:- ark:- 
-WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance eduardo_Seduardo16
-WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance eduardo_Seduardo4
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.759178 over 23996 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 23996 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 18 files, 2 with errors.
-LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -46.8795 over 21499 frames.
+apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
+WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance dieniffer1-Sdieniffer13
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 38 utterances, errors on 0
+WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance dieniffer1-Sdieniffer17
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is -0.0773424 over 40765 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 38 utterances; 0 had errors.
+WARNING (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:79) No alignment for utterance dieniffer1-Sdieniffer18
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 40765 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 38 utterances; 0 had errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:112) Done 35 files, 3 with errors.
+LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -46.5927 over 38933 frames.
 LOG (gmm-acc-stats-ali:main():gmm-acc-stats-ali.cc:123) Written accs.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Wed Jun 22 14:03:40 BRT 2016, elapsed time 1 seconds
+# Accounting: time=2 threads=1
+# Ended (code 0) at Tue Aug  2 16:09:05 BRT 2016, elapsed time 2 seconds

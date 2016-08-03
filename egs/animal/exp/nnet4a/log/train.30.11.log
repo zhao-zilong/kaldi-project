@@ -1,11 +1,12 @@
 # nnet-shuffle-egs --buffer-size=5000 --srand=30 ark:exp/nnet4a/egs/egs.11.2.ark ark:- | nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=30 exp/nnet4a/30.mdl ark:- exp/nnet4a/31.11.mdl 
-# Started at Wed Jun 22 15:01:16 BRT 2016
+# Started at Tue Aug  2 16:52:58 BRT 2016
 #
-nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=30 exp/nnet4a/30.mdl ark:- exp/nnet4a/31.11.mdl 
 nnet-shuffle-egs --buffer-size=5000 --srand=30 ark:exp/nnet4a/egs/egs.11.2.ark ark:- 
-LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 7836 neural-network training examples using a buffer (partial randomization)
-LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 7836 examples, average log-prob per frame is -0.893551
-LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-0.893551
-LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 7836 training examples (weighted).  Wrote model to exp/nnet4a/31.11.mdl
-# Accounting: time=5 threads=1
-# Ended (code 0) at Wed Jun 22 15:01:22 BRT 2016, elapsed time 5 seconds
+nnet-train-parallel --num-threads=16 --minibatch-size=128 --srand=30 exp/nnet4a/30.mdl ark:- exp/nnet4a/31.11.mdl 
+LOG (nnet-shuffle-egs:main():nnet-shuffle-egs.cc:102) Shuffled order of 6750 neural-network training examples using a buffer (partial randomization)
+LOG (nnet-train-parallel:GetScalingFactor():nnet-component.cc:1588) Limiting step size to 10 using scaling factor 0.991426, for component index 6
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:194) Did backprop on 6750 examples, average log-prob per frame is -1.29282
+LOG (nnet-train-parallel:DoBackpropParallel():nnet-update-parallel.cc:196) [this line is to be parsed by a script:] log-prob-per-frame=-1.29282
+LOG (nnet-train-parallel:main():nnet-train-parallel.cc:102) Finished training, processed 6750 training examples (weighted).  Wrote model to exp/nnet4a/31.11.mdl
+# Accounting: time=7 threads=1
+# Ended (code 0) at Tue Aug  2 16:53:05 BRT 2016, elapsed time 7 seconds

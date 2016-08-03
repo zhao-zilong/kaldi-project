@@ -1,5 +1,5 @@
 # compile-train-graphs exp/tri2b_ali/tree exp/tri2b_ali/final.mdl data/lang/L.fst "ark:utils/sym2int.pl --map-oov 2 -f 2- data/lang/words.txt data/train/split16/4/text|" ark:- | gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.0 1 exp/tri2b_ali/final.mdl - |" ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/4/utt2spk scp:data/train/split16/4/cmvn.scp scp:data/train/split16/4/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/final.mat ark:- ark:- |" "ark,t:|gzip -c >exp/tri2b_ali/ali.4.gz" 
-# Started at Wed Jun 22 13:50:07 BRT 2016
+# Started at Tue Aug  2 15:57:39 BRT 2016
 #
 gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/tri2b_ali/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/4/utt2spk scp:data/train/split16/4/cmvn.scp scp:data/train/split16/4/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b/final.mat ark:- ark:- |' 'ark,t:|gzip -c >exp/tri2b_ali/ali.4.gz' 
 compile-train-graphs exp/tri2b_ali/tree exp/tri2b_ali/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov 2 -f 2- data/lang/words.txt data/train/split16/4/text|' ark:- 
@@ -7,16 +7,16 @@ gmm-boost-silence --boost=1.0 1 exp/tri2b_ali/final.mdl -
 WARNING (gmm-boost-silence:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
 LOG (gmm-boost-silence:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
 LOG (gmm-boost-silence:main():gmm-boost-silence.cc:103) Wrote model to -
-splice-feats ark:- ark:- 
 transform-feats exp/tri2b/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/train/split16/4/utt2spk scp:data/train/split16/4/cmvn.scp scp:data/train/split16/4/feats.scp ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 19 utterances, errors on 0
-LOG (compile-train-graphs:main():compile-train-graphs.cc:145) compile-train-graphs: succeeded for 20 graphs, failed for 0
-WARNING (gmm-align-compiled:main():gmm-align-compiled.cc:98) No features for utterance felipe_veight_Sfelipe_veight7
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.5567 over 36642 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 19 utterances; 0 had errors.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -39.2188 over 36642 frames.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 0 out of 20 utterances.
-LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 19, errors on 1
-# Accounting: time=1 threads=1
-# Ended (code 0) at Wed Jun 22 13:50:08 BRT 2016, elapsed time 1 seconds
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 39 utterances, errors on 0
+LOG (compile-train-graphs:main():compile-train-graphs.cc:145) compile-train-graphs: succeeded for 40 graphs, failed for 0
+WARNING (gmm-align-compiled:main():gmm-align-compiled.cc:98) No features for utterance felipe_veight-Sfelipe_veight7
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -89.9609 over 71269 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 39 utterances; 0 had errors.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -39.5542 over 71269 frames.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:131) Retried 0 out of 40 utterances.
+LOG (gmm-align-compiled:main():gmm-align-compiled.cc:133) Done 39, errors on 1
+# Accounting: time=3 threads=1
+# Ended (code 0) at Tue Aug  2 15:57:43 BRT 2016, elapsed time 3 seconds

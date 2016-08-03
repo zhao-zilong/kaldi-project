@@ -1,31 +1,31 @@
 # gunzip -c exp/tri3b/decode.si/lat.1.gz | lattice-to-post --acoustic-scale=0.083333 ark:- ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.alimdl ark:- ark:- | gmm-post-to-gpost exp/tri3b/final.alimdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |" ark:- ark:- | gmm-est-fmllr-gpost --fmllr-update-type=full --spk2utt=ark:data/test/split1/1/spk2utt exp/tri3b/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |" ark,s,cs:- ark:exp/tri3b/decode/pre_trans.1 
-# Started at Tue Jun 28 15:15:44 BRT 2016
+# Started at Wed Aug  3 14:34:38 BRT 2016
 #
 weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.alimdl ark:- ark:- 
 gmm-post-to-gpost exp/tri3b/final.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |' ark:- ark:- 
 gmm-est-fmllr-gpost --fmllr-update-type=full --spk2utt=ark:data/test/split1/1/spk2utt exp/tri3b/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- |' ark,s,cs:- ark:exp/tri3b/decode/pre_trans.1 
+transform-feats exp/tri3b/final.mat ark:- ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -89.9609 over 6236 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
 lattice-to-post --acoustic-scale=0.083333 ark:- ark:- 
-LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -5.0634 over 527 frames.  Average acoustic like/frame is -4.96984
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
+splice-feats ark:- ark:- 
+transform-feats exp/tri3b/final.mat ark:- ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -89.9609 over 6236 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -3.43427 over 6236 frames.  Average acoustic like/frame is -3.37913
 LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 1 lattices.
 LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 1 posteriors.
-transform-feats exp/tri3b/final.mat ark:- ark:- 
-splice-feats ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-transform-feats exp/tri3b/final.mat ark:- ark:- 
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.5567 over 527 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-splice-feats ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:124) Done 1 files, 0 with no posteriors, 0 with other errors.
-LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:128) Overall avg like per frame (Gaussian only) = -71.0546 over 170.6 frames.
+LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:128) Overall avg like per frame (Gaussian only) = -59.5735 over 946.961 frames.
 LOG (gmm-post-to-gpost:main():gmm-post-to-gpost.cc:131) Done converting post to gpost
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.5567 over 527 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-WARNING (gmm-est-fmllr-gpost:Update():fmllr-diag-gmm.cc:162) Not updating fMLLR since below min-count: count is 170.6
-LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:141) For speaker felipe_test, auxf-impr from fMLLR is 0, over 170.6 frames.
+LOG (gmm-est-fmllr-gpost:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 16.4736 per frame over 946.931 frames.
+LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:141) For speaker arthur, auxf-impr from fMLLR is 16.4736, over 946.931 frames.
 LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:186) Done 1 files, 0 with no gposts, 0 with other errors.
-LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:188) Overall fMLLR auxf impr per frame is 0 over 170.6 frames.
-# Accounting: time=0 threads=1
-# Ended (code 0) at Tue Jun 28 15:15:44 BRT 2016, elapsed time 0 seconds
+LOG (gmm-est-fmllr-gpost:main():gmm-est-fmllr-gpost.cc:188) Overall fMLLR auxf impr per frame is 16.4736 over 946.931 frames.
+# Accounting: time=3 threads=1
+# Ended (code 0) at Wed Aug  3 14:34:41 BRT 2016, elapsed time 3 seconds

@@ -12,7 +12,7 @@ nj=1         # number of parallel jobs - 1 is perfect for such a small data set
 
 # Removing previously created data (from last run.sh execution)
 # rm -rf exp mfcc data/train/spk2utt data/train/utt2dur data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt
-rm -rf  mfcc/cmvn_test.scp mfcc/cmvn_test.ark mfcc/raw_mfcc_test.1.ark mfcc/raw_mfcc_test.1.scp data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/test/split8 data/test/split20
+rm -rf  mfcc/cmvn_test.scp mfcc/cmvn_test.ark mfcc/raw_mfcc_test.1.ark mfcc/raw_mfcc_test.1.scp data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split*
 
 
 # Making spk2utt files

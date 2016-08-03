@@ -1,14 +1,14 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph/words.txt exp/mono/final.mdl exp/mono/graph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > exp/mono/decode/lat.1.gz" 
-# Started at Mon Jun 27 14:21:49 BRT 2016
+# Started at Tue Aug  2 15:50:16 BRT 2016
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph/words.txt exp/mono/final.mdl exp/mono/graph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > exp/mono/decode/lat.1.gz' 
 add-deltas ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-felipe_test_test4 camarao lagosta tenia minhoca vitelo mosca mosquito camelo escorpiao cobra escaravelho andorinha lobo leao crocodilo jiboia anaconda sapo javali corvo joaninha cavalo zebra mula tubarao cupim 
-LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test_test4 is -6.51245 over 9411 frames.
-LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:175) Time taken 9.85521s: real-time factor assuming 100 frames/sec is 0.10472
+felipe-test7 gato rato coelho cavalo tainha egua pato <UNK> passaro aguia condor camelo dromedario escorpiao formiga borboleta cupim baleia tubarao golfinho polvo mula lesma mexilhao caracol minhoca cobra cao sapo tartaruga crocodilo <UNK> mosquito 
+LOG (gmm-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe-test7 is -6.6607 over 6036 frames.
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:175) Time taken 4.58441s: real-time factor assuming 100 frames/sec is 0.0759511
 LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:178) Done 1 utterances, failed for 0
-LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:180) Overall log-likelihood per frame is -6.51245 over 9411 frames.
-# Accounting: time=10 threads=1
-# Ended (code 0) at Mon Jun 27 14:21:59 BRT 2016, elapsed time 10 seconds
+LOG (gmm-latgen-faster:main():gmm-latgen-faster.cc:180) Overall log-likelihood per frame is -6.6607 over 6036 frames.
+# Accounting: time=6 threads=1
+# Ended (code 0) at Tue Aug  2 15:50:22 BRT 2016, elapsed time 6 seconds

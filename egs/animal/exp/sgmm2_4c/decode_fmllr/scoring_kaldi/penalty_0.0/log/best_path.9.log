@@ -1,14 +1,14 @@
 # lattice-scale --inv-acoustic-scale=9 "ark:gunzip -c exp/sgmm2_4c/decode_fmllr/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/sgmm2_4c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/sgmm2_4c/graph/words.txt | cat > exp/sgmm2_4c/decode_fmllr/scoring_kaldi/penalty_0.0/9.txt 
-# Started at Tue Jun 28 15:15:55 BRT 2016
+# Started at Wed Aug  3 14:36:47 BRT 2016
 #
 lattice-scale --inv-acoustic-scale=9 'ark:gunzip -c exp/sgmm2_4c/decode_fmllr/lat.*.gz|' ark:- 
 lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
 lattice-best-path --word-symbol-table=exp/sgmm2_4c/graph/words.txt ark:- ark,t:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe_test_test7, best cost 51.3611 + 4037.77 = 4089.13 over 527 frames.
-felipe_test_test7 cachorro gato rato pato 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 7.75926 = 0.0974593 [graph] + 7.6618 [acoustic] over 527 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance arthur-arthur, best cost 362.736 + 27827.5 = 28190.2 over 6236 frames.
+arthur-arthur cachorro gato lobo onca leao iguana anta cascavel anta <UNK> leao verme <UNK> hiena <UNK> peru barata pato galo <UNK> <UNK> tigre <UNK> <UNK> <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 4.52056 = 0.058168 [graph] + 4.46239 [acoustic] over 6236 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
-# Accounting: time=0 threads=1
-# Ended (code 0) at Tue Jun 28 15:15:55 BRT 2016, elapsed time 0 seconds
+# Accounting: time=1 threads=1
+# Ended (code 0) at Wed Aug  3 14:36:48 BRT 2016, elapsed time 1 seconds

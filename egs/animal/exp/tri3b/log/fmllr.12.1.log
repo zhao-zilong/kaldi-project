@@ -1,25 +1,33 @@
 # ali-to-post "ark:gunzip -c exp/tri3b/ali.1.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3b/12.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/train/split16/1/spk2utt exp/tri3b/12.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark:exp/tri3b/trans.1 ark:- ark:- |" ark:- ark:exp/tri3b/tmp_trans.1 
-# Started at Wed Jun 22 13:51:34 BRT 2016
+# Started at Tue Aug  2 15:58:56 BRT 2016
 #
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3b/12.mdl ark:- ark:- 
 ali-to-post 'ark:gunzip -c exp/tri3b/ali.1.gz|' ark:- 
 gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/train/split16/1/spk2utt exp/tri3b/12.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark:exp/tri3b/trans.1 ark:- ark:- |' ark:- ark:exp/tri3b/tmp_trans.1 
-weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri3b/12.mdl ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
 transform-feats --utt2spk=ark:data/train/split16/1/utt2spk ark:exp/tri3b/trans.1 ark:- ark:- 
 splice-feats ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
 transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 18 alignments.
-LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 18 posteriors.
-WARNING (gmm-est-fmllr:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance eduardo_Seduardo16
-WARNING (gmm-est-fmllr:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance eduardo_Seduardo4
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.5567 over 23996 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 3.0916 over 23996 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.100979 per frame over 16060 frames.
-LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker eduardo, auxf-impr from fMLLR is 0.100979, over 16060 frames.
-LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:188) Done 18 files, 2 with no posts, 0 with other errors.
-LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 0.100979 over 16060 frames.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Wed Jun 22 13:51:35 BRT 2016, elapsed time 1 seconds
+LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0802786 per frame over 6838 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker alfeu, auxf-impr from fMLLR is 0.0802786, over 6838 frames.
+WARNING (gmm-est-fmllr:main():gmm-est-fmllr.cc:113) Did not find features for utterance alfeu1-Salfeu15
+LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0922943 per frame over 6330 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker alfeu1, auxf-impr from fMLLR is 0.0922943, over 6330 frames.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 35 alignments.
+LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0942943 per frame over 5504 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker arthur1, auxf-impr from fMLLR is 0.0942943, over 5504 frames.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 35 posteriors.
+WARNING (gmm-est-fmllr:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance dieniffer1-Sdieniffer13
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 38 utterances, errors on 0
+WARNING (gmm-est-fmllr:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance dieniffer1-Sdieniffer17
+WARNING (gmm-est-fmllr:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance dieniffer1-Sdieniffer18
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -89.9609 over 40765 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 38 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.478088 over 40765 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 38 utterances; 0 had errors.
+LOG (gmm-est-fmllr:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.24424 per frame over 4160 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker dieniffer1, auxf-impr from fMLLR is 0.24424, over 4160 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:188) Done 35 files, 3 with no posts, 1 with other errors.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 0.116862 over 22832 frames.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Tue Aug  2 15:58:58 BRT 2016, elapsed time 2 seconds

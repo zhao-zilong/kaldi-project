@@ -167,7 +167,6 @@ local/run_raw_fmllr.sh
 local/nnet2/run_4a.sh
 
 
-
 echo
 echo "===== run.sh script is finished ====="
 echo

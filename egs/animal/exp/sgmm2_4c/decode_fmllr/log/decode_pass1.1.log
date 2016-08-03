@@ -1,23 +1,23 @@
 # sgmm2-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.1 --determinize-lattice=false --allow-partial=true --word-symbol-table=exp/sgmm2_4c/graph/words.txt --max-mem=50000000 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz| copy-gselect --n=3 ark:- ark:- |" exp/sgmm2_4c/final.alimdl exp/sgmm2_4c/graph/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |" "ark:|gzip -c > exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz" 
-# Started at Tue Jun 28 15:15:52 BRT 2016
+# Started at Wed Aug  3 14:36:20 BRT 2016
 #
 sgmm2-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.1 --determinize-lattice=false --allow-partial=true --word-symbol-table=exp/sgmm2_4c/graph/words.txt --max-mem=50000000 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/decode_fmllr/gselect.1.gz| copy-gselect --n=3 ark:- ark:- |' exp/sgmm2_4c/final.alimdl exp/sgmm2_4c/graph/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- | transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/sgmm2_4c/final.mat ark:- ark:- |' 'ark:|gzip -c > exp/sgmm2_4c/decode_fmllr/pre_lat.1.gz' 
-transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
-transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
-apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 copy-gselect --n=3 ark:- ark:- 
+transform-feats exp/sgmm2_4c/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split1/1/utt2spk scp:data/test/split1/1/cmvn.scp scp:data/test/split1/1/feats.scp ark:- 
 splice-feats ark:- ark:- 
-LOG (copy-gselect:main():copy-gselect.cc:71) Copied 1 gselect objects,  limiting sizes to 3
+transform-feats --utt2spk=ark:data/test/split1/1/utt2spk ark,s,cs:exp/tri3c/decode/raw_trans.1 ark:- ark:- 
 LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.193653 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 527 frames.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 6236 frames.
 LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
-felipe_test_test7 cachorro gato rato pato 
-LOG (sgmm2-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance felipe_test_test7 is -7.17525 over 527 frames.
-LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance felipe_test_test7 is -7.17525 over 527 frames.
-LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:252) Time taken [excluding initialization] 0.541545s: real-time factor assuming 100 frames/sec is 0.10276
+LOG (copy-gselect:main():copy-gselect.cc:71) Copied 1 gselect objects,  limiting sizes to 3
+arthur-arthur cachorro gato lobo leao iguana anta cascavel anta ra leao verme <UNK> hiena <UNK> peru barata vaca galo <UNK> <UNK> tigre <UNK> <UNK> 
+LOG (sgmm2-latgen-faster:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:285) Log-like per frame for utterance arthur-arthur is -4.06551 over 6236 frames.
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance arthur-arthur is -4.06551 over 6236 frames.
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:252) Time taken [excluding initialization] 5.34798s: real-time factor assuming 100 frames/sec is 0.0857597
 LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:255) Done 1 utterances, failed for 0
-LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:257) Overall log-likelihood per frame = -7.17525 over 527 frames.
-# Accounting: time=0 threads=1
-# Ended (code 0) at Tue Jun 28 15:15:52 BRT 2016, elapsed time 0 seconds
+LOG (sgmm2-latgen-faster:main():sgmm2-latgen-faster.cc:257) Overall log-likelihood per frame = -4.06551 over 6236 frames.
+# Accounting: time=5 threads=1
+# Ended (code 0) at Wed Aug  3 14:36:25 BRT 2016, elapsed time 5 seconds

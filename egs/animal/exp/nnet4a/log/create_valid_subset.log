@@ -1,16 +1,17 @@
 # nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl exp/nnet4a/valid_uttlist data/train/feats.scp | apply-cmvn  --utt2spk=ark:data/train/utt2spk scp:data/train/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/utt2spk 'ark:cat exp/tri3c_ali/raw_trans.*|' ark:- ark:- |" "ark,s,cs:gunzip -c exp/nnet4a/ali_special.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:exp/nnet4a/egs/valid_all.egs 
-# Started at Wed Jun 22 14:47:17 BRT 2016
+# Started at Tue Aug  2 16:42:30 BRT 2016
 #
 nnet-get-egs --left-context=5 --right-context=5 "ark,s,cs:utils/filter_scp.pl exp/nnet4a/valid_uttlist data/train/feats.scp | apply-cmvn  --utt2spk=ark:data/train/utt2spk scp:data/train/cmvn.scp scp:- ark:- | transform-feats --utt2spk=ark:data/train/utt2spk 'ark:cat exp/tri3c_ali/raw_trans.*|' ark:- ark:- |" 'ark,s,cs:gunzip -c exp/nnet4a/ali_special.gz | ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |' ark:exp/nnet4a/egs/valid_all.egs 
 transform-feats --utt2spk=ark:data/train/utt2spk 'ark:cat exp/tri3c_ali/raw_trans.*|' ark:- ark:- 
 apply-cmvn --utt2spk=ark:data/train/utt2spk scp:data/train/cmvn.scp scp:- ark:- 
 ali-to-post ark:- ark:- 
 ali-to-pdf exp/tri3c_ali/final.mdl ark:- ark:- 
-LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 39 alignments to pdf sequences.
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 19 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.0489863 over 33526 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 19 utterances; 0 had errors.
-LOG (ali-to-post:main():ali-to-post.cc:65) Converted 39 alignments.
-LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 19 feature files, wrote 33526 examples,  with 33526 egs in total; 0 files had errors.
-# Accounting: time=4 threads=1
-# Ended (code 0) at Wed Jun 22 14:47:21 BRT 2016, elapsed time 4 seconds
+WARNING (nnet-get-egs:main():nnet-get-egs.cc:156) No pdf-level posterior for key dieniffer1-Sdieniffer17
+LOG (ali-to-pdf:main():ali-to-pdf.cc:68) Converted 38 alignments to pdf sequences.
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.108868 over 30767 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (ali-to-post:main():ali-to-post.cc:65) Converted 38 alignments.
+LOG (nnet-get-egs:main():nnet-get-egs.cc:174) Finished generating examples, successfully processed 19 feature files, wrote 30094 examples,  with 30094 egs in total; 1 files had errors.
+# Accounting: time=6 threads=1
+# Ended (code 0) at Tue Aug  2 16:42:36 BRT 2016, elapsed time 6 seconds

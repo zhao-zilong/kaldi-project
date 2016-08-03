@@ -1,18 +1,19 @@
 # sgmm2-align-compiled --spk-vecs=ark:exp/sgmm2_4c/vecs.7 --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.7.gz|" --utt2spk=ark:data/train/split16/7/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/15.mdl "ark:gunzip -c exp/sgmm2_4c/fsts.7.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/7/utt2spk scp:data/train/split16/7/cmvn.scp scp:data/train/split16/7/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/7/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.7 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |" "ark:|gzip -c >exp/sgmm2_4c/ali.7.gz" 
-# Started at Wed Jun 22 14:29:21 BRT 2016
+# Started at Tue Aug  2 16:28:28 BRT 2016
 #
 sgmm2-align-compiled --spk-vecs=ark:exp/sgmm2_4c/vecs.7 --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4c/gselect.7.gz|' --utt2spk=ark:data/train/split16/7/utt2spk --beam=8 --retry-beam=40 exp/sgmm2_4c/15.mdl 'ark:gunzip -c exp/sgmm2_4c/fsts.7.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/7/utt2spk scp:data/train/split16/7/cmvn.scp scp:data/train/split16/7/feats.scp ark:- | transform-feats --utt2spk=ark:data/train/split16/7/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.7 ark:- ark:- | splice-feats  ark:- ark:- | transform-feats exp/tri3c_ali/final.mat ark:- ark:- |' 'ark:|gzip -c >exp/sgmm2_4c/ali.7.gz' 
-apply-cmvn --utt2spk=ark:data/train/split16/7/utt2spk scp:data/train/split16/7/cmvn.scp scp:data/train/split16/7/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/train/split16/7/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.7 ark:- ark:- 
 transform-feats exp/tri3c_ali/final.mat ark:- ark:- 
 splice-feats ark:- ark:- 
-transform-feats --utt2spk=ark:data/train/split16/7/utt2spk ark,s,cs:exp/tri3c_ali/raw_trans.7 ark:- ark:- 
-LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 20 utterances, errors on 0
-LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.287456 over 42777 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -85.9813 over 42777 frames.
-LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
-LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:168) Overall log-likelihood per frame is -37.2593 over 42777 frames.
-LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:170) Retried 0 out of 20 utterances.
-LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:172) Done 20, errors on 0
-# Accounting: time=13 threads=1
-# Ended (code 0) at Wed Jun 22 14:29:34 BRT 2016, elapsed time 13 seconds
+apply-cmvn --utt2spk=ark:data/train/split16/7/utt2spk scp:data/train/split16/7/cmvn.scp scp:data/train/split16/7/feats.scp ark:- 
+WARNING (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:113) No feature found for utterance felipe_vsix-Sfelipe_vsix19
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 49 utterances, errors on 0
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0.315138 over 94354 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 49 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -87.2258 over 94354 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 49 utterances; 0 had errors.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:168) Overall log-likelihood per frame is -36.3499 over 94354 frames.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:170) Retried 0 out of 50 utterances.
+LOG (sgmm2-align-compiled:main():sgmm2-align-compiled.cc:172) Done 49, errors on 1
+# Accounting: time=27 threads=1
+# Ended (code 0) at Tue Aug  2 16:28:55 BRT 2016, elapsed time 27 seconds

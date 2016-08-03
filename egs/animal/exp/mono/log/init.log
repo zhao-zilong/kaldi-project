@@ -1,9 +1,9 @@
 # gmm-init-mono --shared-phones=data/lang/phones/sets.int "--train-feats=ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | add-deltas ark:- ark:- | subset-feats --n=10 ark:- ark:-|" data/lang/topo 39 exp/mono/0.mdl exp/mono/tree 
-# Started at Wed Jun 22 13:36:28 BRT 2016
+# Started at Tue Aug  2 15:47:40 BRT 2016
 #
 gmm-init-mono --shared-phones=data/lang/phones/sets.int '--train-feats=ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- | add-deltas ark:- ark:- | subset-feats --n=10 ark:- ark:-|' data/lang/topo 39 exp/mono/0.mdl exp/mono/tree 
-apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
-add-deltas ark:- ark:- 
 subset-feats --n=10 ark:- ark:- 
+add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split16/1/utt2spk scp:data/train/split16/1/cmvn.scp scp:data/train/split16/1/feats.scp ark:- 
 # Accounting: time=0 threads=1
-# Ended (code 0) at Wed Jun 22 13:36:28 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Tue Aug  2 15:47:40 BRT 2016, elapsed time 0 seconds

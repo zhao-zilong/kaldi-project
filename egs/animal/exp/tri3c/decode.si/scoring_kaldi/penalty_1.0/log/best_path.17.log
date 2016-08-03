@@ -1,14 +1,14 @@
-# lattice-scale --inv-acoustic-scale=17 "ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/decode.si/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/graph/words.txt | cat > /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/decode.si/scoring_kaldi/penalty_1.0/17.txt 
-# Started at Tue Jul 26 13:23:18 BRT 2016
+# lattice-scale --inv-acoustic-scale=17 "ark:gunzip -c exp/tri3c/decode.si/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri3c/graph/words.txt | cat > exp/tri3c/decode.si/scoring_kaldi/penalty_1.0/17.txt 
+# Started at Wed Aug  3 14:35:05 BRT 2016
 #
-lattice-best-path --word-symbol-table=/home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/graph/words.txt ark:- ark,t:- 
-lattice-scale --inv-acoustic-scale=17 'ark:gunzip -c /home/nlpserver/zzilong/verbalFluencyTester-master/kaldi/egs/animal/exp/tri3c/decode.si/lat.*.gz|' ark:- 
 lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp/tri3c/graph/words.txt ark:- ark,t:- 
+lattice-scale --inv-acoustic-scale=17 'ark:gunzip -c exp/tri3c/decode.si/lat.*.gz|' ark:- 
 LOG (lattice-scale:main():lattice-scale.cc:90) Done 1 lattices.
 LOG (lattice-add-penalty:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.
-LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance felipe-test5, best cost 87.2247 + 7671.64 = 7758.86 over 1662 frames.
-felipe-test5 cavalo 
-LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 4.66839 = 0.0524818 [graph] + 4.61591 [acoustic] over 1662 frames.
+LOG (lattice-best-path:main():lattice-best-path.cc:99) For utterance arthur-arthur, best cost 346.976 + 15843 = 16190 over 6236 frames.
+arthur-arthur cachorro gato lobo onca leao iguana anta cascavel leao gamo anu leao <UNK> <UNK> hiena peixe barata <UNK> galinha pinto tigre <UNK> 
+LOG (lattice-best-path:main():lattice-best-path.cc:124) Overall cost per frame is 2.59622 = 0.0556408 [graph] + 2.54058 [acoustic] over 6236 frames.
 LOG (lattice-best-path:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0
 # Accounting: time=0 threads=1
-# Ended (code 0) at Tue Jul 26 13:23:18 BRT 2016, elapsed time 0 seconds
+# Ended (code 0) at Wed Aug  3 14:35:05 BRT 2016, elapsed time 0 seconds
